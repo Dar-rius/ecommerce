@@ -1,0 +1,36 @@
+#sec1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+nav{
+    background-color: black;
+    width: 20%;
+    border-radius: 1%;
+    padding-top: 2%;
+    padding-bottom: 0.5%;
+}
+
+h3{
+    text-align: center;
+    color: white;
+}
+
+#carouselExampleCaptions{
+    width: 50%;
+}
+
+ul,a  {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+  }
+
+img{
+    margin-right: 7%;
+    width: 20%;
+}
