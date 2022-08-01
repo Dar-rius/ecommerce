@@ -5,6 +5,9 @@ from django.http import HttpResponse
 def index_view(request):
     return render(request, "page/home.html", {})
 
+def return_view(request):
+    return redirect("home")
+
 def contact_view(request):
     return render(request, "page/contact.html", {})
 
@@ -19,7 +22,7 @@ def shop_view(request):
 
 def login_view(request):
     return render(request, "page/login.html", {})
-    
+
 
 def signup_view(request):
     return render(request, "page/signup.html", {})

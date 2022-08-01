@@ -98,9 +98,19 @@ class User(AbstractBaseUser):
 
     objects = UserManager()
 
+CATEGORIES = (
+    ('Informatique', 'Informatique'),
+    ('Bureautique', 'Bureautique'),
+    ('Telephone', 'Telephone'),
+    ('Accesoir', 'Accesoir'),
+    ('Console et jeux video', 'Console et jeux video'),
+    ('Multimedia', 'Multimedia')
+)
+
 class Produit(models.Model):
     nom_produit = models.CharField(max_length=200)
     marque_produit = models.CharField(max_length=100)
     prix_produit = models.IntegerField(default=0)
-    quantite_produi = models.IntegerField(default=0)
+    quantite_produit = models.IntegerField(default=0)
+    cat_produit = models.CharField(max_length=50, choices=CATEGORIES, verbose_name="categories")
     photo_produit = models.FileField(upload_to='uploads/')

@@ -39,4 +39,4 @@ class User_form(forms.ModelForm):
 class Produit_form:
     class Meta:
         model = Produit
-        fields = ["nom_produit", "marque_produit", "prix_produit", "quantite_produi", "photo_produit"]
+        fields = ["nom_produit", "marque_produit", "prix_produit", "quantite_produi", "photo_produit", "cat_produit"]
