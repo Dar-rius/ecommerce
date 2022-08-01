@@ -1,5 +1,5 @@
 
-from .models import User
+from .models import User, Produit
 from django.forms import forms
 
 class User_form(forms.ModelForm):
@@ -35,3 +35,8 @@ class User_form(forms.ModelForm):
         if password is not None and password != password_2:
             self.add_error("password_2", "Your passwords must match")
         return cleaned_data
+
+class Produit_form:
+    class Meta:
+        model = Produit
+        fields = ["nom_produit", "marque_produit", "prix_produit", "quantite_produi", "photo_produit"]

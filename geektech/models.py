@@ -1,9 +1,7 @@
-from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
-from pkg_resources import require
 
 #For manage user
 class UserManager(BaseUserManager):
@@ -99,3 +97,10 @@ class User(AbstractBaseUser):
         return self.admin
 
     objects = UserManager()
+
+class Produit(models.Model):
+    nom_produit = models.CharField(max_length=200)
+    marque_produit = models.CharField(max_length=100)
+    prix_produit = models.IntegerField(default=0)
+    quantite_produi = models.IntegerField(default=0)
+    photo_produit = models.FileField(upload_to='uploads/')
