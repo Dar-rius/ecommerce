@@ -35,7 +35,7 @@ Linux
 ```bash
 $ git clone https://github.com/TeraTra/geekTech.git
 
-$ cd Wolof_IA
+$ cd geekTech
 ```
 
 #### 4 - Installation des dépendances
