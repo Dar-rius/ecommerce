@@ -1,3 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100vh;
+}
+/* HOME */
+
 #sec1{
     display: flex;
     align-items: center;
@@ -7,7 +17,7 @@
     margin-right: 2%;
 }
 
-nav{
+#sec1 nav{
     background-color: black;
     width: 20%;
     border-radius: 1%;
@@ -15,7 +25,7 @@ nav{
     padding-bottom: 0.5%;
 }
 
-h3{
+#sec1 h3{
     text-align: center;
     color: white;
 }
@@ -28,9 +38,119 @@ ul,a  {
     list-style-type: none;
     text-decoration: none;
     color: white;
+    padding: 0px;
   }
 
-img{
+#sec1 img{
     margin-right: 7%;
     width: 20%;
 }
+
+/* END HOME */
+
+/* FOOTER */
+
+footer{
+    background: #d9d9d9;
+}
+
+footer > div{
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer li{
+    color: #222733;
+    font-weight: 500;
+}
+
+section{
+    width: 100%;
+    align-items: left;
+}
+
+section > img{
+    width: 100px;
+    padding: .6rem 0px;
+}
+
+.social{
+    display: flex;
+    gap: 1rem;
+}
+.social > img{
+    width: 40px;
+    height: 40px;
+}
+
+li{
+    list-style-type: none;
+    padding: 12px 0px;
+    text-transform: uppercase;
+}
+
+footer p{
+    color: white;
+    background-color: #222733;
+    padding: 24px;
+    text-align: center;
+}
+
+/* END FOOTER */
+
+/* HEADER */
+header{
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    background: hsl(0, 0%, 95%);
+}
+
+header nav{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav div{
+    width: 75%;
+    padding: .2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+header div input{
+    width: 90%;
+    margin-left: 1rem;
+    height: 1em;
+    border: none;
+    background: transparent;
+}
+header input:focus-visible{
+    border: none;
+    outline-offset: none;
+    outline: none;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    color: #222733;
+    font-weight: 500;
+}
+
+header li{
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+header > img{
+    position: relative;
+    right: 80%;
+}
+/* END HEADER */

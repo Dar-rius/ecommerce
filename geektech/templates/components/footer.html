@@ -1,5 +1,34 @@
 {% block content%}
-    <footer>
-        
-    </footer>
+{% load static %}
+<footer>
+    <div>
+        <section>
+            <img src="{% static 'image/logo.png' %}">
+            <ul>
+                <li>Touba sandaga, Dakar,Senegal</li>
+                <li>Tel: 779554981 / 754403758</li>
+                <li>Email: geektech@support.com</li>
+            </ul>
+        </section>
+        <section>
+            <h3>NOS LIENS </h3>
+            <ul>
+                <li>ACCEUIL</li>
+                <li>BOUTIQUES</li>
+                <li>CONTACT</li>
+                <li>à propos</li>
+            </ul>
+        </section>
+        <section>
+            <h3>SUIVEZ-NOUS</h3>
+            <div class="social">
+                <img src="{% static 'image/facebook.png' %}" alt="">
+                <img src="{% static 'image/instagram.png'%}" alt="">
+                <img src="{% static 'image/linkedin.png'%}" alt="">
+            </div>
+            
+        </section>
+    </div>
+    <p>Designed and coded by Teratra</p>
+</footer>
 {% endblock content%}

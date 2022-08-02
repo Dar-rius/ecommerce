@@ -1,5 +1,22 @@
 {% block content%}
+{% load static %}
     <header>
         
+    </header><header>
+        <nav>
+            <img src="{% static 'image/logo.png' %}">
+            <div>
+                <img src="./popo">
+                <input type="text" placeholder="Rechercher un produit...">
+            </div>
+            <img src="{% static 'image/achats.png' %}" style="max-width: 40px;margin-right:1rem;">
+        </nav>
+        <ul>
+            <li>acceuil</li>
+            <li>boutiques</li>
+            <li>maintenance</li>
+            <li>contact</li>
+            <li style="margin-left: 3rem;">se connecter</li>
+        </ul>
     </header>
 {% endblock content%}
