@@ -1,0 +1,55 @@
+/* HEADER */
+header{
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    background: hsl(0, 0%, 95%);
+}
+
+header nav{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav div{
+    width: 75%;
+    padding: .2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+header div input{
+    width: 90%;
+    margin-left: 1rem;
+    height: 1em;
+    border: none;
+    background: transparent;
+}
+header input:focus-visible{
+    border: none;
+    outline-offset: none;
+    outline: none;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    color: #222733;
+    font-weight: 500;
+}
+
+header li{
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+header > img{
+    position: relative;
+    right: 80%;
+}
+/* END HEADER */

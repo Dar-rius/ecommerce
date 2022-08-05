@@ -1,0 +1,41 @@
+/* HOME */
+
+#sec1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+#sec1 nav{
+    background-color: black;
+    width: 20%;
+    border-radius: 1%;
+    padding: 0.5%;
+    padding-top: 1%;
+}
+
+#sec1 h3{
+    text-align: center;
+    color: white;
+}
+
+#carouselExampleCaptions{
+    width: 50%;
+    margin-left: 10%;
+}
+
+ul,a  {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    padding: 0px;
+  }
+
+nav img{
+    margin-right: 10%;
+    margin-left: 2%;
+    width: 15%;
+}
+
+/* END HOME */
