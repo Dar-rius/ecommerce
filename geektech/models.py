@@ -114,3 +114,4 @@ class Produit(models.Model):
     quantite_produit = models.IntegerField(default=0)
     cat_produit = models.CharField(max_length=50, choices=CATEGORIES, verbose_name="categories")
     photo_produit = models.FileField(upload_to='uploads/')
+    tendance = models.IntegerField(default=0)

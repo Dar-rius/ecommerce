@@ -19,7 +19,8 @@ def propos_view(request):
 
 
 def shop_view(request):
-    return render(request, "page/shop.html", {})
+    produits = Produit.objects.all()
+    return render(request, "page/shop.html", {"produits": produits})
 
 
 def login_view(request):
