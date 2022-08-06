@@ -2,6 +2,67 @@
 
 {% block content%}
     <section>
-        test
+        <form method="post">
+            {% csrf_token %}
+
+            {{form.non_field_errors}}
+            <div>
+                {{form.name.error}}
+                <label for="{{form.name.id_for_label}}">
+                    Nom
+                </label>
+                <input type="text" name="name" placeholder="Entrez votre nom"/>
+            </div>
+            
+            <div>
+                {{form.firstName.error}}
+                <label for="{{form.firstName.id_for_label}}">
+                    Prenom
+                </label>
+                <input type="text" name="firstName" placeholder="Entrez votre prenom"/>
+            </div>
+            
+            <div>
+                {{form.email.error}}
+                <label for="{{form.email.id_for_label}}">
+                    Adresse mail
+                </label>
+                <input type="email" name="email" placeholder="Entrez votre adresse mail"/>
+            </div>
+            
+            <div>
+                {{form.password.error}}
+                <label for="{{form.password.id_for_label}}">
+                    Mot de passse
+                </label>
+                <input type="password" name="password" placeholder="Entrez votre mot de passe"/>
+            </div>
+            
+            <div>
+                {{form.password_2.error}}
+                <label for="{{form.password_2.id_for_label}}">
+                    Mot de passe
+                </label>
+                <input type="password" name="password_2" placeholder="Entrez encore votre mot de passe"/>
+            </div>
+
+            <div>
+                {{form.adresse.error}}
+                <label for="{{form.adresse.id_for_label}}">
+                    Adresse
+                </label>
+                <input type="text" name="adresse" placeholder="Entrez votre adresse"/>
+            </div>
+
+            <div>
+                {{form.phone.error}}
+                <label for="{{form.phone.id_for_label}}">
+                    Telephone
+                </label>
+                <input type="text" name="phone" placeholder="Entrez votre telephone"/>
+            </div>
+
+            <input type="submit" value="creer">
+        </form>
     </section>
 {% endblock content%}

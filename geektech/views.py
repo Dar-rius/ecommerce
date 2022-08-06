@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Produit
+from .form import User_form
 
 # Create your views hered
 def index_view(request):
@@ -32,4 +33,13 @@ def login_view(request):
 
 
 def signup_view(request):
-    return render(request, "page/signup.html", {})
+    form = User_form(request.POST)
+
+    if form.is_valid():
+        form.save()
+        return redirect("home")
+
+    else:
+        form = User_form
+
+    return render(request, "page/signup.html", {"form": form})
