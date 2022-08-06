@@ -82,7 +82,11 @@
                 <h2>Informatique</h2>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Informatique" %}
-                       <p>{{produit.nom_produit}}</p> 
+                    <a href="{% url 'detail' produit.id%}">
+                        <div>
+                            <p>{{produit.nom_produit}}</p> 
+                        </div>
+                    </a>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -91,7 +95,11 @@
                 <h2>Multimedia</h2>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Multimedia" %}
-                       <p>{{produit.nom_produit}}</p> 
+                    <a href="{% url 'detail' produit.id%}">
+                        <div>
+                            <p>{{produit.nom_produit}}</p> 
+                        </div>
+                    </a> 
                     {% endif %}
                 {% endfor %}
             </div>
@@ -100,7 +108,11 @@
                 <h2>Bureautique</h2>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Bureautique" %}
-                       <p>{{produit.nom_produit}}</p> 
+                       <a href="{% url 'detail' produit.id%}">
+                        <div>
+                            <p>{{produit.nom_produit}}</p> 
+                        </div>
+                    </a> 
                     {% endif %}
                 {% endfor %}
             </div>
@@ -109,7 +121,11 @@
                 <h2>Telephone</h2>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Telephone" %}
-                       <p>{{produit.nom_produit}}</p> 
+                       <a href="{% url 'detail' produit.id%}">
+                        <div>
+                            <p>{{produit.nom_produit}}</p> 
+                        </div>
+                    </a> 
                     {% endif %}
                 {% endfor %}
             </div>
@@ -118,7 +134,11 @@
                 <h2>Accesoir informatique</h2>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Accesoir" %}
-                       <p>{{produit.nom_produit}}</p> 
+                       <a href="{% url 'detail' produit.id%}">
+                        <div>
+                            <p>{{produit.nom_produit}}</p> 
+                        </div>
+                    </a> 
                     {% endif %}
                 {% endfor %}
             </div>
@@ -127,7 +147,11 @@
                 <h2>Console et jeux video</h2>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Console et jeux video" %}
-                       <p>{{produit.nom_produit}}</p> 
+                       <a href="{% url 'detail' produit.id%}">
+                        <div>
+                            <p>{{produit.nom_produit}}</p> 
+                        </div>
+                    </a> 
                     {% endif %}
                 {% endfor %}
             </div>
