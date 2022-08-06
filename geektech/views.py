@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .models import Produit
 
 # Create your views hered
 def index_view(request):
-    return render(request, "page/home.html", {})
+    produits = Produit.objects.all()
+    return render(request, "page/home.html", {"produits": produits})
 
 def return_view(request):
     return redirect("home")
