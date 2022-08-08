@@ -1,7 +1,116 @@
 {% extends "_base.html" %}
 
 {% block content%}
-    <section>
-        test
+        <div>
+            <ul>
+                <a href="">
+                    <li>
+                        <img src="" alt="">
+                        Informatique
+                    </li>
+                </a>
+
+                <a href="">
+                    <li>
+                        <img src="" alt="">
+                        Multimedia
+                    </li>
+                </a>
+
+                <a href="">
+                    <li>
+                        <img src="" alt="">
+                        Bureautique
+                    </li>
+                </a>
+
+                <a href="">
+                    <li>
+                        <img src="" alt="">
+                        Telephone
+                    </li>
+                </a>
+
+                <a href="">
+                    <li>
+                        <img src="" alt="">
+                        Accessoir
+                    </li>
+                </a>
+
+                <a href="">
+                    <li>
+                        <img src="" alt="">
+                        Console et jeux video
+                    </li>
+                </a>
+            </ul>
+        </div>
+
+        <section>
+            
+            <div>
+                <h2>Tendance</h2>
+                {% for produit in produits %}
+                    {% if produit.tendance >= 20 %}
+                       <p>{{produit.nom_produit}}</p> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div>
+                <h2>Informatique</h2>
+                {% for produit in produits %}
+                    {% if produit.cat_produit == "Informatique" %}
+                       <p>{{produit.nom_produit}}</p> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+    
+            <div>
+                <h2>Multimedia</h2>
+                {% for produit in produits %}
+                    {% if produit.cat_produit == "Multimedia" %}
+                       <p>{{produit.nom_produit}}</p> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+    
+            <div>
+                <h2>Bureautique</h2>
+                {% for produit in produits %}
+                    {% if produit.cat_produit == "Bureautique" %}
+                       <p>{{produit.nom_produit}}</p> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+    
+            <div>
+                <h2>Telephone</h2>
+                {% for produit in produits %}
+                    {% if produit.cat_produit == "Telephone" %}
+                       <p>{{produit.nom_produit}}</p> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+    
+            <div>
+                <h2>Accesoir informatique</h2>
+                {% for produit in produits %}
+                    {% if produit.cat_produit == "Accesoir" %}
+                       <p>{{produit.nom_produit}}</p> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+    
+            <div>
+                <h2>Console et jeux video</h2>
+                {% for produit in produits %}
+                    {% if produit.cat_produit == "Console et jeux video" %}
+                       <p>{{produit.nom_produit}}</p> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
     </section>
 {% endblock content%}

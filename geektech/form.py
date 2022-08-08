@@ -1,40 +1,21 @@
 
-from .models import User, Produit
-from django.forms import forms
+from .models import Produit
+from django.contrib.auth import get_user_model
+from django.forms import ModelForm
+from django import forms
 
-class User_form(forms.ModelForm):
-    """
-    The default 
-
-    """
+class User_form(ModelForm):
 
     password = forms.CharField(widget=forms.PasswordInput)
     password_2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
 
     class Meta:
-        model = User
-        fields = ['email', 'name', 'firstName', 'adresse', 'phone']
+        model = get_user_model()
+        fields = ['email', 'name', 'firstName', 'adresse', 'phone', 'password', 'password_2']
 
-    def clean_email(self):
-        '''
-        Verify email is available.
-        '''
-        email = self.cleaned_data.get('email')
-        qs = User.objects.filter(email=email)
-        if qs.exists():
-            raise forms.ValidationError("email is taken")
-        return email
-
-    def clean(self):
-        '''
-        Verify both passwords match.
-        '''
-        cleaned_data = super().clean()
-        password = cleaned_data.get("password")
-        password_2 = cleaned_data.get("password_2")
-        if password is not None and password != password_2:
-            self.add_error("password_2", "Your passwords must match")
-        return cleaned_data
+class Login_form(forms.Form):
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput())
 
 class Produit_form:
     class Meta:

@@ -2,6 +2,27 @@
 
 {% block content%}
     <section>
-        test
+        <form method="post">
+            {% csrf_token %}
+
+            {{form.non_field_errors}}
+            <div>
+                {{form.email.error}}
+                <label for="{{form.email.id_for_label}}">
+                    Adresse mail
+                </label>
+                <input type="email" name="email" placeholder="Entrez votre Adresse mail"/>
+            </div>
+            
+            <div>
+                {{form.password.error}}
+                <label for="{{form.password.id_for_label}}">
+                    Mot de passe
+                </label>
+                <input type="password" name="password" placeholder="Entrez votre mot de passe"/>
+            </div>
+
+            <input type="submit" value="connectez vous">
+        </form>
     </section>
 {% endblock content%}
