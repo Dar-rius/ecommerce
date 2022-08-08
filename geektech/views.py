@@ -11,6 +11,8 @@ def return_view(request):
 def contact_view(request):
     return render(request, "page/contact.html", {})
 
+def commande_view(request):
+    return render(request, "page/commande.html",{})
 
 def propos_view(request):
     return render(request, "page/propos.html", {})

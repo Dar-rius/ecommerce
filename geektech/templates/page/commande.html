@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+
+{% block content%}
+<div class="container">
+<div class="commande">
+    <table>
+        <thead>
+            <td>votre commande</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nom :</td>
+                <td>Prix :</td>
+                <td>Quantite :</td>
+                <td>Livraison :</td>
+            </tr>
+            <!-- product info -->
+            <tr>
+                <td>Iphone 12</td>
+                <td>250000 Fcfa</td>
+                <td>1</td>
+                <td>0 Fcfa</td>
+            </tr>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+            </tr>
+            <tr>
+                <td>250.000 Fcfa</td>
+            </tr>
+
+
+        </tfoot>
+        </tbody>
+
+    </table>
+    <button>commander</button>
+</div>
+</div>
+{% endblock content%}

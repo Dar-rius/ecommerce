@@ -153,4 +153,85 @@ header > img{
     position: relative;
     right: 80%;
 }
+
 /* END HEADER */
+
+
+/* commande  */
+
+
+table{
+    padding: 24px;
+    background: #d9d9d9;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+tbody,tfoot{
+    display: flex;
+    gap: 6rem;
+}
+
+tr{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+tfoot{
+    padding-top: .5rem;
+    margin-top: 1.5rem;
+    gap: 7.5rem;   
+    border-top: 1px rgb(97, 93, 93) solid;
+}
+
+thead{
+    margin-bottom: 1rem;
+}
+
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.commande{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    width: 30%;
+}
+
+.commande button{
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+}
+
+/* end commande */
+
+/* contact */
+.contact{
+    padding: 32px;
+}
+
+.contact div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+}
+
+.contact p{
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+
