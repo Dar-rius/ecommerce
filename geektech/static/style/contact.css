@@ -1,0 +1,17 @@
+.contact{
+    padding: 32px;
+}
+
+.contact div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+}
+
+.contact p{
+    line-height: 3rem;
+    margin-top: 1rem;
+}
