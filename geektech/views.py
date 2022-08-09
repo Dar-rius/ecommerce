@@ -59,7 +59,7 @@ def login_view(request):
         if form.is_valid():
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password')
-            user = authenticate(username=email, password=password)
+            user = authenticate(request, username=email, password=password)
             if user is not None:
                 login(request, user)
                 messages.info(request, f"Vous etes connecter {email}.")
@@ -69,3 +69,34 @@ def login_view(request):
     else: 
         form = Login_form()
     return render(request, "page/login.html", {"form": form})
+
+
+
+def informatique_view(request):
+    prod_info = Produit.objects.all()
+    return render(request, "page/Informatique.html", {"produits": prod_info})
+
+
+def bureautique_view(request):
+    prod_bureau = Produit.objects.all()
+    return render(request, "page/bureautique.html", {"produits": prod_bureau})
+
+
+def phone_view(request):
+    prod_phone = Produit.objects.all()
+    return render(request, "page/phone.html", {"produits": prod_phone})
+
+
+def accesoir_view(request):
+    prod_accesoir = Produit.objects.all()
+    return render(request, "page/accesoir.html", {"produits": prod_accesoir})
+
+
+def jeux_view(request):
+    prod_jeux = Produit.objects.all()
+    return render(request, "page/jeux.html", {"produits": prod_jeux})
+
+
+def multimedia_view(request):
+    prod_multi = Produit.objects.all()
+    return render(request, "page/multimedia.html", {"produits": prod_multi})
