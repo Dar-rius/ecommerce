@@ -1,11 +1,10 @@
-import email
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
-from .models import Produit
+from .models import Produit, User
 from .form import Login_form, User_form
-from django.views.generic.edit import FormView
 from django.contrib.auth import login, authenticate, logout
+from django.contrib import messages
 
+User = User()
 
 # Create your views hered
 def index_view(request):
@@ -33,19 +32,18 @@ def shop_view(request):
     produits = Produit.objects.all()
     return render(request, "page/shop.html", {"produits": produits})
 
-class SignupView(FormView):
-    """sign up user view"""
-    form_class = User_form
-    template_name = 'page/signup.html'
-    def form_valid(self, form):
 
-        user = form.save(commit=False)
-        user.save()
-        login(self.request, user)
-        if user is not None:
-            return redirect("home")
-
-        return super().form_valid(form)
+def register_view(request):
+	if request.method == "POST":
+		form = User_form(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Creation de compte reussie" )
+			return redirect("home")
+		messages.error(request, "Creation de compte impossible")
+	form = User_form()
+	return render (request=request, template_name="page/signup.html", context={"form":form})
 
 
 def Logout(request):
@@ -54,21 +52,20 @@ def Logout(request):
     return redirect("home")
 
 
-class LoginView(FormView):
-    """login view"""
+def login_view(request):
+    if request.method == "POST":
+        form = Login_form(request.POST)
 
-    form_class = Login_form
-    template_name = 'page/login.html'
-
-    def form_valid(self, form):
-        """ process user login"""
-        credentials = form.cleaned_data
-
-        user = authenticate(username=credentials['email'],
-                            password=credentials['password'])
-
-        if user is not None:
-            login(self.request, user)
-            return HttpResponseRedirect('/')
-        else:
-            return HttpResponseRedirect('/login')
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=email, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"Vous etes connecter {email}.")
+                return redirect("home")
+            else:
+                messages.error(request,"Erreur de connexion")
+    else: 
+        form = Login_form()
+    return render(request, "page/login.html", {"form": form})

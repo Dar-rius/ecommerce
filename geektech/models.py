@@ -63,18 +63,7 @@ class User(AbstractBaseUser):
     # notice the absence of a "Password field", that is built in.
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [] # Email &amp; Password are required by default.
-
-    def get_full_name(self):
-        # The user is identified by their email address
-        return self.email
-
-    def get_short_name(self):
-        # The user is identified by their email address
-        return self.email
-
-    def __str__(self):
-        return self.email
+    REQUIRED_FIELDS = [] 
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
@@ -98,6 +87,8 @@ class User(AbstractBaseUser):
 
     objects = UserManager()
 
+
+#categories de produits
 CATEGORIES = (
     ('Informatique', 'Informatique'),
     ('Bureautique', 'Bureautique'),
@@ -106,6 +97,7 @@ CATEGORIES = (
     ('Console et jeux video', 'Console et jeux video'),
     ('Multimedia', 'Multimedia')
 )
+
 
 class Produit(models.Model):
     nom_produit = models.CharField(max_length=200)

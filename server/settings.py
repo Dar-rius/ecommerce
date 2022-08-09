@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'geektech.User'
 
+
 # Application definition
 
 INSTALLED_APPS = [
