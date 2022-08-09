@@ -1,8 +1,10 @@
 
+from enum import unique
 from .models import Produit, User
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 
 class User_form(ModelForm):
 
@@ -36,7 +38,7 @@ class User_form(ModelForm):
         return cleaned_data
 
 class Login_form(forms.Form):
-    email = forms.CharField()
+    email = forms.EmailField(max_length=255)
     password = forms.CharField(widget=forms.PasswordInput())
 
 class Produit_form:

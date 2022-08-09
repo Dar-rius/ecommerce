@@ -63,7 +63,10 @@ class User(AbstractBaseUser):
     # notice the absence of a "Password field", that is built in.
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [] 
+    REQUIRED_FIELDS = []
+    
+    def __str__(self):
+        return self.email
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
