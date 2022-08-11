@@ -79,20 +79,33 @@
 
         <section>
             <div>
-                <h2>Informatique</h2>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Informatique" %}
-                    <a href="{% url 'detail' produit.id%}">
-                        <div>
-                            <p>{{produit.nom_produit}}</p> 
+                <div class="groupName">
+                    <img src="{% static 'image/Workstation_black.png' %}" alt="">
+                    Informatique
+                </div>
+                <div class="item">
+                    {% for produit in produits %}
+                        {% if produit.cat_produit == "Informatique" %}
+                        <div class="card">
+                            <a href="{% url 'detail' produit.id%}">
+                                <img src="{{produit.photo_produit.url}}">
+                                <p>{{produit.nom_produit}}</p> 
+                            </a>
+                            <div class="bas">
+                                <p>{{produit.prix_produit}}</p>
+                                <button>Ajouter</button>
+                            </div>
                         </div>
-                    </a>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
 
             <div>
-                <h2>Multimedia</h2>
+                <div class="groupName">
+                    <img src="{% static 'image/MultimediaPublishing_black.png' %}" alt="">
+                    Multimedia
+                </div>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Multimedia" %}
                     <a href="{% url 'detail' produit.id%}">
@@ -105,7 +118,10 @@
             </div>
 
             <div>
-                <h2>Bureautique</h2>
+                <div class="groupName">
+                    <img src="{% static 'image/Office_black.png' %}" alt="">
+                    Bureautique
+                </div>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Bureautique" %}
                        <a href="{% url 'detail' produit.id%}">
@@ -118,7 +134,10 @@
             </div>
 
             <div>
-                <h2>Telephone</h2>
+                <div class="groupName">
+                    <img src="{% static 'image/Mobile_black.png' %}" alt="">
+                    Telephone
+                </div>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Telephone" %}
                        <a href="{% url 'detail' produit.id%}">
@@ -131,7 +150,10 @@
             </div>
 
             <div>
-                <h2>Accesoir informatique</h2>
+                <div class="groupName">
+                    <img src="{% static 'image/ComputerSupport_black.png' %}" alt="">
+                    Accesoir informatique
+                </div>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Accesoir" %}
                        <a href="{% url 'detail' produit.id%}">
@@ -144,7 +166,10 @@
             </div>
 
             <div>
-                <h2>Console et jeux video</h2>
+                <div class="groupName">
+                    <img src="{% static 'image/GameController_black.png' %}" alt="">
+                    Console et jeux video
+                </div>
                 {% for produit in produits %}
                     {% if produit.cat_produit == "Console et jeux video" %}
                        <a href="{% url 'detail' produit.id%}">

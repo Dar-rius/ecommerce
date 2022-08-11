@@ -7,7 +7,7 @@
     margin-top: 5%;
 }
 
-#sec1 nav{
+nav{
     background-color: black;
     width: 20%;
     border-radius: 1%;
@@ -15,7 +15,7 @@
     padding-top: 1%;
 }
 
-#sec1 h3{
+h3{
     text-align: center;
     color: white;
 }
@@ -25,7 +25,7 @@
     margin-left: 10%;
 }
 
-ul,a  {
+ul a{
     list-style-type: none;
     text-decoration: none;
     color: white;
@@ -37,5 +37,35 @@ nav img{
     margin-left: 2%;
     width: 15%;
 }
+
+.groupName{
+    display: flex;
+    align-items: center;
+    font-size: large;
+    margin-left: 2%;
+}
+
+.groupName img{
+    width: 5%;
+
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 15%;
+    text-align: center;
+}
+
+.card img{
+    width: 75%;
+}
+
+.bas{
+    display: flex;
+    justify-content: space-around;
+}
+
+
 
 /* END HOME */
