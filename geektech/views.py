@@ -41,7 +41,7 @@ def detail_view(request, produit_id):
 
 
 def shop_view(request):
-    produit_tendance = Produit.objects.filter(produit_tendance=20)
+    produit_tendance = Produit.objects.filter(tendance=20)
     produit_info = Produit.objects.filter(cat_produit = "Informatique")[:10]
     produit_multi = Produit.objects.filter(cat_produit = "Multimedia")[:10]
     produit_bureau = Produit.objects.filter(cat_produit = "Bureautique")[:10]

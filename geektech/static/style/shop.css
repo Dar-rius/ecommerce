@@ -24,3 +24,60 @@ ul{
     padding-right: 5%;
     width: 17%;
 }
+
+.groupName{
+    display: flex;
+    align-items: center;
+    font-size: large;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.groupName img{
+    width: 5%;
+
+}
+
+.card{
+    transition: 0.3s;
+    width: 20%;
+    text-align: center;
+    margin: 2%;
+    border: 1px solid #B3B6B7;
+}
+
+.card img{
+    width: 75%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.bas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.secProduit{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.item1{
+    display: flex;
+    align-items: center;
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
+}
+
+button{
+    background-color: black;
+    color: white;
+    width: 40%;
+    font-weight: 600;
+}
+
