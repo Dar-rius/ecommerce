@@ -8,8 +8,20 @@ User = User()
 
 # Create your views hered
 def index_view(request):
-    produits = Produit.objects.all()
-    return render(request, "page/home.html", {"produits": produits})
+    produit_info = Produit.objects.filter(cat_produit = "Informatique")[:10]
+    produit_multi = Produit.objects.filter(cat_produit = "Multimedia")[:10]
+    produit_bureau = Produit.objects.filter(cat_produit = "Bureautique")[:10]
+    produit_tele = Produit.objects.filter(cat_produit = "Telephone")[:10]
+    produit_accessoir = Produit.objects.filter(cat_produit = "Accesoir")[:10]
+    produit_console = Produit.objects.filter(cat_produit = "Console et jeux video")[:10]
+
+    return render(request, "page/home.html", {"produits_info": produit_info, 
+                                                "produits_multi": produit_multi,
+                                                "produits_bureau": produit_bureau,
+                                                "produits_tele": produit_tele,
+                                                "produits_accessoir": produit_accessoir,
+                                                "produits_console": produit_console})
+
 
 def return_view(request):
     return redirect("home")

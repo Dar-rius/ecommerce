@@ -77,15 +77,14 @@
             </div>
         </section>
 
-        <section>
+        <section class="secProduit">
             <div>
                 <div class="groupName">
                     <img src="{% static 'image/Workstation_black.png' %}" alt="">
                     Informatique
                 </div>
-                <div class="item">
-                    {% for produit in produits %}
-                        {% if produit.cat_produit == "Informatique" %}
+                <div class="item1">
+                    {% for produit in produits_info %}
                         <div class="card">
                             <a href="{% url 'detail' produit.id%}">
                                 <img src="{{produit.photo_produit.url}}">
@@ -96,7 +95,6 @@
                                 <button>Ajouter</button>
                             </div>
                         </div>
-                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -106,15 +104,20 @@
                     <img src="{% static 'image/MultimediaPublishing_black.png' %}" alt="">
                     Multimedia
                 </div>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Multimedia" %}
-                    <a href="{% url 'detail' produit.id%}">
-                        <div>
-                            <p>{{produit.nom_produit}}</p> 
+                <div class="item1">
+                    {% for produit in produits_multi %}
+                        <div class="card">
+                            <a href="{% url 'detail' produit.id%}">
+                                <img src="{{produit.photo_produit.url}}">
+                                <p>{{produit.nom_produit}}</p> 
+                            </a>
+                            <div class="bas">
+                                <p>{{produit.prix_produit}}</p>
+                                <button>Ajouter</button>
+                            </div>
                         </div>
-                    </a> 
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
 
             <div>
@@ -122,15 +125,20 @@
                     <img src="{% static 'image/Office_black.png' %}" alt="">
                     Bureautique
                 </div>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Bureautique" %}
-                       <a href="{% url 'detail' produit.id%}">
-                        <div>
-                            <p>{{produit.nom_produit}}</p> 
+                <div class="item1">
+                    {% for produit in produits_bureau %}
+                        <div class="card">
+                            <a href="{% url 'detail' produit.id%}">
+                                <img src="{{produit.photo_produit.url}}">
+                                <p>{{produit.nom_produit}}</p> 
+                            </a>
+                            <div class="bas">
+                                <p>{{produit.prix_produit}}</p>
+                                <button>Ajouter</button>
+                            </div>
                         </div>
-                    </a> 
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
 
             <div>
@@ -138,15 +146,20 @@
                     <img src="{% static 'image/Mobile_black.png' %}" alt="">
                     Telephone
                 </div>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Telephone" %}
-                       <a href="{% url 'detail' produit.id%}">
-                        <div>
-                            <p>{{produit.nom_produit}}</p> 
+                <div class="item1">
+                    {% for produit in produits_tele %}
+                        <div class="card">
+                            <a href="{% url 'detail' produit.id%}">
+                                <img src="{{produit.photo_produit.url}}">
+                                <p>{{produit.nom_produit}}</p> 
+                            </a>
+                            <div class="bas">
+                                <p>{{produit.prix_produit}}</p>
+                                <button>Ajouter</button>
+                            </div>
                         </div>
-                    </a> 
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
 
             <div>
@@ -154,15 +167,20 @@
                     <img src="{% static 'image/ComputerSupport_black.png' %}" alt="">
                     Accesoir informatique
                 </div>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Accesoir" %}
-                       <a href="{% url 'detail' produit.id%}">
-                        <div>
-                            <p>{{produit.nom_produit}}</p> 
+                <div class="item1">
+                    {% for produit in produits_accessoir %}
+                        <div class="card">
+                            <a href="{% url 'detail' produit.id%}">
+                                <img src="{{produit.photo_produit.url}}">
+                                <p>{{produit.nom_produit}}</p> 
+                            </a>
+                            <div class="bas">
+                                <p>{{produit.prix_produit}}</p>
+                                <button>Ajouter</button>
+                            </div>
                         </div>
-                    </a> 
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
 
             <div>
@@ -170,15 +188,20 @@
                     <img src="{% static 'image/GameController_black.png' %}" alt="">
                     Console et jeux video
                 </div>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Console et jeux video" %}
-                       <a href="{% url 'detail' produit.id%}">
-                        <div>
-                            <p>{{produit.nom_produit}}</p> 
+                <div class="item1">
+                    {% for produit in produits_console %}
+                        <div class="card">
+                            <a href="{% url 'detail' produit.id%}">
+                                <img src="{{produit.photo_produit.url}}">
+                                <p>{{produit.nom_produit}}</p> 
+                            </a>
+                            <div class="bas">
+                                <p>{{produit.prix_produit}}</p>
+                                <button>Ajouter</button>
+                            </div>
                         </div>
-                    </a> 
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </section>
     </main>
