@@ -9,10 +9,11 @@
 
 nav{
     background-color: black;
-    width: 20%;
+    width: 25%;
     border-radius: 1%;
     padding: 0.5%;
-    padding-top: 1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 h3{
@@ -21,8 +22,11 @@ h3{
 }
 
 #carouselExampleCaptions{
-    width: 50%;
-    margin-left: 10%;
+    width: 60%;
+}
+
+#image{
+    width: 75%;
 }
 
 ul a{
@@ -33,7 +37,7 @@ ul a{
   }
 
 nav img{
-    margin-right: 10%;
+    margin-right: 5%;
     margin-left: 2%;
     width: 15%;
 }
@@ -53,15 +57,17 @@ nav img{
 }
 
 .card{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 15%;
+    width: 20%;
     text-align: center;
     margin: 2%;
+    border: 1px solid #B3B6B7;
 }
 
 .card img{
     width: 75%;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 .bas{
@@ -78,6 +84,18 @@ nav img{
 .item1{
     display: flex;
     align-items: center;
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
+}
+
+button{
+    background-color: black;
+    color: white;
+    width: 40%;
+    font-weight: 600;
 }
 
 /* END HOME */
