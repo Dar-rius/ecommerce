@@ -1,11 +1,27 @@
 {% extends "_base.html" %}
+{% load static %}
 
 {% block content%}
     <section>
-    {% for produit in produits %}
-        {% if produit.cat_produit == "Console et jeux video"%}
-            <p>name: {{produit.nom_produit}}</p>
-        {% endif %}
-    {% endfor %}
+        <div>
+            <div class="groupName">
+                <img src="{% static 'image/GameController_black.png' %}" alt="">
+                Console et jeux video
+            </div>
+            <div class="item1">
+                {% for produit in produits %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}} </p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </section>
 {% endblock content%}

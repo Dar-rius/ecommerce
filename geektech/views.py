@@ -98,30 +98,30 @@ def login_view(request):
 
 
 def informatique_view(request):
-    prod_info = Produit.objects.all()
+    prod_info = Produit.objects.filter(cat_produit = "Informatique")
     return render(request, "page/Informatique.html", {"produits": prod_info})
 
 
 def bureautique_view(request):
-    prod_bureau = Produit.objects.all()
+    prod_bureau = Produit.objects.filter(cat_produit = "Bureautique")
     return render(request, "page/bureautique.html", {"produits": prod_bureau})
 
 
 def phone_view(request):
-    prod_phone = Produit.objects.all()
+    prod_phone = Produit.objects.filter(cat_produit = "Telephone")
     return render(request, "page/phone.html", {"produits": prod_phone})
 
 
 def accesoir_view(request):
-    prod_accesoir = Produit.objects.all()
+    prod_accesoir = Produit.objects.filter(cat_produit = "Accessoir")
     return render(request, "page/accesoir.html", {"produits": prod_accesoir})
 
 
 def jeux_view(request):
-    prod_jeux = Produit.objects.all()
+    prod_jeux = Produit.objects.filter(cat_produit = 'Console et jeux video')
     return render(request, "page/jeux.html", {"produits": prod_jeux})
 
 
 def multimedia_view(request):
-    prod_multi = Produit.objects.all()
+    prod_multi = Produit.objects.filter(cat_produit = "Multimedia")
     return render(request, "page/multimedia.html", {"produits": prod_multi})

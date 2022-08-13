@@ -1,11 +1,26 @@
 {% extends "_base.html" %}
+{% load static %}
 
 {% block content%}
     <section>
-    {% for produit in produits %}
-        {% if produit.cat_produit == "Bureautique"%}
-            <p>name: {{produit.nom_produit}}</p>
-        {% endif %}
-    {% endfor %}
+        <div class="groupName">
+            <img src="{% static 'image/Workstation_black.png' %}" alt="">
+            Bureautique
+        </div>
+        <div class="item1">
+            {% for produit in produits %}
+                <div class="card">
+                    <a href="{% url 'detail' produit.id%}" >
+                        <img src="{{produit.photo_produit.url}}" alt="">
+                        <p>{{produit.nom_produit}}</p> 
+                    </a>
+                    <div class="bas">
+                        <p>{{produit.prix_produit}}  FCFA</p>
+                        <button>Ajouter</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
     </section>
 {% endblock content%}

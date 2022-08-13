@@ -69,7 +69,7 @@
                 {% for produit in produits_tendance %}
                     <div class="card">
                         <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
                             <p>{{produit.nom_produit}}</p> 
                         </a>
                         <div class="bas">
@@ -88,8 +88,8 @@
             <div class="item1">
                 {% for produit in produits_info %}
                     <div class="card">
-                        <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}">
+                        <a href="{% url 'detail' produit.id%}" >
+                            <img src="{{produit.photo_produit.url}}" alt="">
                             <p>{{produit.nom_produit}}</p> 
                         </a>
                         <div class="bas">
@@ -110,7 +110,7 @@
                 {% for produit in produits_multi %}
                     <div class="card">
                         <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
                             <p>{{produit.nom_produit}}</p> 
                         </a>
                         <div class="bas">
@@ -131,7 +131,7 @@
                 {% for produit in produits_bureau %}
                     <div class="card">
                         <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
                             <p>{{produit.nom_produit}} </p> 
                         </a>
                         <div class="bas">
@@ -152,7 +152,7 @@
                 {% for produit in produits_tele %}
                     <div class="card">
                         <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
                             <p>{{produit.nom_produit}} </p> 
                         </a>
                         <div class="bas">
@@ -173,7 +173,7 @@
                 {% for produit in produits_accessoir %}
                     <div class="card">
                         <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
                             <p>{{produit.nom_produit}} </p> 
                         </a>
                         <div class="bas">
@@ -194,7 +194,7 @@
                 {% for produit in produits_console %}
                     <div class="card">
                         <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
                             <p>{{produit.nom_produit}} </p> 
                         </a>
                         <div class="bas">
