@@ -1,11 +1,11 @@
-ul a{
+.groupCat a{
     text-decoration: none;
     color: white;
     text-align: center;
     margin: 3%;
 }
 
-ul{
+.groupCat{
     display: flex;
     align-items: center;
     flex-wrap: wrap;

@@ -37,7 +37,9 @@ def propos_view(request):
 
 def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
-    return render(request, "page/detail.html", {"produit": produit})
+    autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit)
+    return render(request, "page/detail.html", {"produit": produit,
+                                                    "autre_produit": autre_produit})
 
 
 def shop_view(request):

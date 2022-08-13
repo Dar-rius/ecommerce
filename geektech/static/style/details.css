@@ -1,0 +1,41 @@
+.secDetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image1{
+    width: 80%;
+    transition: 0.3s;
+    margin: 2%;
+    border: 3px solid #B3B6B7;
+    border-radius: 3%;
+}
+
+.secDetail button{
+    width: 100%;
+    font-size: larger;
+    padding: 5%;
+}
+
+.secDetail input{
+    border-radius: 4%;
+}
+
+.quantite{
+    font-size: 20px;
+}
+
+.price{
+    font-size: 26px;
+}
+
+.dispo{
+    font-size: larger;
+    color: red;
+}
+
+.secDetail input{
+    font-size: larger;
+}
+

@@ -2,9 +2,46 @@
 
 {% block content%}
     <section>
-        <p>{{produit.nom_produit}}</p>
-        <p>{{produit.marque_produit}}</p>
-        <p>{{produit.descrip_produit}}</p>
-        <p>{{produit.quantite_produit}}</p>
+        <div class="secDetail">
+            <div>
+                <img src="{{produit.photo_produit.url}}" alt="" class="image1">
+            </div>
+    
+            <div>
+                <h2>{{produit.nom_produit}}</h2>
+                <p class="quantite">Quantite</p>
+                <input type="number" placeholder="Preciser la quantite" value=0>
+                {% if produit.cat_produit <= 0%}
+                    <p class="dispo">Indisponible</p>
+                {% else %}
+                    <p class="dispo">Disponible</p>
+                {% endif %}
+                <p class="price">{{produit.prix_produit}} FCFA</p>
+                <button>Ajouter au panier</button>
+            </div>
+        </div>
+
+        <div>
+            <h4 class="title3">Detail du produit</h4>
+            <p>{{produit.descrip_produit}}</p>
+        </div>
+
+        <div>
+            <h4 class="title3">Autres produits</h4>
+            <div class="item1">
+                {% for produit in autre_produit %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}" >
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </section>
 {% endblock content%}
