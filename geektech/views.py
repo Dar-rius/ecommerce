@@ -41,8 +41,21 @@ def detail_view(request, produit_id):
 
 
 def shop_view(request):
-    produits = Produit.objects.all()
-    return render(request, "page/shop.html", {"produits": produits})
+    produit_tendance = Produit.objects.filter(produit_tendance=20)
+    produit_info = Produit.objects.filter(cat_produit = "Informatique")[:10]
+    produit_multi = Produit.objects.filter(cat_produit = "Multimedia")[:10]
+    produit_bureau = Produit.objects.filter(cat_produit = "Bureautique")[:10]
+    produit_tele = Produit.objects.filter(cat_produit = "Telephone")[:10]
+    produit_accessoir = Produit.objects.filter(cat_produit = "Accesoir")[:10]
+    produit_console = Produit.objects.filter(cat_produit = "Console et jeux video")[:10]
+
+    return render(request, "page/shop.html", {"produits_info": produit_info, 
+                                                "produits_multi": produit_multi,
+                                                "produits_bureau": produit_bureau,
+                                                "produits_tele": produit_tele,
+                                                "produits_accessoir": produit_accessoir,
+                                                "produits_console": produit_console,
+                                                "produit_pop": produit_tendance})
 
 
 def register_view(request):

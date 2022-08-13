@@ -1,0 +1,26 @@
+ul a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: 3%;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cat{
+    background-color: black;
+    font-size: large;
+    font-weight: 400;
+    border-radius: 2%;
+    width: 140%;
+}
+
+.cat img{
+    padding-right: 5%;
+    width: 17%;
+}
