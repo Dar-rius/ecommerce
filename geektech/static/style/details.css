@@ -1,7 +1,7 @@
 .secDetail{
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-top: 3%;
 }
 
 .image1{
@@ -39,3 +39,19 @@
     font-size: larger;
 }
 
+.descrip{
+    margin-left: 10%;
+}
+
+.prod_detail{
+    margin-bottom: 10%;
+}
+
+.spanDetail{
+    text-decoration:underline 12% #B3B6B7;
+}
+
+.autres{
+    margin-left: 4%;
+    margin-right: 4%;
+}

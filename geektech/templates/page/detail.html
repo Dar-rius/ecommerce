@@ -7,7 +7,7 @@
                 <img src="{{produit.photo_produit.url}}" alt="" class="image1">
             </div>
     
-            <div>
+            <div class="prod_detail">
                 <h2>{{produit.nom_produit}}</h2>
                 <p class="quantite">Quantite</p>
                 <input type="number" placeholder="Preciser la quantite" value=0>
@@ -21,12 +21,12 @@
             </div>
         </div>
 
-        <div>
-            <h4 class="title3">Detail du produit</h4>
+        <div class="descrip">
+            <h4 class="title3"><span class="spanDetail">Detail du</span> produit</h4>
             <p>{{produit.descrip_produit}}</p>
         </div>
 
-        <div>
+        <div class="autres">
             <h4 class="title3">Autres produits</h4>
             <div class="item1">
                 {% for produit in autre_produit %}
