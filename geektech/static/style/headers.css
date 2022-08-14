@@ -4,9 +4,10 @@ header{
     flex-direction: column;
     padding: .5rem;
     background-color: hsl(0, 0%, 95%);
+    margin-bottom: 5%;
 }
 
-header nav{
+.corps{
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -15,7 +16,7 @@ header nav{
     justify-content: space-between;
 }
 
-header nav div{
+.corps div{
     width: 75%;
     padding: .2rem;
     border-radius: 1rem;
@@ -35,9 +36,9 @@ header input:focus-visible{
     outline: none;
 }
 
-header ul{
+.liste{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 3em;
     color: #222733;
     font-weight: 500;
@@ -52,4 +53,13 @@ header > img{
     position: relative;
     right: 80%;
 }
+
+.liste a {
+    color: black;
+}
+
+.logo{
+    width: 10%;
+}
+
 /* END HEADER */

@@ -1,20 +1,38 @@
 {% load static %}
 {% block content%}
     <header>
-        <nav>
-            <img src="{% static 'image/logo.png' %}" alt=""/>
+        <div class="corps">
+            <img src="{% static 'image/logo.png' %}" alt="" class="logo"/>
                 <div>
                     <img src="" alt="">
                     <input type="text" placeholder="Rechercher un produit...">
                 </div>
-            <img src="{% static 'image/achats.png' %}" alt="" style="max-width: 40px;margin-right:1rem;">
-        </nav>
-        <ul>
-            <li>acceuil</li>
-            <li>boutiques</li>
-            <li>maintenance</li>
-            <li>contact</li>
-            <li style="margin-left: 3rem;">se connecter</li>
-        </ul>
+            <img src="{% static 'image/achats.png' %}" alt="" style="max-width: 3%;margin-right:1rem;">
+        </div>
+
+        <div>
+            <ul class="liste">
+                <a href="{% url 'home' %}">
+                    <li>acceuil</li>
+                </a>
+
+                <a href="{% url 'shop' %}">
+                    <li>boutiques</li>
+                </a>
+
+                <a href="{% url 'propos' %}">
+                    <li>maintenance</li>
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    <li>contact</li>
+                </a>
+
+                <a href="{% url 'login' %}" style="margin-left: 3rem;">
+                    <li>se connecter</li> 
+                </a>
+            </ul>
+            
+        </div>
     </header>
 {% endblock content%}
