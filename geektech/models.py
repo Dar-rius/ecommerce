@@ -111,3 +111,8 @@ class Produit(models.Model):
     cat_produit = models.CharField(max_length=50, choices=CATEGORIES, verbose_name="categories")
     photo_produit = models.ImageField(upload_to='images/')
     tendance = models.IntegerField(default=0)
+
+class Panier(models.Model):
+    nom_produit= models.CharField(max_length=200)
+    quantite= models.IntegerField(default=0)
+    pTotal = models.IntegerField(default=0)

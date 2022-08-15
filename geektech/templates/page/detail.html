@@ -2,24 +2,28 @@
 
 {% block content%}
     <section>
-        <div class="secDetail">
+        <form method="post" class="secDetail">
+            {% csrf_token %}
+
             <div>
                 <img src="{{produit.photo_produit.url}}" alt="" class="image1">
             </div>
-    
+            
+            {{form.non_field_errors}}
             <div class="prod_detail">
                 <h2>{{produit.nom_produit}}</h2>
                 <p class="quantite">Quantite</p>
-                <input type="number" placeholder="Preciser la quantite" value=0>
+                {{form.quantite.error}}
+                <input type="number" name="quantite" placeholder="Preciser la quantite" value=0>
                 {% if produit.cat_produit <= 0%}
                     <p class="dispo">Indisponible</p>
                 {% else %}
                     <p class="dispo">Disponible</p>
                 {% endif %}
                 <p class="price">{{produit.prix_produit}} FCFA</p>
-                <button>Ajouter au panier</button>
+                <button type="submit">Ajouter au panier</button>
             </div>
-        </div>
+        </form>
 
         <div class="descrip">
             <h4 class="title3"><span class="spanDetail">Detail du</span> produit</h4>

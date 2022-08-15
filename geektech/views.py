@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Produit, User
-from .form import Login_form, User_form
+from .models import Produit, User, Panier
+from .form import Login_form, User_form, Panier_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 
@@ -38,8 +38,20 @@ def propos_view(request):
 def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
     autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit)
+
+    if request.method == "POST":
+        form = Panier_form(request.POST)
+
+        if form.is_valid():
+            quantite_form = form.cleaned_data.get("quantite")
+            data_panier = Panier(nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit)
+            data_panier.save()
+            return redirect("home")
+
+    form = Panier_form()
     return render(request, "page/detail.html", {"produit": produit,
-                                                    "autre_produit": autre_produit})
+                                                    "autre_produit": autre_produit,
+                                                    "form": form})
 
 
 def shop_view(request):
