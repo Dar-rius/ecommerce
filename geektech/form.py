@@ -2,7 +2,7 @@
 from dataclasses import field
 from enum import unique
 from pyexpat import model
-from .models import Produit, User, Panier
+from .models import Produit, User, Panier, Commande
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
 from django import forms

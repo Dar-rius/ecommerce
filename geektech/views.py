@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Produit, User, Panier
+from .models import Produit, User, Panier,Commande
 from .form import Login_form, User_form, Panier_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
@@ -29,9 +29,6 @@ def return_view(request):
 def contact_view(request):
     return render(request, "page/contact.html", {})
 
-def commande_view(request):
-    return render(request, "page/commande.html",{})
-
 def propos_view(request):
     return render(request, "page/propos.html", {})
 
@@ -52,6 +49,21 @@ def detail_view(request, produit_id):
     return render(request, "page/detail.html", {"produit": produit,
                                                     "autre_produit": autre_produit,
                                                     "form": form})
+
+def commande_view(request, produit_panier_id):
+    produit = get_object_or_404(Panier, pk=produit_panier_id)
+    livraison = 0
+    prixTotal = produit.pTotal+livraison
+
+    if request.method == "POST":
+        commande = Commande(nom_produit=produit.nom_produit, pTotal=produit.pTotal, quantite=produit.quantite,
+                            livraison=livraison, total=produit.pTotal+livraison)
+        commande.save()
+        return redirect("home")
+
+    return render(request,"page/commande.html", {"produit_panier": produit,
+                                                    "livraison": livraison,
+                                                    "prixTotal": prixTotal})
 
 
 def shop_view(request):

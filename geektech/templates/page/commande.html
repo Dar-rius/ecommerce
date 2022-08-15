@@ -1,40 +1,30 @@
 {% extends "_base.html" %}
 
 {% block content%}
-<div class="container">
-<div class="commande">
-    <table>
-        <thead>
-            <td>votre commande</td>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nom :</td>
-                <td>Prix :</td>
-                <td>Quantite :</td>
-                <td>Livraison :</td>
-            </tr>
-            <!-- product info -->
-            <tr>
-                <td>Iphone 12</td>
-                <td>250000 Fcfa</td>
-                <td>1</td>
-                <td>0 Fcfa</td>
-            </tr>
-        <tfoot>
-            <tr>
-                <td>Total</td>
-            </tr>
-            <tr>
-                <td>250.000 Fcfa</td>
-            </tr>
-
-
-        </tfoot>
-        </tbody>
-
-    </table>
-    <button>commander</button>
-</div>
-</div>
+    <div class="container">
+        <form method="post" class="commande">
+            {% csrf_token %}
+            <div class="desc">
+                <p>Votre commande</p>
+                <div class="descrip_commande">
+                    <div class="champ">
+                        <p>Nom: </p>
+                        <p>Prix: </p>
+                        <p>Quantite: </p>
+                        <p>Livraison: </p>
+                        <span><p>Total </p></span>
+                    </div>
+        
+                    <div>
+                        <p>{{produit_panier.nom_produit}}</p>
+                        <p>{{produit_panier.pTotal}}</p>
+                        <p>{{produit_panier.quantite}}</p>
+                        <p>{{livraison}}</p>
+                        <span><p>{{prixTotal}}</p></span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">commander</button>
+        </form>
+    </div>
 {% endblock content%}

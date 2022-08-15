@@ -116,3 +116,10 @@ class Panier(models.Model):
     nom_produit= models.CharField(max_length=200)
     quantite= models.IntegerField(default=0)
     pTotal = models.IntegerField(default=0)
+
+class Commande(models.Model):
+    nom_produit = models.CharField(max_length=200)
+    pTotal = models.IntegerField(default=0)
+    quantite = models.IntegerField(default=0)
+    livraison = models.IntegerField(default=0)
+    total = models.IntegerField(default=0)
