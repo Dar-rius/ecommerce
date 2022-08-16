@@ -3,24 +3,29 @@ header{
     padding: .1rem;
     background-color: hsl(0, 0%, 95%);
     margin-bottom: 5%;
+    padding-top: 2%;
 }
 
 .corp_haut{
-    width: 75%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0px;
-    padding: 0px;
 }
 
 .corp_haut form{
+    width: 75%;
     display: flex;
     align-items: center;
     width: 100%;
     padding: .2rem;
     border-radius: 1rem;
     border: 1px solid black;
+}
+
+.linkerel{
+    width: 5%;
+    margin-left: 2.2%;
 }
 
 
@@ -58,5 +63,6 @@ header li{
 .logo{
     width: 10%;
 }
+
 
 /* END HEADER */
