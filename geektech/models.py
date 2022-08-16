@@ -3,7 +3,7 @@ from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
 
-#For manage user
+#Moedel du user manager
 class UserManager(BaseUserManager):
     def create_user(self, email, password, **extra_fields):
         """
@@ -45,7 +45,8 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-#for create user
+
+#Model du user
 class User(AbstractBaseUser):
     email = models.EmailField(
         verbose_name='email address',
@@ -91,6 +92,7 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
 
+
 #categories de produits
 CATEGORIES = (
     ('Informatique', 'Informatique'),
@@ -102,6 +104,7 @@ CATEGORIES = (
 )
 
 
+#Model de produits
 class Produit(models.Model):
     nom_produit = models.CharField(max_length=200)
     marque_produit = models.CharField(max_length=100)
@@ -112,11 +115,16 @@ class Produit(models.Model):
     photo_produit = models.ImageField(upload_to='images/')
     tendance = models.IntegerField(default=0)
 
+
+#Model du panier d'achat
 class Panier(models.Model):
     nom_produit= models.CharField(max_length=200)
     quantite= models.IntegerField(default=0)
     pTotal = models.IntegerField(default=0)
 
+
+
+#Model des commandes
 class Commande(models.Model):
     nom_produit = models.CharField(max_length=200)
     pTotal = models.IntegerField(default=0)

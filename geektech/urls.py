@@ -4,6 +4,7 @@ import django
 from django.urls import path
 from . import views
 
+#listes des differentes liens de la plateforme
 urlpatterns = [
     path("", views.return_view,),
     path("home/", views.index_view, name="home"),

@@ -7,7 +7,9 @@ from django.db.models import Q
 
 User = User()
 
-# Create your views hered
+# Create your views here
+
+#la view pour la page d'accueille
 def index_view(request):
     produit_info = Produit.objects.filter(cat_produit = "Informatique")[:10]
     produit_multi = Produit.objects.filter(cat_produit = "Multimedia")[:10]
@@ -23,6 +25,9 @@ def index_view(request):
                                                 "produits_accessoir": produit_accessoir,
                                                 "produits_console": produit_console})
 
+                                            
+# la view pour la page du header
+#Ce view a ete creer principalement pour la focntionnalite de recherche
 def header_view(request):
     produit_seached = ""
 
@@ -34,21 +39,30 @@ def header_view(request):
 
     return render(request, "components/header.html", {"produit_seached": produit_seached})
 
+
+#La view du panier pour afficher toutes donnees du panier du User
 def panier_view(request):
     produits_panier = Panier.objects.all()
 
     return render(request, "page/panier.html", {"produits_panier": produits_panier})
 
+
+#la view pour redirection le user vers la page d'accueille
 def return_view(request):
     return redirect("home")
     
 
+#La view pour la contact
 def contact_view(request):
     return render(request, "page/contact.html", {})
 
+
+#la view pour la page " a propos "
 def propos_view(request):
     return render(request, "page/propos.html", {})
 
+
+# La view pour la page du detail du produit
 def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
     autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit)
@@ -67,6 +81,8 @@ def detail_view(request, produit_id):
                                                     "autre_produit": autre_produit,
                                                     "form": form})
 
+
+# La view de la page commande pour effectuer une commande
 def commande_view(request, produit_panier_id):
     produit = get_object_or_404(Panier, pk=produit_panier_id)
     livraison = 0
@@ -83,6 +99,7 @@ def commande_view(request, produit_panier_id):
                                                     "prixTotal": prixTotal})
 
 
+#La view pour la page de la boutique
 def shop_view(request):
     produit_tendance = Produit.objects.filter(tendance=20)
     produit_info = Produit.objects.filter(cat_produit = "Informatique")[:10]
@@ -101,6 +118,7 @@ def shop_view(request):
                                                 "produit_pop": produit_tendance})
 
 
+#La view pour l'inscription du user
 def register_view(request):
 	if request.method == "POST":
 		form = User_form(request.POST)
@@ -114,12 +132,15 @@ def register_view(request):
 	return render (request=request, template_name="page/signup.html", context={"form":form})
 
 
+
+# La view pour permettre le user de se deconnecter
 def Logout(request):
     """logout logged in user"""
     logout(request)
     return redirect("home")
 
 
+#La view permettant au user de se connecter
 def login_view(request):
     if request.method == "POST":
         form = Login_form(request.POST)
@@ -140,31 +161,37 @@ def login_view(request):
 
 
 
+#La view pour afficher les produit de categories "Informatique"
 def informatique_view(request):
     prod_info = Produit.objects.filter(cat_produit = "Informatique")
     return render(request, "page/Informatique.html", {"produits": prod_info})
 
 
+#La view pour afficher les produit de categories "Bureautique"
 def bureautique_view(request):
     prod_bureau = Produit.objects.filter(cat_produit = "Bureautique")
     return render(request, "page/bureautique.html", {"produits": prod_bureau})
 
 
+#La view pour afficher les produit de categories "Telephone"
 def phone_view(request):
     prod_phone = Produit.objects.filter(cat_produit = "Telephone")
     return render(request, "page/phone.html", {"produits": prod_phone})
 
 
+#La view pour afficher les produit de categories "Accesoir"
 def accesoir_view(request):
     prod_accesoir = Produit.objects.filter(cat_produit = "Accessoir")
     return render(request, "page/accesoir.html", {"produits": prod_accesoir})
 
 
+#La view pour afficher les produit de categories "Jeux "
 def jeux_view(request):
     prod_jeux = Produit.objects.filter(cat_produit = 'Console et jeux video')
     return render(request, "page/jeux.html", {"produits": prod_jeux})
 
 
+#La view pour afficher les produit de categories "Multimedia"
 def multimedia_view(request):
     prod_multi = Produit.objects.filter(cat_produit = "Multimedia")
     return render(request, "page/multimedia.html", {"produits": prod_multi})
