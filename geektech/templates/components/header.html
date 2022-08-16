@@ -1,13 +1,24 @@
 {% load static %}
 {% block content%}
     <header>
-        <div class="corps">
-            <img src="{% static 'image/logo.png' %}" alt="" class="logo"/>
-                <div>
-                    <img src="" alt="">
-                    <input type="text" placeholder="Rechercher un produit...">
-                </div>
-            <img src="{% static 'image/achats.png' %}" alt="" style="max-width: 3%;margin-right:1rem;">
+        <div class="corp_haut">
+            <a href="{% url 'home'%}">
+                <img src="{% static 'image/logo.png' %}" alt="" 
+                class="logo"
+                style="width: 100%;"/>
+            </a>
+
+            <form >
+                <img src="{% static 'image/search.png' %}" alt="" style="width: 5%;">
+                <input type="search" placeholder="Rechercher un produit..." name="q">
+            </form>
+            
+            <a href="">
+                <img src="{% static 'image/achats.png' %}" alt="" 
+                type="button" 
+                style="max-width: 14%;"
+                >
+            </a>
         </div>
 
         <div>
@@ -32,7 +43,6 @@
                     <li>Se connecter</li> 
                 </a>
             </ul>
-            
         </div>
     </header>
 {% endblock content%}

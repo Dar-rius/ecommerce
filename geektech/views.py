@@ -3,6 +3,7 @@ from .models import Produit, User, Panier,Commande
 from .form import Login_form, User_form, Panier_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
+from django.db.models import Q
 
 User = User()
 
@@ -22,9 +23,25 @@ def index_view(request):
                                                 "produits_accessoir": produit_accessoir,
                                                 "produits_console": produit_console})
 
+def header_view(request):
+    produit_seached = ""
+
+    if 'q' in request.GET:
+        q = request.GET['q']
+        
+        multiple_q = Q(Q(nom_produit__icontains=q) | Q(marque_produit__icontains=q))
+        produit_seached = Produit.objects.filter(multiple_q)
+
+    return render(request, "components/header.html", {"produit_seached": produit_seached})
+
+def panier_view(request):
+    produits_panier = Panier.objects.all()
+
+    return render(request, "page/panier.html", {"produits_panier": produits_panier})
 
 def return_view(request):
     return redirect("home")
+    
 
 def contact_view(request):
     return render(request, "page/contact.html", {})
