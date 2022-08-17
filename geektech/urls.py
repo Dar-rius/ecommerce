@@ -9,7 +9,7 @@ urlpatterns = [
     path("", views.return_view,),
     path("home/", views.index_view, name="home"),
     path("header/", views.header_view,),
-    path("panier/", views.panier_view,),
+    path("panier/", views.panier_view, name="panier"),
     path("contact/", views.contact_view, name="contact"),
     path("<int:produit_panier_id>/commande/",views.commande_view,name="commande"),
     path("propos/", views.propos_view, name="propos"),

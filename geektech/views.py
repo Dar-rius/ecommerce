@@ -72,7 +72,7 @@ def detail_view(request, produit_id):
 
         if form.is_valid():
             quantite_form = form.cleaned_data.get("quantite")
-            data_panier = Panier(nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit)
+            data_panier = Panier(nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
             data_panier.save()
             return redirect("home")
 

@@ -121,6 +121,7 @@ class Panier(models.Model):
     nom_produit= models.CharField(max_length=200)
     quantite= models.IntegerField(default=0)
     pTotal = models.IntegerField(default=0)
+    photo_produit = models.ImageField(upload_to='images_card/')
 
 
 
