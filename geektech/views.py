@@ -47,6 +47,13 @@ def panier_view(request):
     return render(request, "page/panier.html", {"produits_panier": produits_panier})
 
 
+#view permettant de retirer un produit du panier
+def retire_panier_view(request, produit_panier_id):
+    produit = get_object_or_404(Panier, pk=produit_panier_id)
+    produit.delete()
+    return redirect("panier")
+
+
 #la view pour redirection le user vers la page d'accueille
 def return_view(request):
     return redirect("home")
