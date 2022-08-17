@@ -26,9 +26,8 @@ def index_view(request):
                                                 "produits_console": produit_console})
 
                                             
-# la view pour la page du header
-#Ce view a ete creer principalement pour la focntionnalite de recherche
-def header_view(request):
+
+def search_view(request): 
     produit_seached = ""
 
     if 'q' in request.GET:
@@ -37,7 +36,7 @@ def header_view(request):
         multiple_q = Q(Q(nom_produit__icontains=q) | Q(marque_produit__icontains=q))
         produit_seached = Produit.objects.filter(multiple_q)
 
-    return render(request, "components/header.html", {"produit_seached": produit_seached})
+    return render(request, "page/search.html", {"produits": produit_seached})
 
 
 #La view du panier pour afficher toutes donnees du panier du User

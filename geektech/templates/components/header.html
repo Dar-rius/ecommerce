@@ -8,9 +8,9 @@
                 style="width: 100%;"/>
             </a>
 
-            <form >
+            <form action="{% url 'search' %}">
                 <img src="{% static 'image/search.png' %}" alt="" style="width: 5%;">
-                <input type="search" placeholder="Rechercher un produit..." name="q">
+                <input type="search" placeholder="Rechercher un produit..." aria-label="Search" name="q">
             </form>
             
             <a href="{% url 'panier' %}" class="linkerel">

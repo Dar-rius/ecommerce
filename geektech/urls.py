@@ -8,7 +8,6 @@ from . import views
 urlpatterns = [
     path("", views.return_view,),
     path("home/", views.index_view, name="home"),
-    path("header/", views.header_view,),
     path("panier/", views.panier_view, name="panier"),
     path("retirepanier/<int:produit_panier_id>", views.retire_panier_view, name="retire"),
     path("contact/", views.contact_view, name="contact"),
@@ -25,4 +24,6 @@ urlpatterns = [
     path("accessoir/", views.accesoir_view, name="accessoir"),
     path("jeux/", views.jeux_view, name="jeux"),
     path("multimedia/", views.multimedia_view, name="multimedia"),
+    path("search/", views.search_view, name="search"),
+
 ]
