@@ -4,10 +4,11 @@ from .form import Login_form, User_form, Panier_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models import Min
 
 User = User()
 
-# Create your views here
+
 
 #la view pour la page d'accueille
 def index_view(request):
@@ -79,13 +80,15 @@ def detail_view(request, produit_id):
         if form.is_valid():
             quantite_form = form.cleaned_data.get("quantite")
             data_panier = Panier(nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
+            produit.quantite_produit -= data_panier.quantite
+            produit.save()
             data_panier.save()
             return redirect("home")
 
     form = Panier_form()
     return render(request, "page/detail.html", {"produit": produit,
                                                     "autre_produit": autre_produit,
-                                                    "form": form})
+                                                    "form": form,})
 
 
 # La view de la page commande pour effectuer une commande

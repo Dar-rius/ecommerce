@@ -154,20 +154,6 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="item5">
-                {% for produit in produits_info %}
-                    <div class="card">
-                        <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}" alt="">
-                            <p >{{produit.nom_produit}}</p> 
-                        </a>
-                        <div class="bas">
-                            <p>{{produit.prix_produit}}  FCFA</p>
-                            <a href="#" class="btn-b">Ajouter</a>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
 
 
             </div>

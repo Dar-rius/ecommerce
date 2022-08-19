@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+.registration{
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+input{
+    width: 50%;
+    padding: 1rem;
+    font-size: large;
+    border: solid 1px black;
+}
+
+input[type='submit']{
+    cursor: pointer;
+    background: rgb(11, 11, 22);
+    color: white;
+}
+
+a{
+    color: blue;
+}
