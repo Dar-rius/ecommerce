@@ -13,12 +13,7 @@ header{
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
-header nav div{
-    display: flex;
-=======
 .corp_haut form{
->>>>>>> 5a6266f13f628f2e320372dbf5cdfac179b4754a
     width: 75%;
     display: flex;
     align-items: center;
