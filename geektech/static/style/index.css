@@ -3,99 +3,150 @@
 #sec1{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 5%;
+    justify-content: space-between;
+    margin-top: 7.5px;
+    margin-top: 4px;
 }
 
 nav{
     background-color: black;
-    width: 25%;
-    border-radius: 1%;
-    padding: 0.5%;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    height: 420px;
+    border-radius: 10px; 
+    margin-left: 125px;
+    width: 280px;
+    padding-top: 30px;
+    margin-top: 20px;
+}
+.carousel-item img{
+    background-size: cover;
 }
 
-h3{
-    text-align: center;
+ nav h3{
+    font-size: 1.2rem;
     color: white;
+    padding-left: 40px;
 }
 
 #carouselExampleCaptions{
-    width: 60%;
+    width: 58%;
+    height: 30%;    
+    margin-right: 100px;    
 }
-
+.d-block{
+    height: 420px;
+    width: 100%;
+    margin-right: 100px;
+    margin-top: 15px; 
+    border-radius: 10px;   
+}
 #image{
-    width: 75%;
+   height: 100px;
+   width: 30%;
 }
-
+h5{
+   margin-top: -200px;
+   font-size: 30px;
+}
 ul a{
     list-style-type: none;
     text-decoration: none;
     color: white;
+    font-size: .92rem;
   }
 
 nav img{
     margin-right: 5%;
     margin-left: 2%;
-    width: 15%;
+    width: 12%;
 }
-
-.groupName{
+.link{
+    background: white;
+    height: 300px;  
+    margin-top: 100px;
+}
+.box{
+    display: flex;
+    top:50px;
+    background: black;
+    padding: 20px 10px;
+    height: 200px;
+    width: 84%;
+    margin-left: 120px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.card-w{
+    align-items: center;
+    justify-content: center;
+    padding: 0 100px;
+}
+.card-w img{
+    width: 38%;
+    margin-left: 42px;
+}
+.card-w a {
+   text-decoration: none;
+   color: white;
+}
+.entete{
     display: flex;
     align-items: center;
-    font-size: large;
-    margin-left: 2%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    flex-wrap: wrap;
+    margin-left: 100px;
 }
-
-.groupName img{
-    width: 5%;
-
+.it h4{
+    color:black;
+    font-size: 1.2rem;
 }
-
-.card{
-    transition: 0.3s;
-    width: 20%;
+.it img{
+    width: 4.2%;
+}
+.items .card{
+    width: 230px;
+    height:300px;
+    margin-right:20px;
+    margin-bottom:30px;
+    margin-top:30px;
+}
+.card a img{ 
+    width: 100%;
+    height: 200px;
+    border-radius: 5px 5px 0 0;
+}
+.items{
+    display: flex;
+    margin-left: 50px;    
+}
+.card a{ 
+    text-decoration: none;
+}
+.card p{
+    padding-top: 10px;
+    color: black;
+    text-transform: uppercase;
     text-align: center;
-    margin: 2%;
-    border: 1px solid #B3B6B7;
 }
-
-.card img{
-    width: 75%;
-    margin-bottom: 2%;
-    margin-top: 2%;
-}
-
 .bas{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
-
-.secProduit{
-    margin-left: 3%;
-    margin-right: 3%;
+.bas p{
+    padding-left:10px;
+    margin-right:10px;
 }
-
-.item1{
-    display: flex;
+.btn-b{
+   color: white;
+   background: black ;
+   height: 30px;
+   padding: 0 10px;
+}
+.btn-b:hover{
+    color: white; 
+ }
+.items{
+    margin-left: 100px;
     align-items: center;
+    justify-content: center;
 }
-
-.card a{
-    text-decoration: none;
-    color: black;
-}
-
-button{
-    background-color: black;
-    color: white;
-    width: 40%;
-    font-weight: 600;
-}
-
 /* END HOME */

@@ -1,15 +1,18 @@
 {% load static %}
 {% block content%}
+    <div class="liv">
+        <h4>Livraison gratuit partout à dakar!!</h4>
+    </div>
     <header>
         <div class="corp_haut">
             <a href="{% url 'home'%}">
                 <img src="{% static 'image/logo.png' %}" alt="" 
                 class="logo"
-                style="width: 100%;"/>
+                style="width: 70%;"/>
             </a>
 
             <form action="{% url 'search' %}">
-                <img src="{% static 'image/search.png' %}" alt="" style="width: 5%;">
+                <img src="{% static 'image/search.png' %}" alt="" class="search-img" style="width: 5%;">
                 <input type="search" placeholder="Rechercher un produit..." aria-label="Search" name="q">
             </form>
             

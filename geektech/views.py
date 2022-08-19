@@ -26,7 +26,7 @@ def index_view(request):
                                                 "produits_console": produit_console})
 
                                             
-
+#La paage ou se retrouve les produits dont le user recherche
 def search_view(request): 
     produit_seached = ""
 

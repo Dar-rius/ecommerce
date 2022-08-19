@@ -38,7 +38,7 @@
                     <a href="{% url 'accessoir' %}">
                         <li>
                             <img src="{% static 'image/ComputerSupport.png'%}" alt="">
-                            Accessoir
+                            Accessoires
                         </li>
                     </a>
 
@@ -76,133 +76,104 @@
                 </button>
             </div>
         </section>
-
-        <section class="secProduit">
-            <div>
-                <div class="groupName">
-                    <img src="{% static 'image/Workstation_black.png' %}" alt="">
-                    Informatique
+        <section class="link">
+            <div class="box">
+                <div class="card-w">
+                    <img src="{% static 'image/deliv.png'%}" alt=""><br>
+                    <a href="#">Livraison gratuite</a>
                 </div>
-                <div class="item1">
-                    {% for produit in produits_info %}
-                        <div class="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p>{{produit.nom_produit}}</p> 
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                                <button>Ajouter</button>
-                            </div>
-                        </div>
-                    {% endfor %}
+                <div class="card-w">
+                    <img src="{% static 'image/card.png'%}" alt=""><br>
+                    <a href="#">Paiement à la livraison</a>
                 </div>
-            </div>
-
-            <div>
-                <div class="groupName">
-                    <img src="{% static 'image/MultimediaPublishing_black.png' %}" alt="">
-                    Multimedia
-                </div>
-                <div class="item1">
-                    {% for produit in produits_multi %}
-                        <div class="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p>{{produit.nom_produit}}</p> 
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                                <button>Ajouter</button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div>
-                <div class="groupName">
-                    <img src="{% static 'image/Office_black.png' %}" alt="">
-                    Bureautique
-                </div>
-                <div class="item1">
-                    {% for produit in produits_bureau %}
-                        <div class="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p>{{produit.nom_produit}} </p> 
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                                <button>Ajouter</button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div>
-                <div class="groupName">
-                    <img src="{% static 'image/Mobile_black.png' %}" alt="">
-                    Telephone
-                </div>
-                <div class="item1">
-                    {% for produit in produits_tele %}
-                        <div class="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt=""> 
-                                <p>{{produit.nom_produit}} </p> 
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                                <button>Ajouter</button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div>
-                <div class="groupName">
-                    <img src="{% static 'image/ComputerSupport_black.png' %}" alt="">
-                    Accesoir informatique
-                </div>
-                <div class="item1">
-                    {% for produit in produits_accessoir %}
-                        <div class="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p>{{produit.nom_produit}} </p> 
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                                <button>Ajouter</button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div>
-                <div class="groupName">
-                    <img src="{% static 'image/GameController_black.png' %}" alt="">
-                    Console et jeux video
-                </div>
-                <div class="item1">
-                    {% for produit in produits_console %}
-                        <div class="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p>{{produit.nom_produit}} </p> 
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                                <button>Ajouter</button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
+                <div class="card-w">
+                    <img src="{% static 'image/service.png'%}" alt=""><br>
+                    <a href="#">Service client 24h/24</a>
+                </div>    
+            </div>     
         </section>
+        <section class="it">
+            <div class="entete">
+                <img src="{% static 'image/computer.png'%}" alt="" >
+                <h4>Informatique</h4>
+            </div>  
+            <div class="items">       
+            <div class="item1">
+                {% for produit in produits_info %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                             <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="item2">
+                {% for produit in produits_info %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="item3">
+                {% for produit in produits_info %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="item4">
+                {% for produit in produits_info %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="item5">
+                {% for produit in produits_info %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+            </div>
+            
+        </section>
+
+        
     </main>
 {% endblock content%}

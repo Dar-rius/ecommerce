@@ -1,36 +1,49 @@
 /* HEADER */
 header{
     padding: .1rem;
-    background-color: hsl(0, 0%, 95%);
-    margin-bottom: 5%;
-    padding-top: 2%;
+    background-color: hsla(0, 0%, 95%, 0.534);
+    padding: 15px 70px;
+    height: 158px;
 }
 
 .corp_haut{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 8px 20px;
 }
 
 .corp_haut form{
-    width: 75%;
     display: flex;
     align-items: center;
-    width: 100%;
-    padding: .2rem;
-    border-radius: 1rem;
-    border: 1px solid black;
+    width: 1158px;
+    height: 43px;
+    padding: 5px .2rem;
+    border-radius: 2rem;
+    border: 1px solid #D9D9D9;
+    margin-left:25px;
 }
-
+.liv{ 
+    background-color: black;
+    margin-bottom: 0;
+    height: 45px;    
+}
+h4{
+    font-size: .9rem;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    letter-spacing: 1px;
+}
 .linkerel{
     width: 5%;
-    margin-left: 2.2%;
+    margin-left: 7%;
 }
 
 
 header input{
-    width: 90%;
+    width: 50%;
     height: 1em;
     border: none;
     background: transparent;
@@ -44,24 +57,33 @@ header input:focus-visible{
 
 .liste{
     display: flex;
-    justify-content: space-around;
-    gap: 3em;
+    justify-content: center;
+    gap: 2em;
     color: #222733;
-    font-weight: 500;
+    font-weight: 499;
+    padding-left: 475px;
+    margin-top:-15px;
 }
 
 header li{
     list-style-type: none;
-    text-transform: uppercase;
+    text-transform: uppercase;     
 }
-
-
 .liste a {
     color: black;
+    margin-left: 10px;
+    font-weight: 495;
+    font-size: .92rem;
 }
-
+.liste a:hover {
+    color: red;
+    transition: all .7s ease;
+}
 .logo{
-    width: 10%;
+    padding-left: 25px;
+}
+.search-img{
+   font-size: 1.5px;
 }
 
 
