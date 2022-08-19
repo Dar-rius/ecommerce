@@ -6,16 +6,23 @@
             {% csrf_token %}
 
             {{form.non_field_errors}}
-<<<<<<< HEAD
-            <div class="registration">
-                <h1>se connecter</h1>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Passsword">
-                <input type="submit" value="se connecter">
-                <input type="submit" value="se connecter avec google">
-                <p>si vous n'avez pas de compte <a href="#">cliquez ici</a></p>
+            <div>
+                {{form.email.error}}
+                <label for="{{form.email.id_for_label}}">
+                    Adresse mail
+                </label>
+                <input type="email" name="email" placeholder="Entrez votre adresse mail"/>
             </div>
-=======
+            
+            <div>
+                {{form.password.error}}
+                <label for="{{form.password.id_for_label}}">
+                    Mot de passse
+                </label>
+                <input type="password" name="password" placeholder="Entrez votre mot de passe"/>
+            </div>
+
+            <input type="submit" value="se connecter">
         </form>
     </section>
 {% endblock content%}
