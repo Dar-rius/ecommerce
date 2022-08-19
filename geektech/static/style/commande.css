@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 
 table{
     padding: 24px;
@@ -8,19 +11,19 @@ table{
 
 tbody,tfoot{
     display: flex;
-    gap: 6rem;
+    gap: 3rem;
 }
 
 tr{
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1rem;
 }
 
 tfoot{
     padding-top: .5rem;
     margin-top: 1.5rem;
-    gap: 7.5rem;   
+    gap: 5rem;   
     border-top: 1px rgb(97, 93, 93) solid;
 }
 
@@ -29,7 +32,7 @@ thead{
 }
 
 .container{
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,7 +45,6 @@ thead{
     justify-content: center;
     align-items: center;
     padding: 24px;
-    width: 30%;
 }
 
 .commande button{

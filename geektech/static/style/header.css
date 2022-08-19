@@ -16,6 +16,7 @@ header nav{
 }
 
 header nav div{
+    display: flex;
     width: 75%;
     padding: .2rem;
     border-radius: 1rem;
