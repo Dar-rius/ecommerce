@@ -1,44 +1,55 @@
 /* HEADER */
 header{
-    display: flex;
-    flex-direction: column;
-    padding: .5rem;
-    background: hsl(0, 0%, 95%);
+    padding: .1rem;
+    background-color: hsl(0, 0%, 95%);
+    margin-bottom: 5%;
+    padding-top: 2%;
 }
 
-header nav{
+.corp_haut{
     width: 100%;
-    margin: 0px;
-    padding: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+<<<<<<< HEAD
 header nav div{
     display: flex;
+=======
+.corp_haut form{
+>>>>>>> 5a6266f13f628f2e320372dbf5cdfac179b4754a
     width: 75%;
+    display: flex;
+    align-items: center;
+    width: 100%;
     padding: .2rem;
     border-radius: 1rem;
     border: 1px solid black;
 }
 
-header div input{
+.linkerel{
+    width: 5%;
+    margin-left: 2.2%;
+}
+
+
+header input{
     width: 90%;
-    margin-left: 1rem;
     height: 1em;
     border: none;
     background: transparent;
 }
+
 header input:focus-visible{
     border: none;
     outline-offset: none;
     outline: none;
 }
 
-header ul{
+.liste{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 3em;
     color: #222733;
     font-weight: 500;
@@ -49,8 +60,14 @@ header li{
     text-transform: uppercase;
 }
 
-header > img{
-    position: relative;
-    right: 80%;
+
+.liste a {
+    color: black;
 }
+
+.logo{
+    width: 10%;
+}
+
+
 /* END HEADER */

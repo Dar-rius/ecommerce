@@ -1,0 +1,42 @@
+.panier_body h2{
+    border-bottom: 1px solid black;
+    margin: 5%;
+    padding-bottom: 5%;
+    margin-bottom: -1%;
+}
+
+.produit{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    width: 90%;
+    margin: 2%;
+}
+
+.produit img{
+    width: 18%;
+    margin-right: 5%;
+}
+
+.bouton{
+    display: flex;
+    align-items: center;
+}
+
+.bouton a {
+    margin-right: 50%;
+}
+
+.bouton button{
+    width: 150%;
+    padding: 5%;
+}
+
+.card_produit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 500;
+
+}

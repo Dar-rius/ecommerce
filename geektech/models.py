@@ -3,7 +3,7 @@ from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
 
-#For manage user
+#Moedel du user manager
 class UserManager(BaseUserManager):
     def create_user(self, email, password, **extra_fields):
         """
@@ -45,7 +45,8 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-#for create user
+
+#Model du user
 class User(AbstractBaseUser):
     email = models.EmailField(
         verbose_name='email address',
@@ -63,16 +64,8 @@ class User(AbstractBaseUser):
     # notice the absence of a "Password field", that is built in.
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [] # Email &amp; Password are required by default.
-
-    def get_full_name(self):
-        # The user is identified by their email address
-        return self.email
-
-    def get_short_name(self):
-        # The user is identified by their email address
-        return self.email
-
+    REQUIRED_FIELDS = []
+    
     def __str__(self):
         return self.email
 
@@ -98,6 +91,9 @@ class User(AbstractBaseUser):
 
     objects = UserManager()
 
+
+
+#categories de produits
 CATEGORIES = (
     ('Informatique', 'Informatique'),
     ('Bureautique', 'Bureautique'),
@@ -107,6 +103,8 @@ CATEGORIES = (
     ('Multimedia', 'Multimedia')
 )
 
+
+#Model de produits
 class Produit(models.Model):
     nom_produit = models.CharField(max_length=200)
     marque_produit = models.CharField(max_length=100)
@@ -114,5 +112,23 @@ class Produit(models.Model):
     prix_produit = models.IntegerField(default=0)
     quantite_produit = models.IntegerField(default=0)
     cat_produit = models.CharField(max_length=50, choices=CATEGORIES, verbose_name="categories")
-    photo_produit = models.FileField(upload_to='uploads/')
+    photo_produit = models.ImageField(upload_to='images/')
     tendance = models.IntegerField(default=0)
+
+
+#Model du panier d'achat
+class Panier(models.Model):
+    nom_produit= models.CharField(max_length=200)
+    quantite= models.IntegerField(default=0)
+    pTotal = models.IntegerField(default=0)
+    photo_produit = models.ImageField(upload_to='images_card/')
+
+
+
+#Model des commandes
+class Commande(models.Model):
+    nom_produit = models.CharField(max_length=200)
+    pTotal = models.IntegerField(default=0)
+    quantite = models.IntegerField(default=0)
+    livraison = models.IntegerField(default=0)
+    total = models.IntegerField(default=0)

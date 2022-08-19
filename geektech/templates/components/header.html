@@ -1,21 +1,46 @@
-{% block content%}
 {% load static %}
-
+{% block content%}
     <header>
-        <nav>
-            <img src="{% static 'image/logo.png' %}" alt=""/>
-                <div>
-                    <img src="" alt="">
-                    <input type="text" placeholder="Rechercher un produit...">
-                </div>
-            <img src="{% static 'image/achats.png' %}" alt="" style="max-width: 40px;margin-right:1rem;">
-        </nav>
-        <ul>
-            <li>acceuil</li>
-            <li>boutiques</li>
-            <li>maintenance</li>
-            <li>contact</li>
-            <li style="margin-left: 3rem;">se connecter</li>
-        </ul>
+        <div class="corp_haut">
+            <a href="{% url 'home'%}">
+                <img src="{% static 'image/logo.png' %}" alt="" 
+                class="logo"
+                style="width: 100%;"/>
+            </a>
+
+            <form action="{% url 'search' %}">
+                <img src="{% static 'image/search.png' %}" alt="" style="width: 5%;">
+                <input type="search" placeholder="Rechercher un produit..." aria-label="Search" name="q">
+            </form>
+            
+            <a href="{% url 'panier' %}" class="linkerel">
+                <img src="{% static 'image/achats.png' %}" alt="" 
+                style="width: 75%;">
+            </a>
+        </div>
+
+        <div>
+            <ul class="liste">
+                <a href="{% url 'home' %}">
+                    <li>Acceuil</li>
+                </a>
+
+                <a href="{% url 'shop' %}">
+                    <li>Boutique</li>
+                </a>
+
+                <a href="{% url 'propos' %}">
+                    <li>Maintenance</li>
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    <li>Contact</li>
+                </a>
+
+                <a href="{% url 'login' %}" style="margin-left: 3rem;">
+                    <li>Se connecter</li> 
+                </a>
+            </ul>
+        </div>
     </header>
 {% endblock content%}

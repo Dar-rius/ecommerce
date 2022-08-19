@@ -1,0 +1,31 @@
+{% extends "_base.html" %}
+
+{% block content%}
+    <section class="panier_body">
+        <div>
+            <h2>Votre panier</h2>
+            <div class="card_produit">
+                {% for produit in produits_panier %}
+                    <div class="produit">
+                        <img src="{{produit.photo_produit.url}}" alt="">
+                        <div>
+                            <h4>{{produit.nom_produit}}</h4>
+                            <p>Disponible</p>
+                            <P>Quantite: {{produit.quantite}}</P>  
+                            <p>Prix: {{produit.pTotal}}</p> 
+                            <div class="bouton">
+                                <a href="{% url 'commande' produit.id %}">
+                                    <button>Commander</button>
+                                </a>
+
+                                <a href="{% url 'retire' produit.id %}">
+                                    <button>Retirer</button>
+                                </a>
+                            </div>                      
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock content%}

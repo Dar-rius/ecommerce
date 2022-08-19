@@ -1,46 +1,48 @@
 {% extends "_base.html" %}
+{% load static %}
+
 
 {% block content%}
-        <div>
-            <ul>
+        <div class="ensemble">
+            <ul class="groupCat">
                 <a href="">
-                    <li>
-                        <img src="" alt="">
+                    <li class="cat">
+                        <img src="{% static 'image/Workstation.png' %}" alt="">
                         Informatique
                     </li>
                 </a>
 
                 <a href="">
-                    <li>
-                        <img src="" alt="">
+                    <li class="cat">
+                        <img src="{% static 'image/MultimediaPublishing.png' %}" alt="">
                         Multimedia
                     </li>
                 </a>
 
                 <a href="">
-                    <li>
-                        <img src="" alt="">
+                    <li class="cat">
+                        <img src="{% static 'image/Office.png' %}" alt="">
                         Bureautique
                     </li>
                 </a>
 
                 <a href="">
-                    <li>
-                        <img src="" alt="">
+                    <li class="cat">
+                        <img src="{% static 'image/Mobile.png' %}" alt="">
                         Telephone
                     </li>
                 </a>
 
                 <a href="">
-                    <li>
-                        <img src="" alt="">
+                    <li class="cat">
+                        <img src="{% static 'image/ComputerSupport.png' %}" alt="">
                         Accessoir
                     </li>
                 </a>
 
                 <a href="">
-                    <li>
-                        <img src="" alt="">
+                    <li class="cat">
+                        <img src="{% static 'image/GameController.png' %}" alt="">
                         Console et jeux video
                     </li>
                 </a>
@@ -48,7 +50,7 @@
         </div>
 
         <section>
-            
+            <!-- 
             <div>
                 <h2>Tendance</h2>
                 {% for produit in produits %}
@@ -57,60 +59,152 @@
                     {% endif %}
                 {% endfor %}
             </div>
+            -->
 
-            <div>
-                <h2>Informatique</h2>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Informatique" %}
-                       <p>{{produit.nom_produit}}</p> 
-                    {% endif %}
+            <div class="groupName">
+                <img src="{% static 'image/sell.png' %}" alt="">
+                Tendance
+            </div>
+            <div class="item1">
+                {% for produit in produits_tendance %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
-    
-            <div>
-                <h2>Multimedia</h2>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Multimedia" %}
-                       <p>{{produit.nom_produit}}</p> 
-                    {% endif %}
+        </div>
+
+            <div class="groupName">
+                <img src="{% static 'image/Workstation_black.png' %}" alt="">
+                Informatique
+            </div>
+            <div class="item1">
+                {% for produit in produits_info %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}" >
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
-    
-            <div>
-                <h2>Bureautique</h2>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Bureautique" %}
-                       <p>{{produit.nom_produit}}</p> 
-                    {% endif %}
+        </div>
+
+        <div>
+            <div class="groupName">
+                <img src="{% static 'image/MultimediaPublishing_black.png' %}" alt="">
+                Multimedia
+            </div>
+            <div class="item1">
+                {% for produit in produits_multi %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}}</p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
-    
-            <div>
-                <h2>Telephone</h2>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Telephone" %}
-                       <p>{{produit.nom_produit}}</p> 
-                    {% endif %}
+        </div>
+
+        <div>
+            <div class="groupName">
+                <img src="{% static 'image/Office_black.png' %}" alt="">
+                Bureautique
+            </div>
+            <div class="item1">
+                {% for produit in produits_bureau %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}} </p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
-    
-            <div>
-                <h2>Accesoir informatique</h2>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Accesoir" %}
-                       <p>{{produit.nom_produit}}</p> 
-                    {% endif %}
+        </div>
+
+        <div>
+            <div class="groupName">
+                <img src="{% static 'image/Mobile_black.png' %}" alt="">
+                Telephone
+            </div>
+            <div class="item1">
+                {% for produit in produits_tele %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}} </p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
-    
-            <div>
-                <h2>Console et jeux video</h2>
-                {% for produit in produits %}
-                    {% if produit.cat_produit == "Console et jeux video" %}
-                       <p>{{produit.nom_produit}}</p> 
-                    {% endif %}
+        </div>
+
+        <div>
+            <div class="groupName">
+                <img src="{% static 'image/ComputerSupport_black.png' %}" alt="">
+                Accesoir informatique
+            </div>
+            <div class="item1">
+                {% for produit in produits_accessoir %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}} </p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
+        </div>
+
+        <div>
+            <div class="groupName">
+                <img src="{% static 'image/GameController_black.png' %}" alt="">
+                Console et jeux video
+            </div>
+            <div class="item1">
+                {% for produit in produits_console %}
+                    <div class="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p>{{produit.nom_produit}} </p> 
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <button>Ajouter</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
         </section>
     </section>
 {% endblock content%}

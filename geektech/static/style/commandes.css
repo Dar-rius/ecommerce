@@ -1,0 +1,38 @@
+
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.commande{
+    width: 30%;
+    margin: 4%;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.commande button{
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+}
+
+.descrip_commande{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10%;
+}
+
+.desc{
+    background-color:#d9d9d9;
+
+}
+
+.champ{
+    margin-right: 4%;
+}

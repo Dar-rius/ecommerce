@@ -1,0 +1,101 @@
+/* HOME */
+
+#sec1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+nav{
+    background-color: black;
+    width: 25%;
+    border-radius: 1%;
+    padding: 0.5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+h3{
+    text-align: center;
+    color: white;
+}
+
+#carouselExampleCaptions{
+    width: 60%;
+}
+
+#image{
+    width: 75%;
+}
+
+ul a{
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+  }
+
+nav img{
+    margin-right: 5%;
+    margin-left: 2%;
+    width: 15%;
+}
+
+.groupName{
+    display: flex;
+    align-items: center;
+    font-size: large;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    flex-wrap: wrap;
+}
+
+.groupName img{
+    width: 5%;
+
+}
+
+.card{
+    transition: 0.3s;
+    width: 20%;
+    text-align: center;
+    margin: 2%;
+    border: 1px solid #B3B6B7;
+}
+
+.card img{
+    width: 75%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.bas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.secProduit{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.item1{
+    display: flex;
+    align-items: center;
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
+}
+
+button{
+    background-color: black;
+    color: white;
+    width: 40%;
+    font-weight: 600;
+}
+
+/* END HOME */

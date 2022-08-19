@@ -1,8 +1,8 @@
 {% block content%}
 {% load static %}
 <footer>
-    <div>
-        <section>
+    <div class="sect">
+        <section class="part1">
             <img src="{% static 'image/logo.png' %}" alt="">
             <ul>
                 <li>Touba sandaga, Dakar,Senegal</li>
@@ -10,25 +10,46 @@
                 <li>Email: geektech@support.com</li>
             </ul>
         </section>
-        <section>
-            <h3>NOS LIENS </h3>
+
+        <section class="part2">
+            <h4 class="tite">NOS LIENS </h4>
             <ul>
-                <li>ACCEUIL</li>
-                <li>BOUTIQUES</li>
-                <li>CONTACT</li>
-                <li>à propos</li>
+                <a href="{% url 'home' %}">
+                    <li>Acceuil</li>
+                </a>
+
+                <a href="{% url 'shop' %}">
+                    <li>Boutique</li>
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    <li>Contact</li>
+                </a>
+
+                <a href="{% url 'propos' %}">
+                    <li>À propos</li>
+                </a>
             </ul>
         </section>
-        <section>
-            <h3>SUIVEZ-NOUS</h3>
+
+        <section class="part3">
+            <h4 class="tite">SUIVEZ-NOUS</h4>
             <div class="social">
-                <img src="{% static 'image/facebook.png' %}" alt="">
-                <img src="{% static 'image/instagram.png'%}" alt="">
-                <img src="{% static 'image/linkedin.png'%}" alt="">
+                <a href="">
+                    <img src="{% static 'image/facebook.png' %}" alt="">
+                </a>
+
+                <a href="">
+                    <img src="{% static 'image/instagram.png'%}" alt="">
+                </a>
+
+                <a href="">
+                    <img src="{% static 'image/linkedin.png'%}" alt="">
+                </a>
             </div>
             
         </section>
     </div>
-    <p>Designed and coded by Teratra</p>
+    <p class="last">Designed and coded by Teratra</p>
 </footer>
 {% endblock content%}
