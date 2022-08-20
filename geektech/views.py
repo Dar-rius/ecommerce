@@ -1,7 +1,7 @@
 from http import client
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produit, User, Panier,Commande
-from .form import Login_form, User_form, Panier_form
+from .form import Login_form, User_form, Panier_form, Produit_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.db.models import Q
@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 User = User()
 
 
+#Les views pour les parties dont les users peuvent voir
 
 #la view pour la page d'accueille
 def index_view(request):
@@ -212,3 +213,32 @@ def jeux_view(request):
 def multimedia_view(request):
     prod_multi = Produit.objects.filter(cat_produit = "Multimedia")
     return render(request, "page/multimedia.html", {"produits": prod_multi})
+
+
+
+#Les views pour les parties dont l'admin peut voir
+
+#La view pour le dashboard
+def dashboard_view(request):
+    commande_count = Commande.objects.all().count()
+    return render(request, "admin_page/dashboard.html", {"commande_count": commande_count})
+
+
+#La view pour les commandes sur les differentes commandes
+def commandeList_view(request):
+    commandeList = Commande.objects.all()
+    return render(request, "admin_page/commandes.html", {"command_list": commandeList})
+
+
+#La view pour ajouter un produit dans la plateforme
+def ajoutProduct_view(request):
+    if request.method == "POST":
+        form = Produit_form(request.POST)
+            
+        if form.is_valid():
+            form.save()
+            return redirect("dashboard")
+    else:
+        form = Produit_form()
+
+    return render(request, "admin_page/addProduct.html", {"form": form})

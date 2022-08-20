@@ -1,0 +1,9 @@
+{% block content%}
+    <section>
+        <div>
+            <a href="{% url 'commandes_list'%}">
+                Le nombre de commande est de: {{commande_count}}
+            </a>
+        </div>
+    </section>
+{% endblock content%}

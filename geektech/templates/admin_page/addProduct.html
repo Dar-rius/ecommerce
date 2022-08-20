@@ -1,0 +1,76 @@
+
+{% block content%}
+    <section>
+        <form method="post">
+            {% csrf_token %}
+
+            {{form.non_field_errors}}
+            <div>
+                {{form.nom_produit.error}}
+                <label for="{{form.nom_produit.id_for_label}}">
+                    Nom du produit
+                </label>
+                <input type="text" name="nom_produit" placeholder="Entrez le nom du produit"/>
+            </div>
+            
+            <div>
+                {{form.marque_produit.error}}
+                <label for="{{form.marque_produit.id_for_label}}">
+                    Marque du produit
+                </label>
+                <input type="text" name="marque_produit" placeholder="Entrez la marque du produit"/>
+            </div>
+
+            <div>
+                {{ form.descrip_produit.errors }}
+                <label for="{{ form.descrip_produit.id_for_label }}" >
+                    description produit:
+                </label>
+                <textarea name="descrip_produit" rows="8" 
+                    placeholder="Entrez la description du produit"
+                    /></textarea>
+            </div>
+            
+            <div>
+                {{form.prix_produit.error}}
+                <label for="{{form.prix_produit.id_for_label}}">
+                    Le prix du produit
+                </label>
+                <input type="number" name="prix_produit" placeholder="Entrez le prix du produit"/>
+            </div>
+            
+            <div>
+                {{form.quantite_produit.error}}
+                <label for="{{form.quantite_produit.id_for_label}}">
+                    Quantite du produit
+                </label>
+                <input type="number" name="quantite_produit" placeholder="Entrez la quantite du produit"/>
+            </div>
+            
+            <div>
+                {{form.photo_produit.error}}
+                <label for="{{form.photo_produit.id_for_label}}">
+                    veillez chisir un fichier
+                </label>
+                <input type="file" name="photo_produit" accept="image/*"/>
+            </div>
+
+            <div >
+                {{ form.cat_produit.errors }}
+                <label for="{{ form.cat_produit.id_for_label }}" >Préciser la categorie du produit</label>
+                
+                <select name="cat_produit" required id="id_emotion">
+                    <option selected>Neutre</option>
+                    <option value="Informatique">Informatique</option>
+                    <option value="Bureautique">Bureautique</option>  
+                    <option value="Telephone">Telephone</option>
+                    <option value="Accesoir">Accesoir</option>  
+                    <option value="Console et jeux video">Console et jeux video</option>
+                    <option value="Multimedia">Multimedia</option>  
+                </select>
+            </div>
+
+            <input type="submit" value="creer">
+        </form>
+    </section>
+{% endblock content%}

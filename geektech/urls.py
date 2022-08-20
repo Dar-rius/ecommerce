@@ -25,5 +25,7 @@ urlpatterns = [
     path("jeux/", views.jeux_view, name="jeux"),
     path("multimedia/", views.multimedia_view, name="multimedia"),
     path("search/", views.search_view, name="search"),
-
+    path("administrateur/dasbord", views.dashboard_view, name="dashboard"),
+    path("administrateur/commandes", views.commandeList_view, name="commandes_list"),
+    path("administrateur/ajout_produit", views.ajoutProduct_view, name="ajout_produit"),
 ]

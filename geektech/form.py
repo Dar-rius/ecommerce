@@ -1,8 +1,5 @@
 
-from dataclasses import field
-from enum import unique
-from pyexpat import model
-from .models import Produit, User, Panier, Commande
+from .models import Produit, User, Panier
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
 from django import forms
@@ -42,10 +39,10 @@ class Login_form(forms.Form):
     email = forms.EmailField(max_length=255)
     password = forms.CharField(widget=forms.PasswordInput())
 
-class Produit_form():
+class Produit_form(ModelForm):
     class Meta:
         model = Produit
-        fields = ["nom_produit", "marque_produit", "prix_produit", "quantite_produi", "photo_produit", "cat_produit"]
+        fields = ["nom_produit", "marque_produit", "descrip_produit", "prix_produit", "quantite_produit", "cat_produit", "photo_produit"]
 
 
 class Panier_form(ModelForm):
