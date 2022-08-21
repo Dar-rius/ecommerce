@@ -1,14 +1,16 @@
+from http import client
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produit, User, Panier,Commande
-from .form import Login_form, User_form, Panier_form
+from .forms import Login_form, User_form, Panier_form, Produit_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.db.models import Q
-from django.db.models import Min
+from django.contrib.auth.decorators import login_required
 
 User = User()
 
 
+#Les views pour les parties dont les users peuvent voir
 
 #la view pour la page d'accueille
 def index_view(request):
@@ -41,8 +43,10 @@ def search_view(request):
 
 
 #La view du panier pour afficher toutes donnees du panier du User
+@login_required
 def panier_view(request):
-    produits_panier = Panier.objects.all()
+    user = request.user
+    produits_panier = Panier.objects.filter(client=user)
 
     return render(request, "page/panier.html", {"produits_panier": produits_panier})
 
@@ -70,6 +74,7 @@ def propos_view(request):
 
 
 # La view pour la page du detail du produit
+@login_required
 def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
     autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit)
@@ -79,9 +84,8 @@ def detail_view(request, produit_id):
 
         if form.is_valid():
             quantite_form = form.cleaned_data.get("quantite")
-            data_panier = Panier(nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
-            produit.quantite_produit -= data_panier.quantite
-            produit.save()
+            form_user = request.user
+            data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
             data_panier.save()
             return redirect("home")
 
@@ -92,14 +96,19 @@ def detail_view(request, produit_id):
 
 
 # La view de la page commande pour effectuer une commande
+@login_required
 def commande_view(request, produit_panier_id):
     produit = get_object_or_404(Panier, pk=produit_panier_id)
+    produit_selec = Produit.objects.get(nom_produit=produit.nom_produit)
     livraison = 0
     prixTotal = produit.pTotal+livraison
 
     if request.method == "POST":
-        commande = Commande(nom_produit=produit.nom_produit, pTotal=produit.pTotal, quantite=produit.quantite,
+        form_user = request.user
+        commande = Commande(client= form_user, nom_produit=produit.nom_produit, pTotal=produit.pTotal, quantite=produit.quantite,
                             livraison=livraison, total=produit.pTotal+livraison)
+        produit_selec.quantite_produit -= commande.quantite
+        produit_selec.save()
         commande.save()
         return redirect("home")
 
@@ -204,3 +213,31 @@ def jeux_view(request):
 def multimedia_view(request):
     prod_multi = Produit.objects.filter(cat_produit = "Multimedia")
     return render(request, "page/multimedia.html", {"produits": prod_multi})
+
+
+
+#Les views pour les parties dont l'admin peut voir
+
+#La view pour le dashboard
+def dashboard_view(request):
+    commande_count = Commande.objects.all().count()
+    return render(request, "admin_page/dashboard.html", {"commande_count": commande_count})
+
+
+#La view pour les commandes sur les differentes commandes
+def commandeList_view(request):
+    commandeList = Commande.objects.all()
+    return render(request, "admin_page/commandes.html", {"command_list": commandeList})
+
+
+#La view pour ajouter un produit dans la plateforme
+def ajoutProduct_view(request):
+    if request.method == "POST":
+        form = Produit_form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("dashboard")
+    else:
+        form = Produit_form()
+
+    return render(request, "admin_page/ajout.html", {"form": form})

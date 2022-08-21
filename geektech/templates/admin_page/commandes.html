@@ -1,0 +1,10 @@
+{% block content%}
+    <section>
+        <div>
+            {% for commande in command_list %}
+                <p>Nom du client: {{commande.client}}</p>
+                <p>Le produit: {{commande.nom_produit}}</p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock content%}

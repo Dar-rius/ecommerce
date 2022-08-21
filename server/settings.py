@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'geektech.User'
 
 MEDIA_URL = '/media/'  
+
+LOGIN_URL = "/login/"
   
 # Path where media is stored  
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  

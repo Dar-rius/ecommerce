@@ -1,3 +1,4 @@
+from pydoc import cli
 from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
@@ -118,6 +119,7 @@ class Produit(models.Model):
 
 #Model du panier d'achat
 class Panier(models.Model):
+    client = models.ForeignKey(User, on_delete=models.CASCADE)
     nom_produit= models.CharField(max_length=200)
     quantite= models.IntegerField(default=0)
     pTotal = models.IntegerField(default=0)
@@ -127,6 +129,7 @@ class Panier(models.Model):
 
 #Model des commandes
 class Commande(models.Model):
+    client = models.ForeignKey(User, on_delete=models.CASCADE)
     nom_produit = models.CharField(max_length=200)
     pTotal = models.IntegerField(default=0)
     quantite = models.IntegerField(default=0)
