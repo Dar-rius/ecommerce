@@ -76,48 +76,67 @@
                 </button>
             </div>
         </section>
-        <section class="link">
-            <div class="box">
-                <div class="card-w">
-                    <img src="{% static 'image/deliv.png'%}" alt=""><br>
-                    <a href="#">Livraison gratuite</a>
-                </div>
-                <div class="card-w">
-                    <img src="{% static 'image/card.png'%}" alt=""><br>
-                    <a href="#">Paiement à la livraison</a>
-                </div>
-                <div class="card-w">
-                    <img src="{% static 'image/service.png'%}" alt=""><br>
-                    <a href="#">Service client 24h/24</a>
-                </div>    
-            </div>     
-        </section>
         <section class="it">
             <div class="entete">
                 <img src="{% static 'image/computer.png'%}" alt="" >
                 <h4>Informatique</h4>
             </div>  
-            <div class="items">       
-            <div class="item1">
-                {% for produit in produits_info %}
-                    <div class="card">
-                        <a href="{% url 'detail' produit.id%}">
-                            <img src="{{produit.photo_produit.url}}" alt="">
-                            <p>{{produit.nom_produit}}</p> 
-                        </a>
-                        <div class="bas">
-                            <p>{{produit.prix_produit}}  FCFA</p>
-                             <a href="#" class="btn-b">Ajouter</a>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="item2">
-                {% for produit in produits_info %}
-                    <div class="card">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
                         <a href="{% url 'detail' produit.id%}">
                             <img src="{{produit.photo_produit.url}}" alt="">
                             <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">{% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
                         </a>
                         <div class="bas">
                             <p>{{produit.prix_produit}}  FCFA</p>
@@ -126,12 +145,19 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="item3">
-                {% for produit in produits_info %}
-                    <div class="card">
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
                         <a href="{% url 'detail' produit.id%}">
                             <img src="{{produit.photo_produit.url}}" alt="">
                             <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
                         </a>
                         <div class="bas">
                             <p>{{produit.prix_produit}}  FCFA</p>
@@ -139,13 +165,20 @@
                         </div>
                     </div>
                 {% endfor %}
-            </div>
-            <div class="item4">
-                {% for produit in produits_info %}
-                    <div class="card">
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
                         <a href="{% url 'detail' produit.id%}">
                             <img src="{{produit.photo_produit.url}}" alt="">
                             <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
                         </a>
                         <div class="bas">
                             <p>{{produit.prix_produit}}  FCFA</p>
@@ -153,13 +186,895 @@
                         </div>
                     </div>
                 {% endfor %}
-            </div>
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
 
-
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>     
             </div>
             
         </section>
+        <section class="multimedia">
+            <div class="entete">
+                <img src="{% static 'image/MultimediaPublishing_black.png'%}" alt="" >    
+                <h4>Multimédia</h4>
+            </div>  
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">{% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>     
+            </div>
+            
+        </section>
+        <section class="bureautique">
+            <div class="entete">
+                <img src="{% static 'image/Office_black.png'%}" alt="" >    
+                <h4>Bureautique</h4>
+            </div>  
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">{% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>     
+            </div>
+            
+        </section>
+        
+        <section class="telephone">
+            <div class="entete">
+                <img src="{% static 'image/Mobile_black.png'%}" alt="" >    
+                <h4>Téléphone</h4>
+            </div>  
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">{% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>     
+            </div>
+            
+        </section>
+        <section class="accessoires">
+            <div class="entete">
+                <img src="{% static 'image/ComputerSupport_black.png'%}" alt="" >    
+                <h4>Accessoires informatiques</h4>
+            </div>  
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">{% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>     
+            </div>
+            
+        </section>
+        <section class="jeux">
+            <div class="entete">
+                <img src="{% static 'image/GameController_black.png'%}" alt="" >    
+                <h4>Console et jeux</h4>
+            </div>  
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">{% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    {% for produit in produits_info %}
+                    <div class="card" id="card">
+                        <a href="{% url 'detail' produit.id%}">
+                            <img src="{{produit.photo_produit.url}}" alt="">
+                            <p >{{produit.nom_produit}}</p> 
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </a>
+                        <div class="bas">
+                            <p>{{produit.prix_produit}}  FCFA</p>
+                            <a href="#" class="btn-b">Ajouter</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                  </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>     
+            </div>
+            
+        </section>
+        <script>
+            let items = document.getElementById("items");
+            let card = items.getElementsByClassName("card");
+            function next(){
+                items.append(card[0]);
+            }
+        </script>
 
         
+
+    <script>
+                var swiper = new Swiper(".mySwiper", {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                  slidesPerGroup: 3,
+                  loop: true,
+                  loopFillGroupWithBlank: true,
+                  pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                  },
+                  navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  },
+                });
+              </script>
     </main>
 {% endblock content%}
