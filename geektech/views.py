@@ -1,7 +1,7 @@
 from http import client
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produit, User, Panier,Commande
-from .form import Login_form, User_form, Panier_form, Produit_form
+from .forms import Login_form, User_form, Panier_form, Produit_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.db.models import Q
@@ -233,12 +233,11 @@ def commandeList_view(request):
 #La view pour ajouter un produit dans la plateforme
 def ajoutProduct_view(request):
     if request.method == "POST":
-        form = Produit_form(request.POST)
-            
+        form = Produit_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("dashboard")
     else:
         form = Produit_form()
 
-    return render(request, "admin_page/addProduct.html", {"form": form})
+    return render(request, "admin_page/ajout.html", {"form": form})

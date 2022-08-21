@@ -35,9 +35,11 @@ class User_form(ModelForm):
             self.add_error("password_2", "Veillez taper votre mot de passe")
         return cleaned_data
 
+
 class Login_form(forms.Form):
     email = forms.EmailField(max_length=255)
     password = forms.CharField(widget=forms.PasswordInput())
+
 
 class Produit_form(ModelForm):
     class Meta:
