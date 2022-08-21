@@ -81,7 +81,7 @@ nav img{
 #card{
     width: 230px;
     height:330px;
-    margin-right:5px;
+    margin-left: -55px;
     margin-bottom:30px;
     margin-top: 40px;
 }
@@ -208,6 +208,8 @@ nav img{
   }
 .swiper-button-next,.swiper-pagination,.swiper-button-prev{
     color:black;
+    padding: 0 65px;
+
 }
 .swiper-slide {
     text-align: center;
