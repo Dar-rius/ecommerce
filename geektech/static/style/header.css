@@ -1,19 +1,17 @@
 /* HEADER */
 header{
-    padding: .1rem;
-    background-color: hsla(0, 0%, 95%, 0.534);
+    padding: 2rem;
+    background-color: hsl(0, 0%, 95%);
     padding: 15px 70px;
-    height: 158px;
+    height: 158px;   
 }
-
 .corp_haut{
-    width: 100%;
+    width: 100%;    
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 8px 20px;
 }
-
 .corp_haut form{
     display: flex;
     align-items: center;
@@ -64,7 +62,7 @@ header li{
     font-size: .92rem;
 }
 .liste a:hover {
-    color: red;
+    color: blue;
     transition: all .7s ease;
 }
 .logo{

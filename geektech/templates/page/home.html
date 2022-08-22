@@ -3,6 +3,7 @@
 
 {% block content%}
     <main>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{% static 'image/top.png'%}" alt=""></button>
         <section id="sec1">
             <nav>
                 <h3>Toutes les categories</h3>
@@ -1070,6 +1071,19 @@
                     prevEl: ".swiper-button-prev",
                   },
                 });
-              </script>
+                var mybutton = document.getElementById("myBtn");
+                window.onscroll = function() {scrollFunction()};        
+                function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+                }
+                function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                }
+    </script>
     </main>
 {% endblock content%}

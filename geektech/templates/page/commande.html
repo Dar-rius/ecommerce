@@ -2,29 +2,32 @@
 
 {% block content%}
     <div class="container">
-        <form method="post" class="commande">
-            {% csrf_token %}
-            <div class="desc">
-                <p>Votre commande</p>
-                <div class="descrip_commande">
-                    <div class="champ">
-                        <p>Nom: </p>
-                        <p>Prix: </p>
-                        <p>Quantite: </p>
-                        <p>Livraison: </p>
-                        <span><p>Total </p></span>
-                    </div>
-        
-                    <div>
-                        <p>{{produit_panier.nom_produit}}</p>
-                        <p>{{produit_panier.pTotal}}</p>
-                        <p>{{produit_panier.quantite}}</p>
-                        <p>{{livraison}}</p>
-                        <span><p>{{prixTotal}}</p></span>
+        <h3 class="detailCommande">Detail de livraison</h3>
+        <div class="contain">
+            <form method="post" class="commande">
+                {% csrf_token %}
+                <div class="desc">
+                    <p class="com">Votre commande</p>
+                    <div class="descrip_commande">
+                        <div class="champ">
+                            <p>Nom:</p>
+                            <p>Prix:</p>
+                            <p>Quantite:</p>
+                            <p>Livraison:</p>
+                            <span><p>Total:</p></span>
+                        </div>
+            
+                        <div>
+                            <p>{{produit_panier.nom_produit}}</p>
+                            <p>{{produit_panier.pTotal}}</p>
+                            <p>{{produit_panier.quantite}}</p>
+                            <p>{{livraison}}</p>
+                            <span><p>{{prixTotal}}</p></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <button type="submit">commander</button>
-        </form>
+                <button type="submit" class="bout">commander</button>
+            </form>
+        </div>
     </div>
 {% endblock content%}

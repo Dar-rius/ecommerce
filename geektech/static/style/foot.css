@@ -1,7 +1,7 @@
 /* FOOTER */
 
 footer{
-    background: #d9d9d9;
+    background: hsl(0, 0%, 95%);
 }
 
 footer li{
@@ -32,14 +32,6 @@ li{
     padding: 12px 0px;
     text-transform: uppercase;
 }
-
-footer p{
-    color: white;
-    background-color: #222733;
-    padding: 24px;
-    text-align: center;
-}
-
 .tite{
     color: black;
 }
@@ -49,6 +41,10 @@ footer p{
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+.last{
+    color:black;
+    background: white;
 }
 
 /* END FOOTER */
