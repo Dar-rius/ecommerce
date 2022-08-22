@@ -1,28 +1,28 @@
 {% extends "_base.html" %}
 
 {% block content%}
-    <section>
-        <form method="post">
+    <section class="secInscrire">
+        <h3>Se Connecter</h3>
+        <form method="post" class="formSignup">
             {% csrf_token %}
 
             {{form.non_field_errors}}
             <div>
                 {{form.email.error}}
-                <label for="{{form.email.id_for_label}}">
-                    Adresse mail
-                </label>
                 <input type="email" name="email" placeholder="Entrez votre adresse mail"/>
             </div>
             
             <div>
                 {{form.password.error}}
-                <label for="{{form.password.id_for_label}}">
-                    Mot de passse
-                </label>
                 <input type="password" name="password" placeholder="Entrez votre mot de passe"/>
             </div>
 
-            <input type="submit" value="se connecter">
+            <input type="submit" value="se connecter" class="sign">
         </form>
+
+        <div class="cas">
+            Si vous avez pas de compte 
+            <a href="{% url 'signup' %}">cliquez ici</a>
+        </div>
     </section>
 {% endblock content%}
