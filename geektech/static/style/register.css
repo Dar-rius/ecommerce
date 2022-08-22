@@ -1,0 +1,20 @@
+.secInscrire{
+    text-align: center;
+    margin: 5%;
+}
+
+.formSignup div{
+    margin: 2%;
+}
+
+.formSignup input{
+    width: 30%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+}
+
+.sign{
+    background-color: black;
+    color: white;
+    margin-bottom: 2%;
+}
