@@ -1,0 +1,83 @@
+.secDetail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+}
+
+.image1{
+    width: 29%;
+    height: 400px;
+    margin: 2%;
+    border: 3px solid #B3B6B7;
+    border-radius: 3%;
+    margin-right: 5%;
+}
+
+.secDetail button{
+    font-size: larger;
+    width: 150%;
+    padding: 10%;
+    background-color: black;
+    color: white;
+}
+
+.secDetail input{
+    border-radius: 4%;
+}
+
+.classQuantite{
+    width: 100%;
+}
+
+.prod_detail{
+    margin-left: 5%;
+
+}
+
+.quantite{
+    font-size: 20px;
+}
+
+.price{
+    font-size: 26px;
+}
+
+.dispo{
+    font-size: larger;
+    color: red;
+}
+
+.secDetail input{
+    font-size: larger;
+}
+
+.descrip{
+    margin-left: 10%;
+    margin-right: 35%;
+    margin-bottom: 5%;
+}
+
+.descrip .title3{
+    margin-right: 20;
+}
+
+
+.autres{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.item1{
+    display: flex;
+    justify-content: space-around;
+    margin: 5%;
+    flex-wrap: wrap;
+}
+
+.item1 .card{
+    margin-bottom: 5%;
+}
