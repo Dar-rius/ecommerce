@@ -1,0 +1,10 @@
+.item1{
+    display: flex;
+    justify-content: space-around;
+    margin: 5%;
+    flex-wrap: wrap;
+}
+
+.item1 .card{
+    margin-bottom: 5%;
+}
