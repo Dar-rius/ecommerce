@@ -2,16 +2,23 @@
 
 {% block content%}
     <section>
-        <div>
-            {% for produit in produits%}
-            <div class="card">
+        <div class="item1">
+            {% for produit in produits %}
+            <div class="card" id="card">
                 <a href="{% url 'detail' produit.id%}">
                     <img src="{{produit.photo_produit.url}}" alt="">
-                    <p>{{produit.nom_produit}}</p> 
+                    <p >{{produit.nom_produit}}</p> 
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
                 </a>
                 <div class="bas">
                     <p>{{produit.prix_produit}}  FCFA</p>
-                    <button>Ajouter</button>
+                    <a href="#" class="btn-b">Ajouter</a>
                 </div>
             </div>
             {% endfor %}
