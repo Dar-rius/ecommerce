@@ -1,15 +1,17 @@
 .panier_body h2{
-    border-bottom: 1px solid black;
     margin: 5%;
     padding-bottom: 5%;
     margin-bottom: -1%;
 }
 
+.panier_body{
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
 .produit{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid black;
-    width: 90%;
     margin: 2%;
 }
 
@@ -30,6 +32,8 @@
 .bouton button{
     width: 150%;
     padding: 5%;
+    background-color: black;
+    color: white;
 }
 
 .card_produit{
@@ -37,6 +41,5 @@
     flex-direction: column;
     justify-content: center;
     font-size: larger;
-    font-weight: 500;
-
+    font-weight: 400;
 }
