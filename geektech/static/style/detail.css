@@ -18,9 +18,9 @@
     padding: 10px;
 }
 
-.secDetail button{
+.prod_detail button{
     font-size: larger;
-    width: 120%;
+    width: 100%;
     padding: 5%;
     background-color: black;
     color: white;
@@ -36,6 +36,7 @@
 
 .prod_detail{
     margin-left: 5%;
+    width: 18%;
 
 }
 

@@ -34,12 +34,11 @@
 
 nav{
     background-color: black;
-    height: 490px;
-    margin-top: 11px;
     border-radius: 10px; 
-    margin-left: 125px;
+    padding-top: 3%;
+    padding-bottom: 1.5%;
+    margin-left: 10%;
     width: 280px;
-    padding-top: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
