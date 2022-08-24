@@ -5,16 +5,16 @@
     <section>
 
         <div>
-            <div class="groupName">
+            <div class="entete">
                 <img src="{% static 'image/Workstation_black.png' %}" alt="">
-                Informatique
+                <h4>Informatique</h4> 
             </div>
             <div class="item1">
                 {% for produit in produits %}
                 <div class="card" id="card">
                     <a href="{% url 'detail' produit.id%}">
                         <img src="{{produit.photo_produit.url}}" alt="">
-                        <p >{{produit.nom_produit}}</p> 
+                        <p class="textPrice">{{produit.nom_produit}}</p> 
                         <div class="star">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
