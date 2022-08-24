@@ -133,11 +133,12 @@ nav img{
 #card a{ 
     text-decoration: none;
 }
-#card p{
+.textPrice{
     padding-top: 10px;
     color: black;
     text-transform: uppercase;
     text-align: center;
+    font-size: larger;
 } 
 .swiper-slide{
     display: flex;
@@ -149,12 +150,15 @@ nav img{
   align-items: center;
 }
 .star {
-    margin-left: 10px;
+   text-align: center;
   }
 .bas{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 500;
+    font-size: larger;
+    margin-top: 4%;
 }
 .bas p{
     padding-left:10px;
