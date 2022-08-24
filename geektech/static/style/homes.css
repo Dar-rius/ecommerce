@@ -151,6 +151,9 @@ nav img{
 .btn-b:hover{
     color: white; 
  }
+ .swiper-slide .card{
+    margin: 0 10px;
+ }
 .items{
     margin-left: 100px;
     align-items: center;
