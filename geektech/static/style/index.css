@@ -77,6 +77,11 @@ nav{
    height: 100px;
    width: 30%;
 }
+
+.material-icons.red { color: #CB4335; }
+
+.material-icons.md-30 { font-size: 30px; }
+
 h5{
    margin-top: -200px;
    font-size: 30px;
@@ -149,8 +154,17 @@ nav img{
   align-items: center;
 }
 .star {
-   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: large;
+   color: #CB4335;
   }
+
+.star img{
+    width: 100%;
+}
+
 .bas{
     display: flex;
     justify-content: center;

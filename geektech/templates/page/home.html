@@ -80,6 +80,38 @@
 
         <section class="it">
             <div class="entete">
+                <img src="{% static 'image/Sell.png'%}" alt="" >
+                <h4>Tendance</h4>
+            </div>  
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {% for produit in produit_tendance %}
+                        {% if produit.tendance >= 10 %}
+                            <div class="swiper-slide ">
+                                <div class="card" id="card">
+                                    <a href="{% url 'detail' produit.id%}">
+                                        <img src="{{produit.photo_produit.url}}" alt="">
+                                        <p class="textPrice" >{{produit.nom_produit}}</p> 
+                                        <div class="star">
+                                            {{produit.tendance}}
+                                            <span class="material-icons red md-30">local_fire_department</span>
+                                        </div>
+                                    </a>
+                                    <div class="bas">
+                                        <p>{{produit.prix_produit}}  FCFA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                {% endfor %}
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <section class="it">
+            <div class="entete">
                 <img src="{% static 'image/computer.png'%}" alt="" >
                 <h4>Informatique</h4>
             </div>  
@@ -92,11 +124,8 @@
                                 <img src="{{produit.photo_produit.url}}" alt="">
                                 <p class="textPrice" >{{produit.nom_produit}}</p> 
                                 <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    {{produit.tendance}}
+                                    <span class="material-icons red md-30">local_fire_department</span>
                                 </div>
                             </a>
                             <div class="bas">
@@ -124,13 +153,10 @@
                             <a href="{% url 'detail' produit.id%}">
                                 <img src="{{produit.photo_produit.url}}" alt="">
                                 <p class="textPrice">{{produit.nom_produit}}</p> 
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                                 <div class="star">
+                                            {{produit.tendance}}
+                                            <span class="material-icons red md-30">local_fire_department</span>
+                                        </div>
                             </a>
                             <div class="bas">
                                 <p>{{produit.prix_produit}}  FCFA</p>
@@ -157,13 +183,10 @@
                             <a href="{% url 'detail' produit.id%}">
                                 <img src="{{produit.photo_produit.url}}" alt="">
                                 <p class="textPrice">{{produit.nom_produit}}</p> 
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                                 <div class="star">
+                                            {{produit.tendance}}
+                                            <span class="material-icons red md-30">local_fire_department</span>
+                                        </div>
                             </a>
                             <div class="bas">
                                 <p>{{produit.prix_produit}}  FCFA</p>
@@ -190,13 +213,10 @@
                             <a href="{% url 'detail' produit.id%}">
                                 <img src="{{produit.photo_produit.url}}" alt="">
                                 <p class="textPrice">{{produit.nom_produit}}</p> 
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                                 <div class="star">
+                                            {{produit.tendance}}
+                                            <span class="material-icons red md-30">local_fire_department</span>
+                                        </div>
                             </a>
                             <div class="bas">
                                 <p>{{produit.prix_produit}}  FCFA</p>
@@ -223,13 +243,10 @@
                             <a href="{% url 'detail' produit.id%}">
                                 <img src="{{produit.photo_produit.url}}" alt="">
                                 <p class="textPrice">{{produit.nom_produit}}</p> 
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                                 <div class="star">
+                                            {{produit.tendance}}
+                                            <span class="material-icons red md-30">local_fire_department</span>
+                                        </div>
                             </a>
                             <div class="bas">
                                 <p>{{produit.prix_produit}}  FCFA</p>
@@ -256,13 +273,10 @@
                             <a href="{% url 'detail' produit.id%}">
                                 <img src="{{produit.photo_produit.url}}" alt="">
                                 <p class="textPrice">{{produit.nom_produit}}</p> 
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                                 <div class="star">
+                                            {{produit.tendance}}
+                                            <span class="material-icons red md-30">local_fire_department</span>
+                                        </div>
                             </a>
                             <div class="bas">
                                 <p>{{produit.prix_produit}}  FCFA</p>
