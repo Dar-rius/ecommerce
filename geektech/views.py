@@ -14,19 +14,21 @@ User = User()
 
 #la view pour la page d'accueille
 def index_view(request):
-    produit_info = Produit.objects.filter(cat_produit = "Informatique")[:10]
-    produit_multi = Produit.objects.filter(cat_produit = "Multimedia")[:10]
-    produit_bureau = Produit.objects.filter(cat_produit = "Bureautique")[:10]
-    produit_tele = Produit.objects.filter(cat_produit = "Telephone")[:10]
-    produit_accessoir = Produit.objects.filter(cat_produit = "Accesoir")[:10]
-    produit_console = Produit.objects.filter(cat_produit = "Console et jeux video")[:10]
+    produit_tendance = Produit.objects.all()
+    produit_info = Produit.objects.filter(cat_produit = "Informatique")[:12]
+    produit_multi = Produit.objects.filter(cat_produit = "Multimedia")[:12]
+    produit_bureau = Produit.objects.filter(cat_produit = "Bureautique")[:12]
+    produit_tele = Produit.objects.filter(cat_produit = "Telephone")[:12]
+    produit_accessoir = Produit.objects.filter(cat_produit = "Accesoir")[:12]
+    produit_console = Produit.objects.filter(cat_produit = "Console et jeux video")[:12]
 
     return render(request, "page/home.html", {"produits_info": produit_info, 
                                                 "produits_multi": produit_multi,
                                                 "produits_bureau": produit_bureau,
                                                 "produits_tele": produit_tele,
                                                 "produits_accessoir": produit_accessoir,
-                                                "produits_console": produit_console})
+                                                "produits_console": produit_console,
+                                                "produit_tendance": produit_tendance})
 
                                             
 #La paage ou se retrouve les produits dont le user recherche
@@ -108,6 +110,7 @@ def commande_view(request, produit_panier_id):
         commande = Commande(client= form_user, nom_produit=produit.nom_produit, pTotal=produit.pTotal, quantite=produit.quantite,
                             livraison=livraison, total=produit.pTotal+livraison)
         produit_selec.quantite_produit -= commande.quantite
+        produit_selec.tendance+= 5
         produit_selec.save()
         commande.save()
         return redirect("home")
@@ -115,26 +118,7 @@ def commande_view(request, produit_panier_id):
     return render(request,"page/commande.html", {"produit_panier": produit,
                                                     "livraison": livraison,
                                                     "prixTotal": prixTotal})
-
-
-#La view pour la page de la boutique
-def shop_view(request):
-    produit_tendance = Produit.objects.filter(tendance=20)
-    produit_info = Produit.objects.filter(cat_produit = "Informatique")[:10]
-    produit_multi = Produit.objects.filter(cat_produit = "Multimedia")[:10]
-    produit_bureau = Produit.objects.filter(cat_produit = "Bureautique")[:10]
-    produit_tele = Produit.objects.filter(cat_produit = "Telephone")[:10]
-    produit_accessoir = Produit.objects.filter(cat_produit = "Accesoir")[:10]
-    produit_console = Produit.objects.filter(cat_produit = "Console et jeux video")[:10]
-
-    return render(request, "page/shop.html", {"produits_info": produit_info, 
-                                                "produits_multi": produit_multi,
-                                                "produits_bureau": produit_bureau,
-                                                "produits_tele": produit_tele,
-                                                "produits_accessoir": produit_accessoir,
-                                                "produits_console": produit_console,
-                                                "produit_pop": produit_tendance})
-
+                                                    
 
 #La view pour l'inscription du user
 def register_view(request):

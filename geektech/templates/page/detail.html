@@ -10,7 +10,7 @@
             {{form.non_field_errors}}
             <div class="prod_detail">
                 <h2>{{produit.nom_produit}}</h2>
-                <p class="quantite">Quantite</p>
+                <p class="quantite">Quantité</p>
                 {{form.quantite.error}}
                 <input type="number" name="quantite" placeholder="Preciser la quantite" value={{produit.quantite_produit}} min="1" max="{{produit.quantite_produit}}" class="classQuantite">
                 {% if produit.quantite_produit <= 0%}
@@ -18,7 +18,7 @@
                 {% else %}
                     <p class="dispo">Disponible</p>
                 {% endif %}
-                <p class="price">{{produit.prix_produit}} FCFA</p>
+                <p class="price">Prix: {{produit.prix_produit}} FCFA</p>
                 <button type="submit">Ajouter au panier</button>
             </div>
         </form>
@@ -35,18 +35,14 @@
                 <div class="card" id="card">
                     <a href="{% url 'detail' produit.id%}">
                         <img src="{{produit.photo_produit.url}}" alt="">
-                        <p >{{produit.nom_produit}}</p> 
+                        <p class="textPrice">{{produit.nom_produit}}</p> 
                         <div class="star">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                            {{produit.tendance}}
+                            <span class="material-icons red md-30">local_fire_department</span>
                         </div>
                     </a>
                     <div class="bas">
                         <p>{{produit.prix_produit}}  FCFA</p>
-                        <a href="#" class="btn-b">Ajouter</a>
                     </div>
                 </div>
                 {% endfor %}

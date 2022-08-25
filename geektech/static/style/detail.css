@@ -9,18 +9,19 @@
 }
 
 .image1{
-    width: 29%;
-    height: 400px;
+    width: 27%;
+    height: 360px;
     margin: 2%;
     border: 3px solid #B3B6B7;
     border-radius: 3%;
     margin-right: 5%;
+    padding: 10px;
 }
 
-.secDetail button{
+.prod_detail button{
     font-size: larger;
-    width: 150%;
-    padding: 10%;
+    width: 100%;
+    padding: 5%;
     background-color: black;
     color: white;
 }
@@ -35,11 +36,12 @@
 
 .prod_detail{
     margin-left: 5%;
+    width: 18%;
 
 }
 
 .quantite{
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .price{
@@ -80,4 +82,6 @@
 
 .item1 .card{
     margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
