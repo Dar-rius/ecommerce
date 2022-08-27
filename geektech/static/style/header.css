@@ -4,6 +4,9 @@ header{
     background-color: hsl(0, 0%, 95%);
     padding: 15px 70px;
     height: 158px;   
+    position: fixed;
+    top: 0px;
+    z-index: 100;
 }
 .corp_haut{
     width: 100%;    

@@ -1,11 +1,9 @@
-import django
-
-
 from django.urls import path
 from . import views
 
 #listes des differentes liens de la plateforme
 urlpatterns = [
+    #Les urls du cote user
     path("", views.return_view,),
     path("home/", views.index_view, name="home"),
     path("panier/", views.panier_view, name="panier"),
@@ -15,7 +13,7 @@ urlpatterns = [
     path("propos/", views.propos_view, name="propos"),
     path("login/", views.login_view, name="login"),
     path('logout/', views.Logout, name='logout'),
-    path("signup/",  views.register_view, name="signup"),
+    path("signup/",  views.signup_view, name="signup"),
     path("detail/<int:produit_id>/", views.detail_view, name="detail"),
     path("informatique/", views.informatique_view, name="informatique"),
     path("bureautique/", views.bureautique_view, name="bureautique"),
@@ -24,7 +22,12 @@ urlpatterns = [
     path("jeux/", views.jeux_view, name="jeux"),
     path("multimedia/", views.multimedia_view, name="multimedia"),
     path("search/", views.search_view, name="search"),
+
+    #les urls de l'admin
     path("administrateur/dasbord/", views.dashboard_view, name="dashboard"),
     path("administrateur/commandes/", views.commandeList_view, name="commandes_list"),
     path("administrateur/ajout_produit/", views.ajoutProduct_view, name="ajout_produit"),
+    path("administrateur/update_produit/<int:id_produit>/", views.updateProd_view, name="update_produit"),
+    path("administrateur/porduits/", views.listProd_view, name="list_prod"),
+    path("administrateur/delete/<int:id_produit>/", views.deleteProd_view, name="delete"),
 ]

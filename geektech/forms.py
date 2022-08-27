@@ -1,4 +1,3 @@
-
 from .models import Produit, User, Panier
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
@@ -12,7 +11,7 @@ class User_form(ModelForm):
 
     class Meta:
         model = get_user_model()
-        fields = ['email', 'name', 'firstName', 'adresse', 'phone', 'password', 'password_2']
+        fields = ['username', 'email', 'name', 'firstName', 'adresse', 'phone', 'password', 'password_2']
 
     def clean_email(self):
         '''
@@ -37,7 +36,7 @@ class User_form(ModelForm):
 
 
 class Login_form(forms.Form):
-    email = forms.EmailField(max_length=255)
+    username = forms.CharField(max_length=255)
     password = forms.CharField(widget=forms.PasswordInput())
 
 

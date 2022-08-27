@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content%}
-    <main>
+    <section class="mainHome">
         <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{% static 'image/top.png'%}" alt=""></button>
         <section id="sec1">
             <nav>
@@ -78,217 +78,220 @@
             </div>
         </section>
 
-        <section class="it">
-            <div class="entete">
-                <img src="{% static 'image/Sell.png'%}" alt="" >
-                <h4>Tendance</h4>
-            </div>  
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {% for produit in produit_tendance %}
-                        {% if produit.tendance >= 10 %}
-                            <div class="swiper-slide ">
-                                <div class="card" id="card">
-                                    <a href="{% url 'detail' produit.id%}">
-                                        <img src="{{produit.photo_produit.url}}" alt="">
-                                        <p class="textPrice" >{{produit.nom_produit}}</p> 
-                                        <div class="star">
-                                            {{produit.tendance}}
-                                            <span class="material-icons red md-30">local_fire_department</span>
+        <section class="children">
+            <section class="it">
+                <div class="entete">
+                    <img src="{% static 'image/Sell.png'%}" alt="" >
+                    <h4>Tendance</h4>
+                </div>  
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for produit in produit_tendance %}
+                            {% if produit.tendance >= 10 %}
+                                <div class="swiper-slide ">
+                                    <div class="card" id="card">
+                                        <a href="{% url 'detail' produit.id%}">
+                                            <img src="{{produit.photo_produit.url}}" alt="">
+                                            <p class="textPrice" >{{produit.nom_produit}}</p> 
+                                            <div class="star">
+                                                {{produit.tendance}}
+                                                <span class="material-icons red md-30">local_fire_department</span>
+                                            </div>
+                                        </a>
+                                        <div class="bas">
+                                            <p>{{produit.prix_produit}}  FCFA</p>
                                         </div>
-                                    </a>
-                                    <div class="bas">
-                                        <p>{{produit.prix_produit}}  FCFA</p>
                                     </div>
                                 </div>
-                            </div>
-                        {% endif %}
-                {% endfor %}
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <section class="it">
-            <div class="entete">
-                <img src="{% static 'image/computer.png'%}" alt="" >
-                <h4>Informatique</h4>
-            </div>  
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {% for produit in produits_info %}
-                    <div class="swiper-slide ">
-                        <div class="card" id="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p class="textPrice" >{{produit.nom_produit}}</p> 
-                                <div class="star">
-                                    {{produit.tendance}}
-                                    <span class="material-icons red md-30">local_fire_department</span>
-                                </div>
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                            </div>
-                        </div>
-                    </div>
+                            {% endif %}
                     {% endfor %}
-                  </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <section class="multimedia">
-            <div class="entete">
-                <img src="{% static 'image/MultimediaPublishing_black.png'%}" alt="" >    
-                <h4>Multimédia</h4>
-            </div>  
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {% for produit in produits_multi %}
-                    <div class="swiper-slide ">
-                        <div class="card" id="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p class="textPrice">{{produit.nom_produit}}</p> 
-                                 <div class="star">
-                                            {{produit.tendance}}
-                                            <span class="material-icons red md-30">local_fire_department</span>
-                                        </div>
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+    
+            <section class="it">
+                <div class="entete">
+                    <img src="{% static 'image/computer.png'%}" alt="" >
+                    <h4>Informatique</h4>
+                </div>  
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for produit in produits_info %}
+                        <div class="swiper-slide ">
+                            <div class="card" id="card">
+                                <a href="{% url 'detail' produit.id%}">
+                                    <img src="{{produit.photo_produit.url}}" alt="">
+                                    <p class="textPrice" >{{produit.nom_produit}}</p> 
+                                    <div class="star">
+                                        {{produit.tendance}}
+                                        <span class="material-icons red md-30">local_fire_department</span>
+                                    </div>
+                                </a>
+                                <div class="bas">
+                                    <p>{{produit.prix_produit}}  FCFA</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                        {% endfor %}
+                      </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <section class="bureautique">
-            <div class="entete">
-                <img src="{% static 'image/Office_black.png'%}" alt="" >    
-                <h4>Bureautique</h4>
-            </div>  
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {% for produit in produits_bureau %}
-                    <div class="swiper-slide ">
-                        <div class="card" id="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p class="textPrice">{{produit.nom_produit}}</p> 
-                                 <div class="star">
-                                            {{produit.tendance}}
-                                            <span class="material-icons red md-30">local_fire_department</span>
-                                        </div>
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
+            </section>
+    
+            <section class="multimedia">
+                <div class="entete">
+                    <img src="{% static 'image/MultimediaPublishing_black.png'%}" alt="" >    
+                    <h4>Multimédia</h4>
+                </div>  
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for produit in produits_multi %}
+                        <div class="swiper-slide ">
+                            <div class="card" id="card">
+                                <a href="{% url 'detail' produit.id%}">
+                                    <img src="{{produit.photo_produit.url}}" alt="">
+                                    <p class="textPrice">{{produit.nom_produit}}</p> 
+                                     <div class="star">
+                                                {{produit.tendance}}
+                                                <span class="material-icons red md-30">local_fire_department</span>
+                                            </div>
+                                </a>
+                                <div class="bas">
+                                    <p>{{produit.prix_produit}}  FCFA</p>
+                                </div>
                             </div>
                         </div>
+                    {% endfor %}
                     </div>
-                {% endfor %}
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
+            </section>
+    
+            <section class="bureautique">
+                <div class="entete">
+                    <img src="{% static 'image/Office_black.png'%}" alt="" >    
+                    <h4>Bureautique</h4>
+                </div>  
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for produit in produits_bureau %}
+                        <div class="swiper-slide ">
+                            <div class="card" id="card">
+                                <a href="{% url 'detail' produit.id%}">
+                                    <img src="{{produit.photo_produit.url}}" alt="">
+                                    <p class="textPrice">{{produit.nom_produit}}</p> 
+                                     <div class="star">
+                                                {{produit.tendance}}
+                                                <span class="material-icons red md-30">local_fire_department</span>
+                                            </div>
+                                </a>
+                                <div class="bas">
+                                    <p>{{produit.prix_produit}}  FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+            
+            <section class="telephone">
+                <div class="entete">
+                    <img src="{% static 'image/Mobile_black.png'%}" alt="" >    
+                    <h4>Téléphone</h4>
+                </div>  
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for produit in produits_tele %}
+                        <div class="swiper-slide ">
+                            <div class="card" id="card">
+                                <a href="{% url 'detail' produit.id%}">
+                                    <img src="{{produit.photo_produit.url}}" alt="">
+                                    <p class="textPrice">{{produit.nom_produit}}</p> 
+                                     <div class="star">
+                                                {{produit.tendance}}
+                                                <span class="material-icons red md-30">local_fire_department</span>
+                                            </div>
+                                </a>
+                                <div class="bas">
+                                    <p>{{produit.prix_produit}}  FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+    
+            <section class="accessoires">
+                <div class="entete">
+                    <img src="{% static 'image/ComputerSupport_black.png'%}" alt="" >    
+                    <h4>Accessoires informatiques</h4>
+                </div>  
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for produit in produits_accessoir %}
+                        <div class="swiper-slide ">
+                            <div class="card" id="card">
+                                <a href="{% url 'detail' produit.id%}">
+                                    <img src="{{produit.photo_produit.url}}" alt="">
+                                    <p class="textPrice">{{produit.nom_produit}}</p> 
+                                     <div class="star">
+                                                {{produit.tendance}}
+                                                <span class="material-icons red md-30">local_fire_department</span>
+                                            </div>
+                                </a>
+                                <div class="bas">
+                                    <p>{{produit.prix_produit}}  FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+    
+            <section class="jeux">
+                <div class="entete">
+                    <img src="{% static 'image/GameController_black.png'%}" alt="" >    
+                    <h4>Console et jeux</h4>
+                </div>  
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for produit in produits_console %}
+                        <div class="swiper-slide ">
+                            <div class="card" id="card">
+                                <a href="{% url 'detail' produit.id%}">
+                                    <img src="{{produit.photo_produit.url}}" alt="">
+                                    <p class="textPrice">{{produit.nom_produit}}</p> 
+                                     <div class="star">
+                                                {{produit.tendance}}
+                                                <span class="material-icons red md-30">local_fire_department</span>
+                                            </div>
+                                </a>
+                                <div class="bas">
+                                    <p>{{produit.prix_produit}}  FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
         </section>
         
-        <section class="telephone">
-            <div class="entete">
-                <img src="{% static 'image/Mobile_black.png'%}" alt="" >    
-                <h4>Téléphone</h4>
-            </div>  
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {% for produit in produits_tele %}
-                    <div class="swiper-slide ">
-                        <div class="card" id="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p class="textPrice">{{produit.nom_produit}}</p> 
-                                 <div class="star">
-                                            {{produit.tendance}}
-                                            <span class="material-icons red md-30">local_fire_department</span>
-                                        </div>
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <section class="accessoires">
-            <div class="entete">
-                <img src="{% static 'image/ComputerSupport_black.png'%}" alt="" >    
-                <h4>Accessoires informatiques</h4>
-            </div>  
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {% for produit in produits_accessoir %}
-                    <div class="swiper-slide ">
-                        <div class="card" id="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p class="textPrice">{{produit.nom_produit}}</p> 
-                                 <div class="star">
-                                            {{produit.tendance}}
-                                            <span class="material-icons red md-30">local_fire_department</span>
-                                        </div>
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <section class="jeux">
-            <div class="entete">
-                <img src="{% static 'image/GameController_black.png'%}" alt="" >    
-                <h4>Console et jeux</h4>
-            </div>  
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {% for produit in produits_console %}
-                    <div class="swiper-slide ">
-                        <div class="card" id="card">
-                            <a href="{% url 'detail' produit.id%}">
-                                <img src="{{produit.photo_produit.url}}" alt="">
-                                <p class="textPrice">{{produit.nom_produit}}</p> 
-                                 <div class="star">
-                                            {{produit.tendance}}
-                                            <span class="material-icons red md-30">local_fire_department</span>
-                                        </div>
-                            </a>
-                            <div class="bas">
-                                <p>{{produit.prix_produit}}  FCFA</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
 
 
         <script>
@@ -301,37 +304,37 @@
 
         
 
-    <script>
-                var swiper = new Swiper(".mySwiper", {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                  slidesPerGroup: 3,
-                  loop: false,
-                  loopFillGroupWithBlank: true,
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
+        <script>
+                    var swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    slidesPerGroup: 3,
+                    loop: false,
+                    loopFillGroupWithBlank: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    });
 
-                
-                var mybutton = document.getElementById("myBtn");
-                window.onscroll = function() {scrollFunction()};        
-                function scrollFunction() {
-                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
-                    mybutton.style.display = "block";
-                } else {
-                    mybutton.style.display = "none";
-                }
-                }
-                function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-                }
-    </script>
-    </main>
+                    
+                    var mybutton = document.getElementById("myBtn");
+                    window.onscroll = function() {scrollFunction()};        
+                    function scrollFunction() {
+                    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+                        mybutton.style.display = "block";
+                    } else {
+                        mybutton.style.display = "none";
+                    }
+                    }
+                    function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                    }
+        </script>
+    </section>
 {% endblock content%}

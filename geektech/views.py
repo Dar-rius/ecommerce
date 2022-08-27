@@ -1,4 +1,4 @@
-from http import client
+from email import message
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produit, User, Panier,Commande
 from .forms import Login_form, User_form, Panier_form, Produit_form
@@ -6,6 +6,9 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
+
+
 
 User = User()
 
@@ -121,18 +124,16 @@ def commande_view(request, produit_panier_id):
                                                     
 
 #La view pour l'inscription du user
-def register_view(request):
-	if request.method == "POST":
-		form = User_form(request.POST)
-		if form.is_valid():
-			user = form.save()
-			login(request, user)
-			messages.success(request, "Creation de compte reussie" )
-			return redirect("home")
-		messages.error(request, "Creation de compte impossible")
-	form = User_form()
-	return render (request=request, template_name="page/signup.html", context={"form":form})
-
+def signup_view(request):
+    if request.method == "POST":
+        form = User_form(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = User_form()
+    return render(request, "page/register.html", {"form": form})
 
 
 # La view pour permettre le user de se deconnecter
@@ -146,19 +147,19 @@ def Logout(request):
 def login_view(request):
     if request.method == "POST":
         form = Login_form(request.POST)
-
         if form.is_valid():
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=email, password=password)
-            if user is not None:
+            if user:
+                print("le user existe")
                 login(request, user)
-                messages.info(request, f"Vous etes connecter {email}.")
                 return redirect("home")
             else:
-                messages.error(request,"Erreur de connexion")
-    else: 
-        form = Login_form()
+                print("le user existe pas")
+        else:
+            print("le form est pas valide")
+    form = Login_form()
     return render(request, "page/login.html", {"form": form})
 
 
@@ -208,6 +209,14 @@ def dashboard_view(request):
     return render(request, "admin_page/dashboard.html", {"commande_count": commande_count})
 
 
+#view pour voir tous les produits
+def listProd_view(request):
+    produit_count = Produit.objects.all().count()
+    produits = Produit.objects.all()
+    return render(request, "admin_page/produits.html", {"produits": produits, 
+                                                        "count_prod": produit_count})
+
+
 #La view pour les commandes sur les differentes commandes
 def commandeList_view(request):
     commandeList = Commande.objects.all()
@@ -225,3 +234,22 @@ def ajoutProduct_view(request):
         form = Produit_form()
 
     return render(request, "admin_page/ajout.html", {"form": form})
+
+
+#view pour mettre a jour un produit
+def updateProd_view(request, id_produit):
+ 
+    produit = get_object_or_404(Produit, pk= id_produit)
+    form = Produit_form(request.POST or None, instance = produit)
+    if form.is_valid():
+        form.save()
+        return redirect("list_prod")
+
+    return render(request, "admin_page/updateProd.html", {"form": form, "produit": produit})
+
+
+#view pour delete un produit
+def deleteProd_view(request, id_produit):
+    produit = get_object_or_404(Produit, pk=id_produit)
+    produit.delete()
+    return redirect("list_prod")

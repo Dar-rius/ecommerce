@@ -1,9 +1,13 @@
 {% block content%}
     <section>
         <div>
+            <a href="{% url 'ajout_produit' %}">Ajouter un produits</a>
+
             <a href="{% url 'commandes_list'%}">
                 Le nombre de commande est de: {{commande_count}}
             </a>
+
+            <a href="{% url 'list_prod' %}">Voir les produits</a>
         </div>
     </section>
 {% endblock content%}
