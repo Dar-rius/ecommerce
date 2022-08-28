@@ -6,10 +6,10 @@ from .models import User
 class CustomerBackend(ModelBackend):
 
     def authenticate(self, request, **kwargs):
-        username = kwargs['username']
+        email = kwargs['email']
         password = kwargs['password']
         try:
-            customer = User.objects.get(username=username)
+            customer = User.objects.get(email=email)
             if password == customer.password: 
                 print("user is login")
                 return customer.username

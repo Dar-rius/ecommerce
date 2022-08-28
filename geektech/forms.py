@@ -11,7 +11,7 @@ class User_form(ModelForm):
 
     class Meta:
         model = get_user_model()
-        fields = ['username', 'email', 'name', 'firstName', 'adresse', 'phone', 'password', 'password_2']
+        fields = ['email', 'name', 'firstName', 'adresse', 'phone', 'password', 'password_2']
 
     def clean_email(self):
         '''
@@ -34,9 +34,17 @@ class User_form(ModelForm):
             self.add_error("password_2", "Veillez taper votre mot de passe")
         return cleaned_data
 
+    def save(self, commit=True):
+        # Save the provided password in hashed format
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data["password"])
+        if commit:
+            user.save()
+        return user
+
 
 class Login_form(forms.Form):
-    username = forms.CharField(max_length=255)
+    email = forms.EmailField(max_length=255)
     password = forms.CharField(widget=forms.PasswordInput())
 
 
