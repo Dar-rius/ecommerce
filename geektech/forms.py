@@ -52,7 +52,15 @@ class Produit_form(ModelForm):
     class Meta:
         model = Produit
         fields = ["nom_produit", "marque_produit", "descrip_produit", "prix_produit", "quantite_produit", "cat_produit", "photo_produit"]
-
+        labels = {
+        "nom_produit":  "Nom du produit",
+        "marque_produit": "Marque du produit",
+        "descrip_produit": "Description du produit",
+        "prix_produit":  "Prix du produit",
+        "quantite_produit": "Quantite du produit",
+        "cat_produit": "Categorie du produit",
+        "photo_produit": "Image du produit",
+    }
 
 class Panier_form(ModelForm):
     class Meta:

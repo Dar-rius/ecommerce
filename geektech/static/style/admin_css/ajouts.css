@@ -26,6 +26,7 @@ form input{
     padding-top: .5%;
     padding-bottom: .5%;
     border: 1px solid #D3C9C9;
+    font-size: 15px;
 }
 
 .files input{
@@ -36,6 +37,7 @@ form input{
 
 textarea{
     border: 1px solid #D3C9C9;
+    font-size: 15px;
 }
 
 select{
@@ -50,6 +52,23 @@ select{
     font-size: 17px;
     color: white;
     background-color: black;
+}
+
+button{
+    padding: 1.5%;
+    border-radius: 20px;
+    font-size: 17px;
+    color: white;
+    background-color: black;
+    width: 20%;
+}
+
+p{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3%;
 }
 
 
