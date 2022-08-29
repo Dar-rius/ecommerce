@@ -8,6 +8,8 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
 
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/commande.css' %}">
+
     <title>Document</title>
 </head>
 <body>
@@ -17,19 +19,16 @@
     {% block content%}
         <section>
             <div>
-                {% include 'components/nav_admin.html'%}
-            </div>
-
-            <div>
-                <div>
+                <div class="haut">
                     <img src="{% static 'image/Packing.png' %}" alt="">
                     <p>Commandes</p>
                 </div>
-                <div>
+                <div class="commandeProduct">
                     {% for commande in command_list %}
                     <a href="{% url 'detail_commande' commande.id%}">
                         <p>{{commande.nom_produit}}</p>
                     </a>
+                    <hr>
                     {% endfor %}
                 </div>
             </div>

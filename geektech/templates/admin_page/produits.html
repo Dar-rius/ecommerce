@@ -8,6 +8,8 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
 
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/commande.css' %}">
+
     <title>Document</title>
 </head>
 <body>
@@ -17,11 +19,11 @@
     {% block content%}
         <section>
             <div>
-                <div>
+                <div class="haut">
                     <img src="{% static 'image/Product.png' %}" alt="">
                     <p>Produits</p>
                 </div>
-                <div>
+                <div class="commandeProduct">
                     {% for produit in produits %}
                     <a href="{% url 'update_produit' produit.id%}">
                         <p>{{produit.nom_produit}}</p>
