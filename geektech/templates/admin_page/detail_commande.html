@@ -8,31 +8,33 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
 
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/detailCommande.css' %}">
+
     <title>Document</title>
 </head>
 <body>
 
     {% include 'components/nav_admin.html' %}
     {% block content%}
-        <div>
-            <div>
+        <section>
+            <div class="haut">
                 <img src="{% static 'image/Packing.png' %}" alt="">
                 <p>Commande</p>
             </div>
         
-            <div>
-                <img src="{{image_produit.photo_produit}}" alt="">
+            <div class="detail">
+                <img src="{{image_produit.photo_produit.url}}" alt="" class="commandeImage">
                 
-                <div>
-                    Le produit a ete commander
-                    prix du produit: {{commande.total}}
-                    Nom du produit: {{commande.nom_produit}}
-                    Commander par: {{client.firstName}} {{client.name}}
-                    Email: {{client.email}}
-                    Adresse du client: {{client.adresse}}
+                <div >
+                    <p>Le produit a ete commander</p>
+                    <p>prix du produit: <span>{{commande.total}} FCFA</span></p>
+                    <p>Nom du produit:c <span>{{commande.nom_produit}}</span></p>
+                    <p>Commander par: <span>{{client.firstName}} {{client.name}}</span></p>
+                    <p>Email: <span>{{client.email}}</span></p>
+                    <p>Adresse du client: <span>{{client.adresse}}</span></p>
                 </div>
             </div>
-        </div>
+        </section>
     {% endblock content%}
 </body>
 </html>

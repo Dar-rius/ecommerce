@@ -1,0 +1,40 @@
+body{
+    margin-left: 30%;
+    background-color: #F5F3F3;
+    font-family: Inter, sans-serif;
+}
+
+.haut{
+    display: flex;
+    align-items: center;
+    margin: 5%;
+    font-size: larger;
+}
+
+.haut img{
+    width: 6%;
+    margin-right: 2%;
+}
+
+.detail{
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;
+    background-color: #ffff;
+    padding: 5%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.commandeImage{
+    width: 40%;
+    height: 300px;
+}
+
+p{
+    font-size: large;
+}
+
+span{
+    color: #CB4335;
+}
