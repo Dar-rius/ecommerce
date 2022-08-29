@@ -1,67 +1,81 @@
-{% block content %}
-    <section>
-        <div>
-            {% include 'components/nav_admin.html'%}
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
 
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
+    <title>Document</title>
+</head>
+<body>
 
-            <div>
-                <label for="{{form.nom_produit.id_for_label}}">
-                    Nom du produit
-                </label>
-                <input type="text" name="nom_produit" />
-            </div>
+    {% include 'components/nav_admin.html' %}
 
-            <div>
-                <label for="{{form.marque_produit.id_for_label}}">
-                    La marque du produit
-                </label>
-                <input type="text" name="marque_produit" />
-            </div>
+    {% block content %}
+        <section>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
 
-            <div>
-                <label for="{{form.descrip_produit.id_for_label}}">
-                    La description du produit
-                </label>
-                <textarea name="descrip_produit" cols="30" rows="10"></textarea>
-            </div>
+                <div>
+                    <label for="{{form.nom_produit.id_for_label}}">
+                        Nom du produit
+                    </label>
+                    <input type="text" name="nom_produit" />
+                </div>
 
-            <div>
-                <label for="{{form.prix_produit.id_for_label}}">
-                    Le prix du produit
-                </label>
-                <input type="number" name="prix_produit" />
-            </div>
+                <div>
+                    <label for="{{form.marque_produit.id_for_label}}">
+                        La marque du produit
+                    </label>
+                    <input type="text" name="marque_produit" />
+                </div>
 
-            <div>
-                <label for="{{form.quantite_produit.id_for_label}}">
-                    La quantite du produit
-                </label>
-                <input type="number" name="quantite_produit" />
-            </div>
+                <div>
+                    <label for="{{form.descrip_produit.id_for_label}}">
+                        La description du produit
+                    </label>
+                    <textarea name="descrip_produit" cols="30" rows="10"></textarea>
+                </div>
 
-            <div>
-                <label for="{{form.cat_produit.id_for_label}}">
-                    La categorie du produit
-                </label>
-                <select name="cat_produit" >
-                    <option value selected>Neutre</option>
-                    <option value="Informatique">Informatique</option>
-                    <option value="Bureautique">Bureautique</option>  
-                    <option value="Telephone">Telephone</option>
-                    <option value="Accesoir">Accesoir</option>  
-                    <option value="Console et jeux video">Console et jeux video</option>
-                    <option value="Multimedia">Multimedia</option>  
-                </select>
-            </div>
+                <div>
+                    <label for="{{form.prix_produit.id_for_label}}">
+                        Le prix du produit
+                    </label>
+                    <input type="number" name="prix_produit" />
+                </div>
 
-            <div>
-                <input type="file" name="photo_produit" accept="image/*" required="" id="id_photo_produit">            
-            </div>
+                <div>
+                    <label for="{{form.quantite_produit.id_for_label}}">
+                        La quantite du produit
+                    </label>
+                    <input type="number" name="quantite_produit" />
+                </div>
 
-            <input type="submit" value="Enregistrer">
-        </form>
-    </section>
-{% endblock content%}
+                <div>
+                    <label for="{{form.cat_produit.id_for_label}}">
+                        La categorie du produit
+                    </label>
+                    <select name="cat_produit" >
+                        <option value selected>Neutre</option>
+                        <option value="Informatique">Informatique</option>
+                        <option value="Bureautique">Bureautique</option>  
+                        <option value="Telephone">Telephone</option>
+                        <option value="Accesoir">Accesoir</option>  
+                        <option value="Console et jeux video">Console et jeux video</option>
+                        <option value="Multimedia">Multimedia</option>  
+                    </select>
+                </div>
+
+                <div>
+                    <input type="file" name="photo_produit" accept="image/*" required="" id="id_photo_produit">            
+                </div>
+
+                <input type="submit" value="Enregistrer">
+            </form>
+        </section>
+    {% endblock content%}
+</body>
+</html>

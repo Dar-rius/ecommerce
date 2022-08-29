@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static%}
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
+
     <title>Document</title>
 </head>
 <body>
+
+    {% include 'components/nav_admin.html' %}
+
     {% block content%}
         <section>
-            <div>
-                {% include 'components/nav_admin.html'%}
-            </div>
-
             <div>
                 <div>
                     <img src="{% static 'image/Product.png' %}" alt="">

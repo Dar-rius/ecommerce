@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
+
     <title>Document</title>
 </head>
 <body>
-    <div>
-        {% include 'components/nav_admin.html'%}
-    </div>
 
-    <form  method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+    {% include 'components/nav_admin.html' %}
+    {% block content%}
+        <form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
 
-        {{form.as_p}}
+            {{form.as_p}}
 
-        <button type="submit">Modier</button>
-        <a href="">
-            <button>Supprimer</button>
-        </a>
-    </form>
+            <button type="submit">Modier</button>
+            <a href="">
+                <button>Supprimer</button>
+            </a>
+        </form>
+    {% endblock content%}
 </body>
 </html>

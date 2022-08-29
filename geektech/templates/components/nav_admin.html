@@ -1,33 +1,33 @@
 {% load static %}
 {% block content %}
-    <nav>
-        <img src="{% static 'image/logo.png' %}" alt="">
+    <aside class="nav_admin">
+        <img src="{% static 'image/logo.png' %}" alt="" class="logo">
 
         <div>
-            <div>
+            <div class="element1">
                 <img src="{% static 'image/Home.png' %}" alt="">
                 <a href="{% url 'dashboard'%}">Dashboard</a>
             </div>
 
-            <div>
+            <div class="element1">
                 <img src="{% static 'image/Product.png' %}" alt="">
                 <a href="{% url 'list_prod'%}">Produits</a>
             </div>
 
-            <div>
+            <div class="element1">
                 <img src="{% static 'image/Packing.png' %}" alt="">
                 <a href="{% url 'commandes_list'%}">Commandes</a>
             </div>
 
-            <div>
+            <div class="element1">
                 <img src="{% static 'image/Plus.png' %}" alt="">
                 <a href="{% url 'ajout_produit'%}">Ajouter un produit</a>
             </div>
         </div>
 
-        <div>
+        <div class="element2">
             <img src="{% static 'image/Logout.png' %}" alt="">
             <a href="{% url 'logout'%}">Se déconnecter</a>
         </div>
-    </nav>
+    </aside>
 {% endblock content %}

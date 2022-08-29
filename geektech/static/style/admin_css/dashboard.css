@@ -1,0 +1,26 @@
+body{
+    margin-left: 30%;
+    background-color: #F5F3F3;
+    font-family: Inter, sans-serif;
+}
+
+.cardSec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card1{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    background-color: #ffff;
+    margin: 5%;
+    border-radius:20px ;
+}
+
+h2{
+    color: #80BC71;
+
+}
