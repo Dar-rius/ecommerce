@@ -180,7 +180,7 @@ def phone_view(request):
 
 #La view pour afficher les produit de categories "Accesoir"
 def accesoir_view(request):
-    prod_accesoir = Produit.objects.filter(cat_produit = "Accessoir")
+    prod_accesoir = Produit.objects.filter(cat_produit = "Accesoir")
     return render(request, "page/accesoir.html", {"produits": prod_accesoir})
 
 
