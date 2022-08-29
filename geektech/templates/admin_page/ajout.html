@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/ajout.css' %}">
+
     <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
 
     <title>Document</title>
@@ -37,7 +39,7 @@
                     <label for="{{form.descrip_produit.id_for_label}}">
                         La description du produit
                     </label>
-                    <textarea name="descrip_produit" cols="30" rows="10"></textarea>
+                    <textarea name="descrip_produit" cols="40" rows="10"></textarea>
                 </div>
 
                 <div>
@@ -69,11 +71,11 @@
                     </select>
                 </div>
 
-                <div>
+                <div class="files">
                     <input type="file" name="photo_produit" accept="image/*" required="" id="id_photo_produit">            
                 </div>
 
-                <input type="submit" value="Enregistrer">
+                <input type="submit" value="Enregistrer" class="save">
             </form>
         </section>
     {% endblock content%}
