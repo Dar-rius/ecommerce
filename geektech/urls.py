@@ -26,6 +26,7 @@ urlpatterns = [
     #les urls de l'admin
     path("administrateur/dasbord/", views.dashboard_view, name="dashboard"),
     path("administrateur/commandes/", views.commandeList_view, name="commandes_list"),
+    path("administrateur/commandes/detail/<int:id_commande>/", views.detail_commandes_view, name="detail_commande"),
     path("administrateur/ajout_produit/", views.ajoutProduct_view, name="ajout_produit"),
     path("administrateur/update_produit/<int:id_produit>/", views.updateProd_view, name="update_produit"),
     path("administrateur/porduits/", views.listProd_view, name="list_prod"),

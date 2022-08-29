@@ -1,10 +1,34 @@
-{% block content%}
-    <section>
-        <div>
-            {% for commande in command_list %}
-                <p>Nom du client: {{commande.client}}</p>
-                <p>Le produit: {{commande.nom_produit}}</p>
-            {% endfor %}
-        </div>
-    </section>
-{% endblock content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    <title>Document</title>
+</head>
+<body>
+    {% block content%}
+        <section>
+            <div>
+                {% include 'components/nav_admin.html'%}
+            </div>
+
+            <div>
+                <div>
+                    <img src="{% static 'image/Packing.png' %}" alt="">
+                    <p>Commandes</p>
+                </div>
+                <div>
+                    {% for commande in command_list %}
+                    <a href="{% url 'detail_commande' commande.id%}">
+                        <p>{{commande.nom_produit}}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endblock content%}
+</body>
+</html>

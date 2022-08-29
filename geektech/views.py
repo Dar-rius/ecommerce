@@ -1,3 +1,4 @@
+import email
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produit, User, Panier,Commande
 from .forms import Login_form, User_form, Panier_form, Produit_form
@@ -6,10 +7,6 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
-
-
-
-User = User()
 
 
 #Les views pour les parties dont les users peuvent voir
@@ -139,7 +136,7 @@ def signup_view(request):
 def Logout(request):
     """logout logged in user"""
     logout(request)
-    return redirect("home")
+    return redirect("login")
 
 
 #La view permettant au user de se connecter
@@ -205,21 +202,31 @@ def multimedia_view(request):
 #La view pour le dashboard
 def dashboard_view(request):
     commande_count = Commande.objects.all().count()
-    return render(request, "admin_page/dashboard.html", {"commande_count": commande_count})
+    produit_count = Produit.objects.all().count()
+    return render(request, "admin_page/dashboard.html", {"commande_count": commande_count, 
+                                                        "count_prod": produit_count})
 
 
 #view pour voir tous les produits
 def listProd_view(request):
-    produit_count = Produit.objects.all().count()
     produits = Produit.objects.all()
-    return render(request, "admin_page/produits.html", {"produits": produits, 
-                                                        "count_prod": produit_count})
+    return render(request, "admin_page/produits.html", {"produits": produits})
 
 
 #La view pour les commandes sur les differentes commandes
 def commandeList_view(request):
     commandeList = Commande.objects.all()
     return render(request, "admin_page/commandes.html", {"command_list": commandeList})
+
+
+#view sur les details de la commandes
+def detail_commandes_view(request, id_commande) :
+    commande = get_object_or_404(Commande, pk=id_commande)
+    image_produit = Produit.objects.get(nom_produit = commande.nom_produit)
+    client= User.objects.get(email = commande.client)
+    return render(request, "admin_page/detail_commande.html", {"commande":commande,
+                                                                "image_produit": image_produit,
+                                                                "client": client})
 
 
 #La view pour ajouter un produit dans la plateforme

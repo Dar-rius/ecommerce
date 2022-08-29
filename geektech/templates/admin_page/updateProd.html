@@ -7,15 +7,19 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        {% include 'components/nav_admin.html'%}
+    </div>
+
     <form  method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{form.as_p}}
 
-        <button type="submit">Changer</button>
+        <button type="submit">Modier</button>
+        <a href="">
+            <button>Supprimer</button>
+        </a>
     </form>
-    <a href="{% url 'delete' produit.id %}">
-        <button>Supprimer</button>
-    </a>
 </body>
 </html>

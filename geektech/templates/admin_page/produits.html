@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
     <title>Document</title>
 </head>
 <body>
-    <p >
-        le nombre de produits est de: {{count_prod}}
-    </p>
+    {% block content%}
+        <section>
+            <div>
+                {% include 'components/nav_admin.html'%}
+            </div>
 
-    <div>
-        <ul>
-            {% for produit in produits %}
-            <a href="{% url 'update_produit' produit.id %}">
-                <li>
-                    {{produit.nom_produit}}
-                </li>
-            </a>
-            {% endfor %}
-        </ul>
-    </div>
+            <div>
+                <div>
+                    <img src="{% static 'image/Product.png' %}" alt="">
+                    <p>Produits</p>
+                </div>
+                <div>
+                    {% for produit in produits %}
+                    <a href="{% url 'update_produit' produit.id%}">
+                        <p>{{produit.nom_produit}}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endblock content%}
 </body>
 </html>

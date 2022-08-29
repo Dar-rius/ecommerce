@@ -1,13 +1,30 @@
-{% block content%}
-    <section>
-        <div>
-            <a href="{% url 'ajout_produit' %}">Ajouter un produits</a>
-
-            <a href="{% url 'commandes_list'%}">
-                Le nombre de commande est de: {{commande_count}}
-            </a>
-
-            <a href="{% url 'list_prod' %}">Voir les produits</a>
-        </div>
-    </section>
-{% endblock content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    {% block content%}
+        <section>
+            <div>
+                {% include 'components/nav_admin.html'%}
+            </div>
+            
+            <div>
+                <div>
+                    <p>Nombre de  produits</p>
+                    <h2>{{count_prod}}</h2>
+                </div>
+    
+                <div>
+                    <p>Nombre de commandes</p>
+                    <h2>{{commande_count}}</h2> 
+                </div>
+            </div>
+        </section>
+    {% endblock content%}
+</body>
+</html>

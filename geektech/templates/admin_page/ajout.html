@@ -1,5 +1,9 @@
 {% block content %}
     <section>
+        <div>
+            {% include 'components/nav_admin.html'%}
+        </div>
+
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
@@ -7,14 +11,14 @@
                 <label for="{{form.nom_produit.id_for_label}}">
                     Nom du produit
                 </label>
-                <input type="text" name="nom_produit" placeholder="Entrez le nom du produit"/>
+                <input type="text" name="nom_produit" />
             </div>
 
             <div>
                 <label for="{{form.marque_produit.id_for_label}}">
                     La marque du produit
                 </label>
-                <input type="text" name="marque_produit" placeholder="Entrez la marque du produit"/>
+                <input type="text" name="marque_produit" />
             </div>
 
             <div>
@@ -28,14 +32,14 @@
                 <label for="{{form.prix_produit.id_for_label}}">
                     Le prix du produit
                 </label>
-                <input type="number" name="prix_produit" placeholder="Entrez le prix du produit"/>
+                <input type="number" name="prix_produit" />
             </div>
 
             <div>
                 <label for="{{form.quantite_produit.id_for_label}}">
                     La quantite du produit
                 </label>
-                <input type="number" name="quantite_produit" placeholder="Entrez la quantite du produit"/>
+                <input type="number" name="quantite_produit" />
             </div>
 
             <div>
@@ -54,9 +58,10 @@
             </div>
 
             <div>
-                <input type="file" name="photo_produit" accept="image/*" required="" id="id_photo_produit">            </div>
+                <input type="file" name="photo_produit" accept="image/*" required="" id="id_photo_produit">            
+            </div>
 
-            <input type="submit" value="Creer">
+            <input type="submit" value="Enregistrer">
         </form>
     </section>
 {% endblock content%}

@@ -1,0 +1,33 @@
+{% load static %}
+{% block content %}
+    <nav>
+        <img src="{% static 'image/logo.png' %}" alt="">
+
+        <div>
+            <div>
+                <img src="{% static 'image/Home.png' %}" alt="">
+                <a href="{% url 'dashboard'%}">Dashboard</a>
+            </div>
+
+            <div>
+                <img src="{% static 'image/Product.png' %}" alt="">
+                <a href="{% url 'list_prod'%}">Produits</a>
+            </div>
+
+            <div>
+                <img src="{% static 'image/Packing.png' %}" alt="">
+                <a href="{% url 'commandes_list'%}">Commandes</a>
+            </div>
+
+            <div>
+                <img src="{% static 'image/Plus.png' %}" alt="">
+                <a href="{% url 'ajout_produit'%}">Ajouter un produit</a>
+            </div>
+        </div>
+
+        <div>
+            <img src="{% static 'image/Logout.png' %}" alt="">
+            <a href="{% url 'logout'%}">Se déconnecter</a>
+        </div>
+    </nav>
+{% endblock content %}
