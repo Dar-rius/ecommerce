@@ -22,10 +22,11 @@
             {{form.as_p}}
 
             <button type="submit">Modier</button>
-            <a href="">
-                <button>Supprimer</button>
-            </a>
+            
         </form>
+        <a href="{% url 'deleteProd' produit.id%}">
+            <button>Supprimer</button>
+        </a>
     {% endblock content%}
 </body>
 </html>

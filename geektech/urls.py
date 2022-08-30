@@ -33,5 +33,6 @@ urlpatterns = [
     path("administrateur/ajout_produit/", views.ajoutProduct_view, name="ajout_produit"),
     path("administrateur/update_produit/<int:id_produit>/", views.updateProd_view, name="update_produit"),
     path("administrateur/porduits/", views.listProd_view, name="list_prod"),
-    path("administrateur/delete/<int:id_produit>/", views.deleteProd_view, name="delete"),
+    path("administrateur/delete/produit/<int:id_produit>/", views.deleteProd_view, name="deleteProd"),
+    path("administrateur/delete/commande/<int:id_commande>/", views.deleteCommande_view, name="deleteCommande"),
 ]

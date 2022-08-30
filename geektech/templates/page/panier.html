@@ -11,7 +11,10 @@
                     <div>
                         <h4>{{produit.nom_produit}}</h4>
                         <p>tendance</p>
-                        <P>Quantité: {{produit.quantite}}</P>  
+                        <P>Quantité: {{produit.quantite}}</P> 
+                        {% if produit.commander%}
+                        <p class="commander">Produit commander</p>
+                        {%endif%} 
                         <p>Prix: {{produit.pTotal}} FCFA</p> 
                         <div class="bouton">
                             <a href="{% url 'commande' produit.id %}">

@@ -50,15 +50,6 @@ def search_view(request):
     return render(request, "page/search.html", {"produits": produit_seached})
 
 
-#La view du panier pour afficher toutes donnees du panier du User
-@login_required
-def panier_view(request):
-    user = request.user
-    produits_panier = Panier.objects.filter(client=user)
-
-    return render(request, "page/panier.html", {"produits_panier": produits_panier})
-
-
 #view permettant de retirer un produit du panier
 def retire_panier_view(request, produit_panier_id):
     produit = get_object_or_404(Panier, pk=produit_panier_id)
@@ -85,7 +76,7 @@ def propos_view(request):
 @login_required
 def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
-    autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit)
+    autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit).exclude(nom_produit=produit.nom_produit)
 
     if request.method == "POST":
         form = Panier_form(request.POST)
@@ -93,12 +84,13 @@ def detail_view(request, produit_id):
         if form.is_valid():
             quantite_form = form.cleaned_data.get("quantite")
             form_user = request.user
-            search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
 
-            if search_dataPanier:
+            if Panier.objects.filter(client=form_user, nom_produit=produit.nom_produit):
+                search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
                 search_dataPanier.quantite+=quantite_form
                 search_dataPanier.pTotal+= quantite_form*produit.prix_produit
                 search_dataPanier.save()
+                return redirect("panier")
             else: 
                 data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
                 data_panier.save()
@@ -108,6 +100,15 @@ def detail_view(request, produit_id):
     return render(request, "page/detail.html", {"produit": produit,
                                                     "autre_produit": autre_produit,
                                                     "form": form,})
+
+
+#La view du panier pour afficher toutes donnees du panier du User
+@login_required
+def panier_view(request):
+    user = request.user
+    produits_panier = Panier.objects.filter(client=user)
+
+    return render(request, "page/panier.html", {"produits_panier": produits_panier})
 
 
 # La view de la page commande pour effectuer une commande
@@ -121,9 +122,11 @@ def commande_view(request, produit_panier_id):
     if request.method == "POST":
         form_user = request.user
         commande = Commande(client= form_user, nom_produit=produit.nom_produit, pTotal=produit.pTotal, quantite=produit.quantite,
-                            livraison=livraison, total=produit.pTotal+livraison)
+                            livraison=livraison, total=produit.pTotal+livraison, photo_produit=produit.photo_produit)
         produit_selec.quantite_produit -= commande.quantite
         produit_selec.tendance+= 5
+        produit.commander = True
+        produit.save()
         produit_selec.save()
         commande.save()
         send_mail(
@@ -310,3 +313,10 @@ def deleteProd_view(request, id_produit):
     produit = get_object_or_404(Produit, pk=id_produit)
     produit.delete()
     return redirect("list_prod")
+
+
+#view pour delete une commande
+def deleteCommande_view(request, id_commande):
+    commande = get_object_or_404(Commande, pk=id_commande)
+    commande.delete()
+    return redirect("commandes_list")
