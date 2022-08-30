@@ -86,9 +86,16 @@ def detail_view(request, produit_id):
         if form.is_valid():
             quantite_form = form.cleaned_data.get("quantite")
             form_user = request.user
-            data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
-            data_panier.save()
-            return redirect("home")
+            search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
+
+            if search_dataPanier:
+                search_dataPanier.quantite+=quantite_form
+                search_dataPanier.pTotal+= quantite_form*produit.prix_produit
+                search_dataPanier.save()
+            else: 
+                data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
+                data_panier.save()
+                return redirect("home")
 
     form = Panier_form()
     return render(request, "page/detail.html", {"produit": produit,
