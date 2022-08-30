@@ -171,7 +171,11 @@ def login_view(request):
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=email, password=password)
-            if user:
+            if  user.is_staff:
+                print("ce gerant existe")
+                login(request, user)
+                return redirect("dashboard")
+            elif user:
                 print("le user existe")
                 login(request, user)
                 return redirect("home")
