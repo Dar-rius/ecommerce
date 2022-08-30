@@ -126,6 +126,13 @@ def commande_view(request, produit_panier_id):
         produit_selec.tendance+= 5
         produit_selec.save()
         commande.save()
+        send_mail(
+            'Nouvelle commande',
+            f'Une nouvelle commande a ete effectuer par {form_user}',
+            'admin@gmail.com.com', 
+            ['mohamedtine17@gmail.com'],
+            fail_silently=False,
+        )
         return redirect("panier")
 
     return render(request,"page/commande.html", {"produit_panier": produit,
