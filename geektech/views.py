@@ -7,6 +7,13 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
+from django.contrib.auth.forms import PasswordResetForm
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.encoding import force_bytes
 
 
 #Les views pour les parties dont les users peuvent voir
@@ -95,7 +102,7 @@ def detail_view(request, produit_id):
             else: 
                 data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
                 data_panier.save()
-                return redirect("home")
+                return redirect("panier")
 
     form = Panier_form()
     return render(request, "page/detail.html", {"produit": produit,
@@ -119,7 +126,7 @@ def commande_view(request, produit_panier_id):
         produit_selec.tendance+= 5
         produit_selec.save()
         commande.save()
-        return redirect("home")
+        return redirect("panier")
 
     return render(request,"page/commande.html", {"produit_panier": produit,
                                                     "livraison": livraison,
@@ -165,6 +172,37 @@ def login_view(request):
     form = Login_form()
     return render(request, "page/login.html", {"form": form})
 
+
+#Auth pour le changement de mot de passe
+def password_reset_request(request):
+	if request.method == "POST":
+		password_reset_form = PasswordResetForm(request.POST)
+		if password_reset_form.is_valid():
+			data = password_reset_form.cleaned_data['email']
+			associated_users = User.objects.filter(Q(email=data))
+			if associated_users.exists():
+				for user in associated_users:
+					subject = "Password Reset Requested"
+					email_template_name = "main/password/password_reset_email.txt"
+					c = {
+					"email":user.email,
+					'domain':'127.0.0.1:8000',
+					'site_name': 'Website',
+					"uid": urlsafe_base64_encode(force_bytes(user.pk)),
+					'token': default_token_generator.make_token(user),
+					'protocol': 'http',
+					}
+					email = render_to_string(email_template_name, c)
+					try:
+						send_mail(subject, email, 'admin@example.com' , [user.email], fail_silently=False)
+					except BadHeaderError:
+
+						return HttpResponse('Invalid header found.')
+						
+					messages.success(request, 'A message with reset password instructions has been sent to your inbox.')
+					return redirect ("home")
+	password_reset_form = PasswordResetForm()
+	return render(request=request, template_name="main/password/password_reset.html", context={"password_reset_form":password_reset_form})
 
 
 #La view pour afficher les produit de categories "Informatique"
@@ -242,7 +280,6 @@ def ajoutProduct_view(request):
         form = Produit_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect("dashboard")
     else:
         form = Produit_form()
 

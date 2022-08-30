@@ -41,6 +41,7 @@ AUTHENTICATION_BACKENDS = [
     'geektech.backends.CustomerBackend',
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Application definition
 
 INSTALLED_APPS = [
