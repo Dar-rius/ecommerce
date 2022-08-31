@@ -1,6 +1,3 @@
-import email
-from email import message
-from http import client
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produit, User, Panier,Commande
 from .forms import Login_form, User_form, Panier_form, Produit_form
