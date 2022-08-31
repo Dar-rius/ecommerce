@@ -262,6 +262,7 @@ def multimedia_view(request):
 #Les views pour les parties dont l'admin peut voir
 
 #La view pour le dashboard
+@login_required
 def dashboard_view(request):
     if request.user.staff != True:
         return redirect("home")
@@ -273,6 +274,7 @@ def dashboard_view(request):
 
 
 #view pour voir tous les produits
+@login_required
 def listProd_view(request):
     if request.user.staff != True:
         return redirect("home")
@@ -282,6 +284,7 @@ def listProd_view(request):
 
 
 #La view pour les commandes sur les differentes commandes
+@login_required
 def commandeList_view(request):
     if request.user.staff != True:
         return redirect("home")
