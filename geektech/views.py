@@ -263,29 +263,41 @@ def multimedia_view(request):
 
 #La view pour le dashboard
 def dashboard_view(request):
-    commande_count = Commande.objects.all().count()
-    produit_count = Produit.objects.all().count()
-    return render(request, "admin_page/dashboard.html", {"commande_count": commande_count, 
-                                                        "count_prod": produit_count})
+    if request.user.staff != True:
+        return redirect("home")
+    else: 
+        commande_count = Commande.objects.all().count()
+        produit_count = Produit.objects.all().count()
+        return render(request, "admin_page/dashboard.html", {"commande_count": commande_count, 
+                                                            "count_prod": produit_count})
 
 
 #view pour voir tous les produits
 def listProd_view(request):
-    produits = Produit.objects.all()
-    return render(request, "admin_page/produits.html", {"produits": produits})
+    if request.user.staff != True:
+        return redirect("home")
+    else: 
+        produits = Produit.objects.all()
+        return render(request, "admin_page/produits.html", {"produits": produits})
 
 
 #La view pour les commandes sur les differentes commandes
 def commandeList_view(request):
-    commandeList = Commande.objects.all()
-    return render(request, "admin_page/commandes.html", {"command_list": commandeList})
+    if request.user.staff != True:
+        return redirect("home")
+    else: 
+        commandeList = Commande.objects.all()
+        return render(request, "admin_page/commandes.html", {"command_list": commandeList})
 
 
 #view sur les details de la commandes
 def detail_commandes_view(request, id_commande) :
     commande = get_object_or_404(Commande, pk=id_commande)
-    client= User.objects.get(email = commande.client)
-    return render(request, "admin_page/detail_commande.html", {"commande":commande,
+    if request.user.staff != True:
+        return redirect("home")
+    else: 
+        client= User.objects.get(email = commande.client)
+        return render(request, "admin_page/detail_commande.html", {"commande":commande,
                                                                 "client": client})
 
 
