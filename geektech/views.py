@@ -1,4 +1,5 @@
 import email
+from email import message
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produit, User, Panier,Commande
 from .forms import Login_form, User_form, Panier_form, Produit_form
@@ -77,7 +78,7 @@ def propos_view(request):
 def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
     autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit).exclude(nom_produit=produit.nom_produit)
-
+    message =""
     if request.method == "POST":
         form = Panier_form(request.POST)
 
@@ -88,9 +89,12 @@ def detail_view(request, produit_id):
             if Panier.objects.filter(client=form_user, nom_produit=produit.nom_produit):
                 search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
                 search_dataPanier.quantite+=quantite_form
-                search_dataPanier.pTotal+= quantite_form*produit.prix_produit
-                search_dataPanier.save()
-                return redirect("panier")
+                if search_dataPanier.quantite > produit.quantite_produit:
+                    message = "La quantite dans le panier ne doit pas depasser celle du produit"
+                else:
+                    search_dataPanier.pTotal+= quantite_form*produit.prix_produit
+                    search_dataPanier.save()
+                    return redirect("panier")
             else: 
                 data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
                 data_panier.save()
@@ -99,7 +103,8 @@ def detail_view(request, produit_id):
     form = Panier_form()
     return render(request, "page/detail.html", {"produit": produit,
                                                     "autre_produit": autre_produit,
-                                                    "form": form,})
+                                                    "form": form,
+                                                    "message": message})
 
 
 #La view du panier pour afficher toutes donnees du panier du User
