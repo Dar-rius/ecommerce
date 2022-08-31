@@ -23,6 +23,9 @@ urlpatterns = [
     path("multimedia/", views.multimedia_view, name="multimedia"),
     path("search/", views.search_view, name="search"),
 
+    #Auth pour le changement de mot de passe
+    path("password_reset/", views.password_reset_request, name="password_reset"),
+
     #les urls de l'admin
     path("administrateur/dasbord/", views.dashboard_view, name="dashboard"),
     path("administrateur/commandes/", views.commandeList_view, name="commandes_list"),
@@ -30,5 +33,6 @@ urlpatterns = [
     path("administrateur/ajout_produit/", views.ajoutProduct_view, name="ajout_produit"),
     path("administrateur/update_produit/<int:id_produit>/", views.updateProd_view, name="update_produit"),
     path("administrateur/porduits/", views.listProd_view, name="list_prod"),
-    path("administrateur/delete/<int:id_produit>/", views.deleteProd_view, name="delete"),
+    path("administrateur/delete/produit/<int:id_produit>/", views.deleteProd_view, name="deleteProd"),
+    path("administrateur/delete/commande/<int:id_commande>/", views.deleteCommande_view, name="deleteCommande"),
 ]

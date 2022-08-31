@@ -27,3 +27,15 @@
 .secInscrire a {
     text-decoration: none;
 }
+
+.other{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.6%;
+}
+
+.other a {
+    margin-left: 2%;
+    margin-right: 2%;
+}

@@ -16,10 +16,20 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+    #create super user
     def create_superuser(self, email, password, **extra_fields):
        
-        user = self.create_user(email, password, **extra_fields)
-        user.is_admin = True
+        user = self.create_user(email, password)
+        user.admin = True
+        user.staff = True
+        user.save(using=self._db)
+        return user
+
+    #Create staff user
+    def create_staffuser(self, email, password, **extra_fields):
+       
+        user = self.create_user(email, password)
+        user.staff = True
         user.save(using=self._db)
         return user
 
@@ -33,7 +43,8 @@ class User(AbstractBaseUser):
     )
     name = models.CharField(max_length=50)
     firstName = models.CharField(max_length=50)
-    adresse = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    quartier = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False) # a admin user; non super-user
@@ -64,6 +75,12 @@ class User(AbstractBaseUser):
 
     @property
     def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.staff
+
+    @property
+    def is_admin(self):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
@@ -99,6 +116,7 @@ class Panier(models.Model):
     quantite= models.IntegerField(default=0)
     pTotal = models.IntegerField(default=0)
     photo_produit = models.ImageField(upload_to='images_card/')
+    commander = models.BooleanField(default=False)
 
 
 
@@ -110,3 +128,5 @@ class Commande(models.Model):
     quantite = models.IntegerField(default=0)
     livraison = models.IntegerField(default=0)
     total = models.IntegerField(default=0)
+    photo_produit = models.ImageField(upload_to='images_commande/')
+
