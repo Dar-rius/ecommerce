@@ -16,13 +16,16 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+    #create super user
     def create_superuser(self, email, password, **extra_fields):
        
         user = self.create_user(email, password)
-        user.is_admin = True
+        user.admin = True
+        user.staff = True
         user.save(using=self._db)
         return user
 
+    #Create staff user
     def create_staffuser(self, email, password, **extra_fields):
        
         user = self.create_user(email, password)
@@ -75,6 +78,12 @@ class User(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.staff
+
+    @property
+    def is_admin(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
 
 
 #categories de produits
