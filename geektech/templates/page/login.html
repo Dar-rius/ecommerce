@@ -27,6 +27,9 @@
             Si vous avez pas de compte 
             <a href="{% url 'signup' %}">cliquez ici</a>
         </div>
-        <a href="{% url 'logout' %}">Se deconnecter</a>
+        <div class="other">
+            <a href="{% url 'logout' %}">Se deconnecter</a>
+            <a href="{% url 'password_reset' %}">Mot de passe oublier</a>
+        </div>
     </section>
 {% endblock content%}

@@ -24,7 +24,7 @@ urlpatterns = [
     path("search/", views.search_view, name="search"),
 
     #Auth pour le changement de mot de passe
-    path("password_reset", views.password_reset_request, name="password_reset"),
+    path("password_reset/", views.password_reset_request, name="password_reset"),
 
     #les urls de l'admin
     path("administrateur/dasbord/", views.dashboard_view, name="dashboard"),
