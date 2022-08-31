@@ -1,5 +1,6 @@
 import email
 from email import message
+from http import client
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produit, User, Panier,Commande
 from .forms import Login_form, User_form, Panier_form, Produit_form
@@ -286,10 +287,8 @@ def commandeList_view(request):
 #view sur les details de la commandes
 def detail_commandes_view(request, id_commande) :
     commande = get_object_or_404(Commande, pk=id_commande)
-    image_produit = Produit.objects.get(nom_produit = commande.nom_produit)
     client= User.objects.get(email = commande.client)
     return render(request, "admin_page/detail_commande.html", {"commande":commande,
-                                                                "image_produit": image_produit,
                                                                 "client": client})
 
 
@@ -327,5 +326,7 @@ def deleteProd_view(request, id_produit):
 #view pour delete une commande
 def deleteCommande_view(request, id_commande):
     commande = get_object_or_404(Commande, pk=id_commande)
+    panier_user = Panier.objects.get(client=commande.client, nom_produit=commande.nom_produit)
+    panier_user.delete()
     commande.delete()
     return redirect("commandes_list")
