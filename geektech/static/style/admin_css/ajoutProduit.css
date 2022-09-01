@@ -107,8 +107,16 @@ p{
     margin-left: 7%;
 }
 
-.supp{
+.btn{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-left: 30%;
+}
+.supp{
+    width: 110%;
+    height: 8vh;
+    text-decoration: none;
+    padding-right: 2%;
+
 }
