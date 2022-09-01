@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/ajouts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/ajout.css' %}">
 
     <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
+
 
     <title>Document</title>
 </head>
@@ -25,35 +26,35 @@
                     <label for="{{form.nom_produit.id_for_label}}">
                         Nom du produit
                     </label>
-                    <input type="text" name="nom_produit" />
+                    <input type="text" name="nom_produit" class="i1"/>
                 </div>
 
                 <div>
                     <label for="{{form.marque_produit.id_for_label}}">
                         La marque du produit
                     </label>
-                    <input type="text" name="marque_produit" />
+                    <input type="text" name="marque_produit" class="i2"/>
                 </div>
 
                 <div>
                     <label for="{{form.descrip_produit.id_for_label}}">
                         La description du produit
                     </label>
-                    <textarea name="descrip_produit" cols="40" rows="10"></textarea>
+                    <textarea name="descrip_produit" cols="40" rows="10" class="i3"></textarea>
                 </div>
 
                 <div>
                     <label for="{{form.prix_produit.id_for_label}}">
                         Le prix du produit
                     </label>
-                    <input type="number" name="prix_produit" />
+                    <input type="number" name="prix_produit" class="i4"/>
                 </div>
 
                 <div>
                     <label for="{{form.quantite_produit.id_for_label}}">
                         La quantite du produit
                     </label>
-                    <input type="number" name="quantite_produit" />
+                    <input type="number" name="quantite_produit" class="i5"/>
                 </div>
 
                 <div>
@@ -75,10 +76,10 @@
                     <label for="{{form.photo_produit.id_for_label}}">
                         Image du produit
                     </label>
-                    <input type="file" name="photo_produit" accept="image/*" required="" id="id_photo_produit">            
+                    <input type="file" name="photo_produit" accept="image/*" required="" id="id_photo_produit" class="i6">            
                 </div>
 
-                <input type="submit" value="Enregistrer" class="save">
+                <input type="submit" value="Enregistrer" class="save" >
             </form>
         </section>
     {% endblock content%}

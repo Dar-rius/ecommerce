@@ -1,5 +1,4 @@
 body{
-    margin-left: 30%;
     background-color: #F5F3F3;
     font-family: Inter, sans-serif;
 }
@@ -7,12 +6,12 @@ body{
 .haut{
     display: flex;
     align-items: center;
-    margin: 5%;
-    font-size: larger;
+    margin-left: 1%;
+    margin-bottom: 1%;
 }
 
 .haut img{
-    width: 6%;
+    width: 3.5%;
     margin-right: 2%;
 }
 
@@ -32,9 +31,13 @@ body{
 }
 
 p{
-    font-size: large;
+    font-size: 1rem;
 }
 
 span{
     color: #CB4335;
+}
+.commandeProduct{
+    margin-left: 1%;
+    margin-top: 1%;
 }

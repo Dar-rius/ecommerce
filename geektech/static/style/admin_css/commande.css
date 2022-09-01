@@ -1,5 +1,4 @@
 body{
-    margin-left: 30%;
     background-color: #F5F3F3;
     font-family: Inter, sans-serif;
 }
@@ -7,12 +6,12 @@ body{
 .haut{
     display: flex;
     align-items: center;
-    margin: 5%;
+    margin-left: 1%;
     font-size: larger;
 }
 
 .haut img{
-    width: 6%;
+    width: 3%;
     margin-right: 2%;
 }
 
