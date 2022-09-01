@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/ajout.css' %}">  
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/ajoutProduit.css' %}">  
 
     <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
 
@@ -24,7 +24,7 @@
             <button type="submit">Modier</button>
             
         </form>
-        <a href="{% url 'deleteProd' produit.id%}">
+        <a href="{% url 'deleteProd' produit.id%}" class="supp">
             <button>Supprimer</button>
         </a>
     {% endblock content%}
