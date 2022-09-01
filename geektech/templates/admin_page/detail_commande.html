@@ -32,11 +32,10 @@
                     <p>Commander par: <span>{{client.firstName}} {{client.name}}</span></p>
                     <p>Email: <span>{{client.email}}</span></p>
                     <p>Adresse du client: <span>{{client.city}}, {{client.quartier}}</span></p>
+                    <a href="{% url 'deleteCommande' commande.id %}" class="supp">
+                        <button>Traiter</button>
+                    </a>
                 </div>
-
-                <a href="{% url 'deleteCommande' commande.id %}">
-                    <button>Traiter</button>
-                </a>
             </div>
         </section>
     {% endblock content%}
