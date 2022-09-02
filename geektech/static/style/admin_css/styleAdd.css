@@ -114,12 +114,8 @@ p{
     width: 46%
 }
 
-<<<<<<< HEAD:geektech/static/style/admin_css/ajoutProduit.css
-.btn{
-=======
 
 .supp{
->>>>>>> 7c6b5ea (update sur le style du cote admin):geektech/static/style/admin_css/styleAdd.css
     display: flex;
     justify-content: center;
     align-items: center;
