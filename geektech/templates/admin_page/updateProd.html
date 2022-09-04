@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/styleAdd.css' %}">  
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/styleAdds.css' %}">  
 
     <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
 
@@ -38,9 +38,7 @@
                 <label for="{{form.descrip_produit.id_for_label}}">
                     La description du produit
                 </label>
-                <textarea name="descrip_produit" cols="40" rows="10" id="id_descrip_produit">
-                    {{produit.descrip_produit}}
-                </textarea>
+                <textarea name="descrip_produit" cols="38" rows="10" id="id_descrip_produit">{{produit.descrip_produit}}</textarea>
             </div>
 
             <div>

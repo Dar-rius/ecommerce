@@ -63,13 +63,14 @@ select{
 
 .link{
     text-decoration: none;
-    padding: 2%;
+    padding: 2.3%;
+    padding-left: 8%;
+    padding-right: 8%;
     background-color: black;
     color: white;
-    width: 50%;
     border-radius: 20px;
     font-size: 17px;
-
+    margin-left: 2%;
 }
 
 button{
@@ -96,10 +97,7 @@ p{
     width: 46%;
     height: 5vh;
 }
-#id_descrip_produit{
-    width: 46%;
-    height: 10vh;
-}
+
 #id_prix_produit{
     width: 46%;
     height: 5vh;
@@ -120,6 +118,7 @@ p{
     justify-content: center;
     align-items: center;
     margin-left: 30%;
+    margin-right: 2%;
 }
 .supp{
     width: 110%;
