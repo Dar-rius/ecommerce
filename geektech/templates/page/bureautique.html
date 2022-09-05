@@ -22,6 +22,8 @@
                     <p>{{produit.prix_produit}}  FCFA</p>
                 </div>
             </div>
+            {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
             {% endfor %}
         </div>
     </div>

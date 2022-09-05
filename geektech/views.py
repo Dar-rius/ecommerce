@@ -18,7 +18,6 @@ from django.db.models import Min
 
 #Les views pour les parties dont les users peuvent voir
 
-
 #la view pour la page d'accueille
 def index_view(request):
     produit_tendance = Produit.objects.all()

@@ -86,7 +86,7 @@
                 </div>  
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        {% for produit in produit_tendance %}
+                        {%for produit in produit_tendance %}
                             {% if produit.tendance >= 10 %}
                                 <div class="swiper-slide ">
                                     <div class="card" id="card">
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                             {% endif %}
-                    {% endfor %}
+                        {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -134,6 +134,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                         {% endfor %}
                       </div>
                     <div class="swiper-button-next"></div>
@@ -164,6 +166,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
@@ -194,6 +198,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
@@ -224,6 +230,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
@@ -254,6 +262,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
@@ -284,6 +294,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p style="text-align:center">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
