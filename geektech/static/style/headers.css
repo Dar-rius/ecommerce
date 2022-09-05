@@ -8,6 +8,7 @@ header{
     top: 0px;
     z-index: 100;
 }
+
 .corp_haut{
     width: 100%;    
     display: flex;
@@ -15,6 +16,7 @@ header{
     justify-content: center;
     padding: 8px 20px;
 }
+
 .corp_haut form{
     display: flex;
     align-items: center;
@@ -32,7 +34,7 @@ header{
 
 
 header input{
-    width: 50%;
+    width: 90%;
     height: 1em;
     border: none;
     background: transparent;
