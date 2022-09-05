@@ -29,13 +29,13 @@
 
 .bouton a {
     margin-right: 50%;
-}
-
-.bouton button{
-    width: 150%;
-    padding: 5%;
+    text-decoration: none;
     background-color: black;
     color: white;
+    padding: 5%;
+    padding-left: 19%;
+    padding-right: 19%;
+    border-radius: 20px;
 }
 
 .card_produit{
@@ -44,4 +44,8 @@
     justify-content: center;
     font-size: larger;
     font-weight: 400;
+}
+
+.commander{
+    color: #CB4335;;
 }
