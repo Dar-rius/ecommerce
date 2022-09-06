@@ -4,9 +4,10 @@
     <section class="secDetailPrincipal">
         <form method="post" class="secDetail">
             {% csrf_token %}
+            <div class="image">
+                <img src="{{produit.photo_produit.url}}" alt="" class="image1">
+            </div>
 
-            <img src="{{produit.photo_produit.url}}" alt="" class="image1">
-            
             {{form.non_field_errors}}
             <div class="prod_detail">
                 <h2>{{produit.nom_produit}}</h2>

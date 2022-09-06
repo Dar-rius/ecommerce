@@ -1,16 +1,24 @@
 .secDetail{
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    margin-top: 3%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 23%;
+    margin-right: 23%;
     margin-bottom: 3%;
 }
 
+.image{
+    margin: 2%;
+}
+
+.prod_detail{
+    margin: 2%;
+
+}
+
 .image1{
-    width: 27%;
-    height: 360px;
+    height: 270px;
     margin: 2%;
     border: 3px solid #B3B6B7;
     border-radius: 3%;
@@ -20,20 +28,15 @@
 
 .prod_detail button{
     font-size: larger;
-    width: 100%;
     padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     background-color: black;
     color: white;
 }
 
 .classQuantite{
-    width: 100%;
-}
-
-.prod_detail{
-    margin-left: 5%;
-    width: 18%;
-
+    width: 60%;
 }
 
 .quantite{
@@ -80,4 +83,24 @@
     margin-bottom: 5%;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+@media only screen and (max-width: 1300px){
+    .secDetail{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+@media only screen and (max-width: 1150px){
+    .secDetail{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .descrip{
+        margin-right: 10%;
+    }
 }
