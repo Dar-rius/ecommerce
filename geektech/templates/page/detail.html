@@ -47,6 +47,8 @@
                         <p>{{produit.prix_produit}}  FCFA</p>
                     </div>
                 </div>
+                {% empty %}
+                <p>Aucun produit meme categorie</p>
                 {% endfor %}
             </div>
         </div>

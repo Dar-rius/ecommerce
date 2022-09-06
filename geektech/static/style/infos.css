@@ -1,6 +1,5 @@
 .secDetail{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin-left: 23%;
@@ -37,6 +36,7 @@
 
 .classQuantite{
     width: 60%;
+    margin-top: 2%;
 }
 
 .quantite{
@@ -97,6 +97,19 @@
         margin-left: 15%;
         margin-right: 15%;
     }
+}
+
+@media only screen and (max-width: 985px){
+    .secDetail{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image1{
+        margin: 0;
+        height: 250px;
+    }
+
 }
 
 @media only screen and (max-width: 650px){

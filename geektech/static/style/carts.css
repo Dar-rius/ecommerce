@@ -1,13 +1,20 @@
 .panier_body h2{
     margin: 5%;
-    padding-bottom: 5%;
-    margin-bottom: -1%;
 }
 
 .panier_body{
     margin-left: 7%;
     margin-right: 7%;
-    height: 100vh;
+    margin-bottom: 10%;
+}
+
+.imageCommande{
+    margin-right: 2%;
+}
+
+.detailCommande{
+    margin-left: 2%;
+    margin-top: 5%;
 }
 
 .produit{
@@ -17,9 +24,7 @@
 }
 
 .produit img{
-    width: 18%;
     height: 210px;
-    margin-right: 5%;
 }
 
 .bouton{
@@ -28,7 +33,7 @@
 }
 
 .bouton a {
-    margin-right: 50%;
+    margin-right: 7%;
     text-decoration: none;
     background-color: black;
     color: white;
@@ -48,4 +53,32 @@
 
 .commander{
     color: #CB4335;;
+}
+
+@media only screen and (max-width: 780px) {
+    .produit{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .produit img{
+        margin-right: 0px;
+        width: 100%;
+    }
+
+    .imageCommande{
+        margin-right: 0;
+    }
+
+    .detailCommande{
+        margin-left: 0;
+    }
+
+    .bouton{
+        justify-content: center;
+    }
+
+    .bouton a{
+        margin-right: 10px;
+    }
 }
