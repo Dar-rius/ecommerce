@@ -4,21 +4,31 @@ body{
     font-family: Inter, sans-serif;
 }
 
+section{
+    
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
 form{
     margin: 5% 10%;
     text-align: center;
 }
+
+
+
+
 form div{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 3%;    
 }
 
 form label{
     margin-bottom: 0.5%;
     font-size: 1rem;
-    margin-right: 10%;
 }
 
 form input{
@@ -29,7 +39,6 @@ form input{
     font-size: 15px;
     flex-direction: column;
     align-items: start;
-    margin-left: 50px;
 }
 
 .files input{
@@ -52,26 +61,26 @@ select{
     height: 8vh;
 }
 
-.save{
-    text-align: center;
-    padding-left: 12%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+.link{
+    text-decoration: none;
+    padding: 2.3%;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: black;
+    color: white;
     border-radius: 20px;
     font-size: 17px;
-    color: white;
-    background-color: black;
-    margin-left: 15%;
+    margin-left: 2%;
 }
 
 button{
     text-align: center;
-    padding: 1.5%;
+    padding: 2%;
     border-radius: 20px;
     font-size: 17px;
     color: white;
     background-color: black;
-    width: 20%;
+    width: 30%;
 }
 
 p{    
@@ -80,38 +89,36 @@ p{
     align-items: center;
     margin-bottom: 3%;
 }
-.i1{
-   margin-left: 8.5%;
+#id_nom_produit{
    width: 46%;
    height: 5vh;
 }
-.i2{
-    margin-left: 3%;
+#id_marque_produit{
     width: 46%;
     height: 5vh;
-}
-.i3{
-    width: 46%;
-    height: 10vh;
-}
-.i4{
-    width: 46%;
-    height: 5vh;
-}
-.i5{
-    margin-left: 2.5%;
-    width: 46%;
-    height: 5vh;
-}
-.i6{
-    margin-left: 7%;
 }
 
-.btn{
+#id_prix_produit{
+    width: 46%;
+    height: 5vh;
+}
+#id_quantite_produit{
+    width: 46%;
+    height: 5vh;
+}
+
+
+#id_photo_produit{
+    width: 46%
+}
+
+
+.supp{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 30%;
+    margin-right: 2%;
 }
 .supp{
     width: 110%;

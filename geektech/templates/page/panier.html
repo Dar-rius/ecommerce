@@ -10,7 +10,6 @@
                     <img src="{{produit.photo_produit.url}}" alt="">
                     <div>
                         <h4>{{produit.nom_produit}}</h4>
-                        <p>tendance</p>
                         <P>Quantité: {{produit.quantite}}</P> 
                         {% if produit.commander%}
                         <p class="commander">Produit commander</p>
@@ -18,16 +17,18 @@
                         <p>Prix: {{produit.pTotal}} FCFA</p> 
                         <div class="bouton">
                             <a href="{% url 'commande' produit.id %}">
-                                <button>Commander</button>
+                                Commander
                             </a>
 
                             <a href="{% url 'retire' produit.id %}">
-                                <button>Retirer</button>
+                                Retirer
                             </a>
                         </div>                      
                     </div>
                 </div>
                 <hr>
+                {% empty %}
+                            <p style="text-align:center">Votre panier est vide</p>
             {% endfor %}
         </div>
     </section>

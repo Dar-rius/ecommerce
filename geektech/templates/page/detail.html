@@ -12,7 +12,7 @@
                 <h2>{{produit.nom_produit}}</h2>
                 <p class="quantite">Quantité</p>
                 {{form.quantite.error}}
-                <input type="number" name="quantite" placeholder="Preciser la quantite" value={{produit.quantite_produit}} min="1" max="{{produit.quantite_produit}}" class="classQuantite">
+                <input type="number" name="quantite" placeholder="Preciser la quantite" value={{produit.quantite_produit}} min=1 max="{{produit.quantite_produit}}" class="classQuantite">
                 {% if produit.quantite_produit <= 0%}
                     <p class="dispo">Indisponible</p>
                 {% else %}

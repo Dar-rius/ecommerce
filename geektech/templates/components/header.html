@@ -8,14 +8,13 @@
                 style="width: 70%;"/>
             </a>
 
-            <form action="{% url 'search' %}">
+            <form action="{% url 'search' %}" class="search">
                 <img src="{% static 'image/search.png' %}" alt="" class="search-img" style="width: 5%;">
                 <input type="search" placeholder="Rechercher un produit..." aria-label="Search" name="q">
             </form>
             
             <a href="{% url 'panier' %}" class="linkerel">
-                <img src="{% static 'image/achats.png' %}" alt="" 
-                style="width: 75%;">
+                <img src="{% static 'image/achats.png' %}" alt="" style="width: 75%;">
             </a>
         </div>
                 

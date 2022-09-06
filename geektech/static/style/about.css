@@ -1,0 +1,32 @@
+
+#about{
+   text-align: center;
+   width: 100%;
+   height: 130vh;
+   background: url(../image/Rectangle106.png) 100% ;
+}
+
+.cont{
+   padding-top: 15%;  
+}
+
+#about h4{
+    font-size: 2rem;
+    color: white;
+
+ }
+ #about p{
+    padding: 5% 15%;
+    font-size: 1.4rem;
+   color: white;
+ }
+ @media screen and (max-width:480px){
+      #about{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: .5rem;
+         padding-top: 5%;
+      }
+   
+}

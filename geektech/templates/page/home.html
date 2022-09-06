@@ -3,7 +3,7 @@
 
 {% block content%}
     <section class="mainHome">
-        <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{% static 'image/top.png'%}" alt=""></button>
+        <!-- <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{% static 'image/top.png'%}" alt=""></button> -->
         <section id="sec1">
             <nav>
                 <h3>Toutes les categories</h3>
@@ -86,7 +86,7 @@
                 </div>  
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        {% for produit in produit_tendance %}
+                        {%for produit in produit_tendance %}
                             {% if produit.tendance >= 10 %}
                                 <div class="swiper-slide ">
                                     <div class="card" id="card">
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                             {% endif %}
-                    {% endfor %}
+                        {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -134,6 +134,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                         {% endfor %}
                       </div>
                     <div class="swiper-button-next"></div>
@@ -141,7 +143,7 @@
                 </div>
             </section>
     
-            <section class="multimedia">
+            <section class="it">
                 <div class="entete">
                     <img src="{% static 'image/MultimediaPublishing_black.png'%}" alt="" >    
                     <h4>Multimédia</h4>
@@ -164,6 +166,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
@@ -171,7 +175,7 @@
                 </div>
             </section>
     
-            <section class="bureautique">
+            <section class="it">
                 <div class="entete">
                     <img src="{% static 'image/Office_black.png'%}" alt="" >    
                     <h4>Bureautique</h4>
@@ -194,6 +198,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
@@ -201,7 +207,7 @@
                 </div>
             </section>
             
-            <section class="telephone">
+            <section class="it">
                 <div class="entete">
                     <img src="{% static 'image/Mobile_black.png'%}" alt="" >    
                     <h4>Téléphone</h4>
@@ -224,6 +230,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
@@ -231,7 +239,7 @@
                 </div>
             </section>
     
-            <section class="accessoires">
+            <section class="it">
                 <div class="entete">
                     <img src="{% static 'image/ComputerSupport_black.png'%}" alt="" >    
                     <h4>Accessoires informatiques</h4>
@@ -254,6 +262,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p class="nothing">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>
@@ -261,7 +271,7 @@
                 </div>
             </section>
     
-            <section class="jeux">
+            <section class="it">
                 <div class="entete">
                     <img src="{% static 'image/GameController_black.png'%}" alt="" >    
                     <h4>Console et jeux</h4>
@@ -284,6 +294,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% empty %}
+                            <p style="text-align:center">Il y a aucun produit</p>
                     {% endfor %}
                     </div>
                     <div class="swiper-button-next"></div>

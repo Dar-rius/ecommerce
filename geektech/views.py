@@ -13,6 +13,7 @@ from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
+from django.db.models import Min
 
 
 #Les views pour les parties dont les users peuvent voir
@@ -102,7 +103,7 @@ def detail_view(request, produit_id):
     return render(request, "page/detail.html", {"produit": produit,
                                                     "autre_produit": autre_produit,
                                                     "form": form,
-                                                    "message": message})
+                                                    "message": message,})
 
 
 #La view du panier pour afficher toutes donnees du panier du User
