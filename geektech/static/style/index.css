@@ -127,6 +127,17 @@ nav img{
 .it img{
     width: 4.2%;
 }
+
+.entete h4{
+    color:black;
+    font-size: 1.2rem;
+    padding-left:2%;
+}
+.entete img{
+    width: 4.2%;
+}
+
+
 .swiper-button-next{
     padding: 0 20px;
 }
@@ -218,11 +229,6 @@ nav img{
  
 
   /* version mobile*/
-  @media only screen and (max-width: 1300px) {
-
-    
-}
-
 @media only screen and (max-width: 1000px) {
     nav{
         width: 30vh;
@@ -233,6 +239,10 @@ nav img{
     }
 
     .it img{
+        width: 5%;
+    }
+
+    .entete img{
         width: 5%;
     }
 }
@@ -257,6 +267,10 @@ nav img{
     }
 
     .it img{
+        width: 9%;
+    }
+
+    .entete img{
         width: 9%;
     }
 }
