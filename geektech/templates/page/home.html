@@ -317,22 +317,45 @@
         
 
         <script>
-                    var swiper = new Swiper(".mySwiper", {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                    slidesPerGroup: 3,
-                    loop: false,
-                    loopFillGroupWithBlank: true,
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    });
+            function myFunction(x) {
+                    if (x.matches) { // If media query matches
+                        var swiper = new Swiper(".mySwiper", {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                            slidesPerGroup: 1,
+                            loop: false,
+                            loopFillGroupWithBlank: true,
+                            pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    } else {
+                        var swiper = new Swiper(".mySwiper", {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                            slidesPerGroup: 3,
+                            loop: false,
+                            loopFillGroupWithBlank: true,
+                            pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    }
+                }
 
+                        var x = window.matchMedia("(max-width: 870px)")
+                        myFunction(x) // Call listener function at run time
+                        x.addListener(myFunction)
                     
                     var mybutton = document.getElementById("myBtn");
                     window.onscroll = function() {scrollFunction()};        
