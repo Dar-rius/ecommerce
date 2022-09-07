@@ -2,14 +2,14 @@
 {% block content%}
      <header id="header" class="header">
         <div class="corp_haut" id="corp_haut">
-            <a href="{% url 'home'%}" class="linkHome" >
+            <a href="{% url 'home'%}">
                 <img src="{% static 'image/logo.png' %}" alt="" 
                 class="logo"
-                style="width: 75%; padding: 1%;"/>
+                style="width: 70%;"/>
             </a>
 
             <form action="{% url 'search' %}">
-                <img src="{% static 'image/search.png' %}" alt="" class="search-img" style="width: 25px;margin-left: 1%;margin-right: 1%;">
+                <img src="{% static 'image/search.png' %}" alt="" class="search-img" style="width: 5%;">
                 <input type="search" placeholder="Rechercher un produit..." aria-label="Search" name="q">
             </form>
             
@@ -17,6 +17,7 @@
                 <img src="{% static 'image/achats.png' %}" alt="" style="width: 75%;">
             </a>
         </div>
+                
 
         <div>
             <ul class="liste">
@@ -32,32 +33,11 @@
                     <li>Contact</li>
                 </a>
 
-                <a href="{% url 'login' %}" >
+                <a href="{% url 'login' %}" style="margin-left: 3rem;">
                     <li>Se connecter</li> 
                 </a>
             </ul>
-
-        </div>    
-
         </div>
-
-<<<<<<< HEAD
-
-        <script>
-            function myFunction() {
-              var x = document.getElementById("myLinks");
-              if (x.style.display === "block") {
-                x.style.display = "none";
-              } else {
-                x.style.display = "block";
-              }
-            }
-            </script>
-
-=======
-        <!-- mobile menu-->
-        
->>>>>>> b0bf78f (update)
     </header>
 {% endblock content%}
 
