@@ -2,10 +2,10 @@
 {% block content%}
      <header id="header" class="header">
         <div class="corp_haut" id="corp_haut">
-            <a href="{% url 'home'%}">
+            <a href="{% url 'home'%}" class="linkHome" >
                 <img src="{% static 'image/logo.png' %}" alt="" 
                 class="logo"
-                style="width: 70%;"/>
+                style="width: 75%; padding: 1%;"/>
             </a>
 
             <form action="{% url 'search' %}">
@@ -31,11 +31,27 @@
                     <li>Contact</li>
                 </a>
 
-                <a href="{% url 'login' %}" style="margin-left: 3rem;">
+                <a href="{% url 'login' %}" >
                     <li>Se connecter</li> 
                 </a>
             </ul>
+
         </div>    
+
+        </div>
+
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }
+            </script>
+
     </header>
 {% endblock content%}
 

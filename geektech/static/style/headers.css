@@ -82,13 +82,13 @@ header li{
 
 /* média queries */
 
-@media  (max-width: 1077px) {
+@media (max-width: 1077px) {
     #header{
         display: center;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 95px;
+        height: 100px;
     }
     .liste{
         display: none;
