@@ -1,6 +1,5 @@
 
 .container{
-    width: 100vw;
     margin-bottom: 10%;
 }
 
@@ -12,10 +11,11 @@
 }
 
 .commande{
-    width: 31%;
+    width: 45%;
     margin: 1%;
     font-size: larger;
     font-weight: 400;
+
 }
 
 .com{
@@ -50,4 +50,22 @@
 
 .bout{
     width: 70%;
+}
+
+@media only screen and (max-width:995px ){
+    .commande{
+        width: 60%
+    }
+}
+
+@media only screen and (max-width:770px ){
+    .commande{
+        width: 75%
+    }
+}
+
+@media only screen and (max-width:500px ){
+    .commande{
+        width: 85%
+    }
 }

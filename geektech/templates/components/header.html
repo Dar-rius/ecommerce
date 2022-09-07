@@ -8,8 +8,8 @@
                 style="width: 70%;"/>
             </a>
 
-            <form action="{% url 'search' %}" class="search">
-                <img src="{% static 'image/search.png' %}" alt="" class="search-img" style="width: 5%;">
+            <form action="{% url 'search' %}">
+                <img src="{% static 'image/search.png' %}" alt="" class="search-img" style="width: 25px;margin-left: 1%;margin-right: 1%;">
                 <input type="search" placeholder="Rechercher un produit..." aria-label="Search" name="q">
             </form>
             
@@ -17,8 +17,6 @@
                 <img src="{% static 'image/achats.png' %}" alt="" style="width: 75%;">
             </a>
         </div>
-                
-
         <div>
             <ul class="liste">
                 <a href="{% url 'home' %}">
@@ -37,7 +35,7 @@
                     <li>Se connecter</li> 
                 </a>
             </ul>
-        </div>
+        </div>    
     </header>
 {% endblock content%}
 

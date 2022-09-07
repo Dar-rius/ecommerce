@@ -1,0 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.seCat, .researchEle, .contact, .container, .secDetailPrincipal, .secInscrire, .panier_body, .item1{
+    margin-top: 30vh;;
+}

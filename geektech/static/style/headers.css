@@ -8,7 +8,6 @@ header{
     top: 0px;
     z-index: 100;
 }
-
 .corp_haut{
     width: 100%;    
     display: flex;
@@ -78,38 +77,68 @@ header li{
 }
 
 
+
 /* END HEADER */
 
 /* média queries */
-@media screen and (max-width:480px){
-    header{
-        display: flex;
+
+@media  (max-width: 1077px) {
+    #header{
+        display: center;
         align-items: center;
-        justify-content: space-between;
-        font-size: 100%;
+        justify-content: center;
         width: 100%;
-        height: 100px;    
-        margin: 0;  
+        height: 95px;
     }
-    .linkerel,.liste{
+    .liste{
         display: none;
     }
-    header form{
-        width: 100%;
-    }
-    header .search{
-       width: 100%;
-       right: 2%; 
-    }
-   header input{
-    width: 200%;
-    height: auto;
-
+   .logo,.linkerel{
+        display: none;
    }
    .search-img{
-    font-size: 100%;
+    display: block;
+     margin: 2%;
    }
-   .logo{
-    margin-left: -55%;
-   }
+    .corp_haut form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1200px;
+        height: 40px;
+        margin-left: 25%;    
+    }
+    .corp_haut{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-left: -13%;
+    }
+    
+}
+
+@media (max-width: 991px) {
+    .corp_haut{
+        width: 100%;
+        margin-left: -1%;        
+    }    
+    .corp_haut form{
+        margin-left: 1%;
+    }
+    .corp_haut form input{
+       width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .corp_haut{
+        width: 100%;
+        margin-left: -.4rem;        
+    }    
+    .corp_haut form{
+        margin-left: .4rem;
+    }
+    .corp_haut form input{
+       width: 100%;
+    }
 }

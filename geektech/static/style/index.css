@@ -1,10 +1,7 @@
 /* HOME */
-.children{
-    margin-bottom: 20vh;
-}
 
 .mainHome{
-    margin-top: 12%;
+    margin-top: 25vh;
 }
 
 #myBtn {
@@ -40,7 +37,8 @@
 #sec1{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 20vh;
 }
 
 
@@ -49,9 +47,7 @@ nav{
     border-radius: 10px; 
     padding-top: 2.5%;
     padding-bottom: 0.5%;
-    margin-left: 10%;
-    width: 280px;
-    margin-top: 2%;
+    width: 42vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -77,13 +73,11 @@ nav{
 }
 
 #carouselExampleCaptions{
-    width: 58%;
-    margin-right: 100px;    
+    width: 55vw;
 }
 .d-block{
     height: 500px;
     width: 100%;
-    margin-right: 100px;
     margin-top: 2%; 
     border-radius: 10px;   
 }
@@ -117,7 +111,7 @@ nav img{
 .entete{
     display: flex;
     align-items: center;
-    margin-left: 115px;
+    margin-left: 5%;
     margin-top: 100px;
 }
 .it{
@@ -126,11 +120,22 @@ nav img{
 .it h4{
     color:black;
     font-size: 1.2rem;
-    padding-left:10px;
+    padding-left:2%;
 }
 .it img{
     width: 4.2%;
 }
+
+.entete h4{
+    color:black;
+    font-size: 1.2rem;
+    padding-left:2%;
+}
+.entete img{
+    width: 4.2%;
+}
+
+
 .swiper-button-next{
     padding: 0 20px;
 }
@@ -179,6 +184,7 @@ nav img{
     margin-top: 4%;
     margin-bottom: 5%;
 }
+
 .bas p{
     padding-left:10px;
     margin-right:10px;
@@ -202,11 +208,13 @@ nav img{
     align-items: center;
     justify-content: center;
 }
+
  .swiper {
     width: 100%;
     height: 100%;
     padding: 0 75px;
-  }
+}
+
 .swiper-button-next,.swiper-pagination,.swiper-button-prev{
     color:black;
     padding: 0 65px;
@@ -214,9 +222,54 @@ nav img{
 }
 
   .swiper-wrapper{
-    margin: 20px 30px;
+    margin-top: 20px;
   }
  
 
+  /* version mobile*/
+@media only screen and (max-width: 1000px) {
+    nav{
+        width: 30vh;
+    }
 
+    #carouselExampleCaptions{
+        width: 60vw;
+    }
+
+    .it img{
+        width: 5%;
+    }
+
+    .entete img{
+        width: 5%;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    nav{
+        display: none;
+    }
+    
+    #carouselExampleCaptions{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 870px) {
+    .swiper-button-next{
+        display: none;
+    }
+
+    .swiper-button-prev{
+        display: none;
+    }
+
+    .it img{
+        width: 9%;
+    }
+
+    .entete img{
+        width: 9%;
+    }
+}
 /* END HOME */

@@ -7,8 +7,10 @@
         <div class="card_produit">
             {% for produit in produits_panier %}
                 <div class="produit">
-                    <img src="{{produit.photo_produit.url}}" alt="">
-                    <div>
+                    <div class="imageCommande">
+                        <img src="{{produit.photo_produit.url}}" alt="">
+                    </div>
+                    <div class="detailCommande">
                         <h4>{{produit.nom_produit}}</h4>
                         <P>Quantité: {{produit.quantite}}</P> 
                         {% if produit.commander%}
