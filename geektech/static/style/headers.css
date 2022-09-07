@@ -8,6 +8,10 @@ header{
     top: 0px;
     z-index: 100;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of adff857 (responsive header)
 .corp_haut{
     width: 100%;    
     display: flex;
@@ -77,6 +81,7 @@ header li{
 }
 
 
+<<<<<<< HEAD
 
 /* END HEADER */
 
@@ -142,3 +147,6 @@ header li{
        width: 100%;
     }
 }
+=======
+/* END HEADER */
+>>>>>>> parent of adff857 (responsive header)
