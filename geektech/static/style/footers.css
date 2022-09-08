@@ -12,6 +12,7 @@ footer li{
     font-size: .92rem;
 }
 
+
 .sect img{
     width: 45px;
     padding: .6rem 0px;
@@ -42,9 +43,11 @@ li{
 .sect{
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding: 30px 0;
+    padding-top: 5%;
 
 }
 .last{
@@ -59,7 +62,35 @@ li{
 
 }
 .part3{
-    margin-top: -88px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+
+.part2{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+
+.part1{
+    margin-top: -30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+
+@media only screen and (max-width:800px) {
+    .part3{
+        margin-top: 0px;
+    }
+
+    .part1 img{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        padding: auto;
+    }
 }
 
 /* END FOOTER */
