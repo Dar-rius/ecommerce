@@ -1,0 +1,86 @@
+.secInscrire{
+    text-align: center;
+    margin-bottom: 20vh;
+}
+
+.formSignup div{
+    margin: 2%;
+
+}
+
+.formSignup input{
+    width: 30%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+}
+
+.sign{
+    background-color: black;
+    color: white;
+    margin-bottom: 2%;
+}
+
+.cas a{
+    text-decoration: none;
+}
+
+.secInscrire a {
+    text-decoration: none;
+}
+
+.other{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.6%;
+}
+
+.other a {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+@media screen and (max-width: 1100px) {
+    .formSignup input{
+        width: 40%;
+    }
+
+    .formSignup div{
+        margin: 3%;
+    
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .formSignup input{
+        width: 50%;
+    }
+
+    .formSignup div{
+        margin: 3%;
+    
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .formSignup input{
+        width: 70%;
+    }
+
+    .formSignup div{
+        margin: 4%;
+    
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .formSignup input{
+        width: 90%;
+    }
+
+    .formSignup div{
+        margin: 5%;
+    
+    }
+}

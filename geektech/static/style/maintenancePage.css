@@ -1,12 +1,13 @@
 
 #about{
+   position: relative;
    text-align: center;
    width: 100%;
    height: 130vh;
-   background: url(../image/Rectangle106.png) ;
+   background: url(../image/Rectangle106.png);
    background-size: cover;
+   bottom: 0;
 }
-
 .cont{
    padding-top: 160px;  
    text-align: center;
