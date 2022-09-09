@@ -1,27 +1,14 @@
 {% load static %}
 {% block content%}
-     <header id="header" class="header">
-        <div class="corp_haut" id="corp_haut">
+    <header>
+        <div class="logo">
             <a href="{% url 'home'%}">
-                <img src="{% static 'image/logo.png' %}" alt="" 
-                class="logo"
-                style="width: 70%;"/>
-            </a>
-
-            <form action="{% url 'search' %}">
-                <img src="{% static 'image/search.png' %}" alt="" class="search-img" style="width: 5%;">
-                <input type="search" placeholder="Rechercher un produit..." aria-label="Search" name="q">
-            </form>
-            
-            <a href="{% url 'panier' %}" class="linkerel">
-                <img src="{% static 'image/achats.png' %}" alt="" style="width: 75%;">
+                <img src="{% static 'image/logo.png' %}" alt="" style="width: 50%;"/>
             </a>
         </div>
-                
-
-        <div>
-            <ul class="liste">
-                <a href="{% url 'home' %}">
+        <div class="liste">
+            <ul>
+                <a href="{% url 'home' %}" class="active">
                     <li>Acceuil</li>
                 </a>
 
@@ -33,12 +20,95 @@
                     <li>Contact</li>
                 </a>
 
-                <a href="{% url 'login' %}" style="margin-left: 3rem;">
+                <a href="{% url 'login' %}" >
                     <li>Se connecter</li> 
                 </a>
             </ul>
         </div>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="{% url 'panier' %}" class="fas fa-shopping-cart"></a>
+        </div>
+        <!-- search form  -->
+        <form action="{% url 'search' %}" id="search-form">
+            <input type="search" placeholder="Rechercher un produit.."aria-label="Search" name="q" id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+            <i class="fas fa-times" id="close"></i>
+        </form>
+
+
+
     </header>
+ <!-- header fin -->
+ <!-- header js début -->
+ <script>
+    let menu = document.querySelector('#menu-bars');
+    let liste = document.querySelector('.liste');
+
+menu.onclick = () =>{
+  menu.classList.toggle('fa-times');
+  liste.classList.toggle('active');
+}
+
+let section = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header .liste a');
+
+window.onscroll = () =>{
+
+  menu.classList.remove('fa-times');
+  liste.classList.remove('active');
+
+  section.forEach(sec =>{
+
+    let top = window.scrollY;
+    let height = sec.offsetHeight;
+    let offset = sec.offsetTop - 150;
+    let id = sec.getAttribute('id');
+
+    if(top >= offset && top < offset + height){
+      navLinks.forEach(links =>{
+        links.classList.remove('active');
+        document.querySelector('header .liste a[href*='+id+']').classList.add('active');
+      });
+    };
+
+  });
+
+}
+
+document.querySelector('#search-icon').onclick = () =>{
+  document.querySelector('#search-form').classList.toggle('active');
+}
+
+document.querySelector('#close').onclick = () =>{
+  document.querySelector('#search-form').classList.remove('active');
+}
+
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock content%}
 
 
