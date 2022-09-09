@@ -152,8 +152,8 @@ header .icons #menu-bars{
 
   header .liste a{
       display: block;
-      padding:1.5rem;
-      margin:1rem;
+      padding: .3rem;
+      margin: 1rem;
       font-size: 2rem;
       flex-direction: column;
 

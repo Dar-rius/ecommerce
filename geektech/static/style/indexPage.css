@@ -73,7 +73,7 @@ nav{
 }
 
 #carouselExampleCaptions{
-    width: 55vw;
+    width: 58vw;
 }
 .d-block{
     height: 500px;
@@ -233,7 +233,7 @@ nav img{
     }
 
     #carouselExampleCaptions{
-        width: 60vw;
+        width: 70vw;
     }
 
     .it img{
@@ -270,6 +270,39 @@ nav img{
 
     .entete img{
         width: 9%;
+    }
+}
+
+@media only screen and (max-width:750px){
+    .d-block{
+        height: 400px;
+    }
+
+    #carouselExampleCaptions{
+        width: 95%;
+    }
+} 
+
+
+@media only screen and (max-width:500px){
+    .d-block{
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .d-block{
+        height: 250px;
+    }
+
+    #card a img{ 
+        width: 100%;
+        height: 165px;
+        padding: 0.5%;
+    }
+
+    #sec1{
+        margin-bottom: 10vh;
     }
 }
 /* END HOME */

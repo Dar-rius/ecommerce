@@ -17,7 +17,7 @@
 }
 
 .image1{
-    height: 270px;
+    height: 300px;
     margin: 2%;
     border: 3px solid #B3B6B7;
     border-radius: 3%;
@@ -28,10 +28,9 @@
 .prod_detail button{
     font-size: larger;
     padding: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
     background-color: black;
     color: white;
+    width: 100%;
 }
 
 .classQuantite{
@@ -104,7 +103,6 @@
         flex-direction: column;
         text-align: center;
     }
-
     .image1{
         margin: 0;
         height: 250px;
