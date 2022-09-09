@@ -1,35 +1,83 @@
 {% load static %}
 {% block content %}
     <aside class="nav_admin">
-        <a href="/">
-            <img src="{% static 'image/logo.png' %}" alt="" class="logo" style="width: 35%;">
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+        </div>
+
+        <a href="/" class="logoLink">
+            <img src="{% static 'image/logo.png' %}" alt="" class="logo" style="width: 120px;">
         </a>
 
-        <div>
-            <div class="element1">
-                <img src="{% static 'image/Home.png' %}" alt="">
-                <a href="{% url 'dashboard'%}">Dashboard</a>
+        <div class="liste">
+            <div>
+                <div class="element1">
+                    <img src="{% static 'image/Home.png' %}" alt="">
+                    <a href="{% url 'dashboard'%}">Dashboard</a>
+                </div>
+    
+                <div class="element1">
+                    <img src="{% static 'image/Product.png' %}" alt="">
+                    <a href="{% url 'list_prod'%}">Produits</a>
+                </div>
+    
+                <div class="element1">
+                    <img src="{% static 'image/Packing.png' %}" alt="">
+                    <a href="{% url 'commandes_list'%}">Commandes</a>
+                </div>
+    
+                <div class="element1">
+                    <img src="{% static 'image/Plus.png' %}" alt="">
+                    <a href="{% url 'ajout_produit'%}">Ajouter un produit</a>
+                </div>
+            </div>
+    
+            <div class="element2">
+                <img src="{% static 'image/Logout.png' %}" alt="">
+                <a href="{% url 'logout'%}">Se déconnecter</a>
             </div>
 
-            <div class="element1">
-                <img src="{% static 'image/Product.png' %}" alt="">
-                <a href="{% url 'list_prod'%}">Produits</a>
-            </div>
-
-            <div class="element1">
-                <img src="{% static 'image/Packing.png' %}" alt="">
-                <a href="{% url 'commandes_list'%}">Commandes</a>
-            </div>
-
-            <div class="element1">
-                <img src="{% static 'image/Plus.png' %}" alt="">
-                <a href="{% url 'ajout_produit'%}">Ajouter un produit</a>
-            </div>
         </div>
 
-        <div class="element2">
-            <img src="{% static 'image/Logout.png' %}" alt="">
-            <a href="{% url 'logout'%}">Se déconnecter</a>
-        </div>
+        <script>
+            let menu = document.querySelector('#menu-bars');
+            let liste = document.querySelector('.liste');
+
+            menu.onclick = () =>{
+            menu.classList.toggle('fa-times');
+            liste.classList.toggle('active');
+            }
+
+            let section = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('aside .liste a');
+
+            window.onscroll = () =>{
+
+            menu.classList.remove('fa-times');
+            liste.classList.remove('active');
+
+            section.forEach(sec =>{
+
+                let top = window.scrollY;
+                let height = sec.offsetHeight;
+                let offset = sec.offsetTop - 150;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height){
+                navLinks.forEach(links =>{
+                    links.classList.remove('active');
+                    document.querySelector('aside .liste a[href*='+id+']').classList.add('active');
+                });
+                };
+            });
+            }
+            document.querySelector('#search-icon').onclick = () =>{
+  document.querySelector('#search-form').classList.toggle('active');
+}
+
+document.querySelector('#close').onclick = () =>{
+  document.querySelector('#search-form').classList.remove('active');
+}
+        </script>
     </aside>
 {% endblock content %}

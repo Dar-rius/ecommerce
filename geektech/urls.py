@@ -27,7 +27,7 @@ urlpatterns = [
     path("password_reset/", views.password_reset_request, name="password_reset"),
 
     #les urls de l'admin
-    path("administrateur/dasbord/", views.dashboard_view, name="dashboard"),
+    path("administrateur/dashboard/", views.dashboard_view, name="dashboard"),
     path("administrateur/commandes/", views.commandeList_view, name="commandes_list"),
     path("administrateur/commandes/detail/<int:id_commande>/", views.detail_commandes_view, name="detail_commande"),
     path("administrateur/ajout_produit/", views.ajoutProduct_view, name="ajout_produit"),

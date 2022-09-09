@@ -1,7 +1,6 @@
 /* FOOTER */
 
 footer{   
-    margin-top: 100px;
     height: 20%;
     width: 100%;
     background: hsl(0, 0%, 95%);
@@ -25,11 +24,7 @@ footer li{
 }
 
 .social > img{
-<<<<<<< HEAD
     width: 50%;
-=======
-    width: %;
->>>>>>> 22639ede9759332a97f2bfeeb20a22c836d4285a
 }
 .part1 img{
     width: 60%;
