@@ -1,4 +1,4 @@
-header{
+aside{
     position: fixed;
     top:0; left:0; bottom:0;
     background:#fff;
@@ -12,13 +12,13 @@ header{
     text-align: center;
     font-family: Inter, sans-serif;
 }
-header .logo{
+aside .logo{
     margin-top: -90px;
 }
-header .navbar a:hover{
+aside .navbar a:hover{
     color: blue;
 }
-header .navbar a{
+aside .navbar a{
     display: flex;
     align-items: center;
     justify-content: left;
@@ -28,7 +28,7 @@ header .navbar a{
     text-decoration: none;
     font-weight: none;
 }
-header .navbar{
+aside .navbar{
     padding-top: 65px;
     flex-flow: column;
     text-align: left;
@@ -49,14 +49,17 @@ header .navbar{
     display: none;
     margin-right: 1rem;
 }
-@media (max-width:1275px){
+
+@media screen and (max-width: 980px) {
+    aside{
+        width: 21%
+    }
+}
+
+@media (max-width:650px){
 
     html{
         font-size: 60%;
-    }
-    
-    body{
-        padding: 0;
     }
 
     #menu-bars{
@@ -64,25 +67,50 @@ header .navbar{
         font-size: 1.4rem;
     }
 
-    header{
+    aside{
+        width:100%;
         left:-120%;
+        bottom: 0%;
         padding-top: 12rem;
+        padding: auto;
+        padding-left: 0%;
+        padding-bottom: 0%;
     }
     
-    header.active{
+    .logo{
+        display: none;
+    }
+
+    aside .navbar a{
+        margin-bottom: 10%;
+        font-size: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20%;
+    }
+
+    aside .navbar{
+        padding-top: 2%;
+        text-align: center;
+    }
+
+    .navbar .second{
+        padding-top: 0px;
+      }
+    
+    aside.active{
         left:0%;
+    }
+
+    .navbar img{
+        display: none;
     }
 
 }
 @media (max-width:450px){
 
     html{
-        font-size: 80%;
-    }
-
-    header{
-        width:100%;
-        font-size: 100%;
-        padding-top: 9rem;
+        font-size: 70%;
     }
 }

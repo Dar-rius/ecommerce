@@ -1,7 +1,7 @@
 {% load static %}
 {% block content %}
 <div id="menu-bars" class="fas fa-bars"></div>
-<header>
+<aside>
 
     <a href="/" class="logo">
         <img src="{% static 'image/logo.png' %}" alt="" style="width: 99px;">
@@ -15,19 +15,19 @@
         <a href="{% url 'logout'%}" class="second"><img src="{% static 'image/Logout.png' %}" alt="" style="width: 30px;padding-right: 10px;text-align: center;">Se déconnecter</a>       
     </nav>
 
-</header>
+</aside>
 <script>
     let menu = document.querySelector('#menu-bars');
-    let header = document.querySelector('header');
+    let aside = document.querySelector('aside');
 
     menu.onclick = () =>{
         menu.classList.toggle('fa-times');
-        header.classList.toggle('active');
+        aside.classList.toggle('active');
     }
 
     window.onscroll = () =>{
         menu.classList.remove('fa-times');
-        header.classList.remove('active');
+        aside.classList.remove('active');
     }
 </script>
 {% endblock content %}
