@@ -52,7 +52,7 @@ header .navbar{
 @media (max-width:1275px){
 
     html{
-        font-size: 55%;
+        font-size: 60%;
     }
     
     body{
@@ -66,8 +66,7 @@ header .navbar{
 
     header{
         left:-120%;
-        padding-top: 15rem;
-
+        padding-top: 12rem;
     }
     
     header.active{
