@@ -1,126 +1,89 @@
-.logo{
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.element1, .element2{
+header{
+    position: fixed;
+    top:0; left:0; bottom:0;
+    background:#fff;
     display: flex;
     align-items: center;
-    margin-left: 22%;
-    font-weight: none;
-}
-
-.element2{
-    position: absolute;
-    bottom: 10%; 
-}
-
-.element1{
-    margin-bottom: 6%;
-}
-
-.element1 img{
-    width: 30px;
-    margin-right: 3%;
-}
-
-.element2 img{
-    width: 17%;
-    margin-right: 3%;
-}
-
-.nav_admin a{
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    padding: 1.5%;
-    display: block;
-    font-weight: none;
-    font-size: 1.2rem;
-}
-
-.nav_admin{
+    justify-content: space-between;
+    z-index: 1000;
+    flex-flow: column;
+    padding:8rem 2rem;
+    width:15rem;
     text-align: center;
-    height: 100%;
-    width: 25%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-    background-color: #ffffff;
     font-family: Inter, sans-serif;
-    font-size: .5rem;
 }
-
-aside .icons i,
-aside .icons a{
-    cursor: pointer;
-    margin-left: .5rem;
-    height:4.5rem;
-    line-height: 4.5rem;
-    width: 2.5rem;
-    text-align: center;
-    font-size: 1.5rem;
-    color:var(--black);
+header .logo{
+    margin-top: -90px;
 }
-
-aside .icons i:hover,
-aside .icons a:hover{
+header .navbar a:hover{
     color: blue;
-    transform: rotate(360deg);
 }
-
-aside .icons #menu-bars{
+header .navbar a{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1.1rem;
+    color:black;
+    margin-bottom:2rem ;
+    text-decoration: none;
+    font-weight: none;
+}
+header .navbar{
+    padding-top: 65px;
+    flex-flow: column;
+    text-align: left;
+}
+.navbar .second{
+  padding-top: 110px;
+}
+#menu-bars{
+    position: fixed;
+    top:1rem; right: 1rem;
+    z-index: 10000;
+    background: black;
+    color:#fff;
+    border-radius: .5rem;
+    padding:1rem 1.5rem;
+    font-size: 3rem;
+    cursor:pointer;
     display: none;
+    margin-right: 1rem;
 }
+@media (max-width:1275px){
 
-@media screen and (max-width: 1050px) {
-    .element1, .element2{
-        margin-left: 13%;
+    html{
+        font-size: 55%;
     }
+    
+    body{
+        padding: 0;
+    }
+
+    #menu-bars{
+        display: initial;
+        font-size: 1.4rem;
+    }
+
+    header{
+        left:-120%;
+        padding-top: 15rem;
+
+    }
+    
+    header.active{
+        left:0%;
+    }
+
 }
+@media (max-width:450px){
 
-/* 900px */
-
-@media screen and (max-width:900px) {
-
-    a.logoLink , .element1 img, .element2 img{
-        display: none;
+    html{
+        font-size: 80%;
     }
 
-    aside .icons #menu-bars{
-        display: inline-block;
-    }
-  
-    aside .liste a {
-      flex-direction: column;
-      padding: 1rem;
-    }
-  
-    aside .liste{
-        position: absolute;
-        top:100%; left:0; right:0;
-        background:#fff;
-        border-top: .1rem solid rgba(0,0,0,.2);
-        border-bottom: .1rem solid rgba(0,0,0,.2);
-        padding:1rem;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-  
-    aside .liste.active{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
-  
-    aside .liste a{
-        display: block;
-        padding: .3rem;
-        margin: 1rem;
-        font-size: 2rem;
-        flex-direction: column;
-  
+    header{
+        width:100%;
+        font-size: 100%;
+        padding-top: 9rem;
     }
 }
-

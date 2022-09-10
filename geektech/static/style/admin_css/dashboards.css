@@ -1,13 +1,15 @@
 body{
-    margin-left: 30%;
     background-color: #F5F3F3;
     font-family: Inter, sans-serif;
+    padding-left: 30%;
+    
 }
-
 .cardSec{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+   
 }
 
 .card1{
@@ -18,7 +20,7 @@ body{
     background-color: #ffff;
     margin: 5%;
     border-radius: 15px ;
-    width: 60%;
+    width: 25%;
 }
 h2{
     color: #80BC71;
@@ -28,4 +30,13 @@ h2{
 }
 .card1 p{
     font-size: 1rem;
+}
+
+@media (max-width:1275px){
+   
+   
+}
+@media (max-width:450px){
+
+
 }
