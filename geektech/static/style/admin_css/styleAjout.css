@@ -127,3 +127,83 @@ p{
     padding-right: 2%;
 
 }
+
+@media only screen and (max-width:900px){
+    section {
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 10%;
+
+    }
+
+    form{
+        margin-bottom: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width:650px){
+
+    p{
+        font-size: 1.8rem;
+    }
+
+    body{
+        margin-left: 0px;
+    }
+
+    section{
+        margin-top: 5%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    form label{
+        font-size: 1.8rem;
+        margin-bottom: 2%;
+    }
+
+    form div{
+        flex-direction: column;
+        margin-bottom: 6%;
+    }
+
+    #id_nom_produit{
+        width: 65%;
+        height: 4vh;
+     }
+     #id_marque_produit{
+         width: 65%;
+         height: 4vh;
+     }
+     
+     #id_prix_produit{
+         width: 65%;
+         height: 4vh;
+     }
+     #id_quantite_produit{
+         width: 65%;
+         height: 4vh;
+     }
+     
+     #id_cat_produit{
+        height: 4vh;
+     }
+
+     #id_photo_produit{
+        width: auto;
+     }
+
+     .files {
+        justify-content: center;
+     }
+}
+
+
+@media only screen and (max-width:500px){
+    button{
+        width: 40%;
+        height: 15%;
+    }
+}

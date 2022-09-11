@@ -8,6 +8,7 @@
     </a>
 
     <nav class="navbar">
+        <a href="{% url 'home'%}"  id="accueil"> Accueil</a>
         <a href="{% url 'dashboard'%}"> <img src="{% static 'image/Home.png' %}" alt="" style="width: 30px;padding-right: 10px;text-align: center;">Dashboard</a>
         <a href="{% url 'list_prod'%}"><img src="{% static 'image/Product.png' %}" alt="" style="width: 30px;padding-right: 10px;text-align: center;">Produits</a>
         <a href="{% url 'commandes_list'%}"> <img src="{% static 'image/Packing.png' %}" alt="" style="width: 30px;padding-right: 10px;text-align: center;">Commandes</a>

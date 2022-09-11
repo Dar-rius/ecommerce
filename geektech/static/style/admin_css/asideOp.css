@@ -50,6 +50,10 @@ aside .navbar{
     margin-right: 1rem;
 }
 
+#accueil{
+    display: none;
+}
+
 @media screen and (max-width: 980px) {
     aside{
         width: 21%
@@ -105,6 +109,10 @@ aside .navbar{
 
     .navbar img{
         display: none;
+    }
+
+    #accueil{
+        display: block;
     }
 
 }
