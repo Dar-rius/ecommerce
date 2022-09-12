@@ -24,46 +24,45 @@
             {% csrf_token %}
 
             <div>
-                <label for="{{form.nom_produit.id_for_label}}">
+                <label for="id_nom_produit">
                     Nom du produit
                 </label>
                 <input type="text" name="nom_produit" value="{{produit.nom_produit}}" id="id_nom_produit"/>
             </div>
 
             <div>
-                <label for="{{form.marque_produit.id_for_label}}">
+                <label for="id_marque_produit">
                     La marque du produit
                 </label>
                 <input type="text" name="marque_produit" value="{{produit.marque_produit}}" id="id_marque_produit"/>
             </div>
 
             <div>
-                <label for="{{form.descrip_produit.id_for_label}}">
+                <label for="id_descrip_produit">
                     La description du produit
                 </label>
                 <textarea name="descrip_produit" cols="38" rows="10" id="id_descrip_produit">{{produit.descrip_produit}}</textarea>
             </div>
 
             <div>
-                <label for="{{form.prix_produit.id_for_label}}">
+                <label for="id_prix_produit">
                     Le prix du produit
                 </label>
                 <input type="number" name="prix_produit" value="{{produit.prix_produit}}" id="id_prix_produit"/>
             </div>
 
             <div>
-                <label for="{{form.quantite_produit.id_for_label}}">
+                <label for="id_quantite_produit">
                     La quantite du produit
                 </label>
                 <input type="number" name="quantite_produit" value="{{produit.quantite_produit}}" id="id_quantite_produit"/>
             </div>
 
             <div>
-                <label for="{{form.cat_produit.id_for_label}}">
+                <label for="id_cat_produit">
                     La categorie du produit
                 </label>
                 <select name="cat_produit" id="id_cat_produit">
-                    <option value selected>Neutre</option>
                     <option value="Informatique">Informatique</option>
                     <option value="Bureautique">Bureautique</option>  
                     <option value="Telephone">Telephone</option>
@@ -74,13 +73,13 @@
             </div>
 
             <div class="files">
-                <label for="{{form.photo_produit.id_for_label}}">
+                <label for="id_photo_produit">
                     Image du produit
                 </label>
                 <article class="recentFile">
                     <p>le recent fichier: <a href="">{{produit.photo_produit.url}}</a></p> <br>
                     <p>Changer d'image: </p>
-                    <input type="file" name="photo_produit" accept="image/*" id="id_photo_produit" >            
+                    <input type="file" name="photo_produit" accept="image/*" id="id_photo_produit">           
                 </article>
             </div>
 

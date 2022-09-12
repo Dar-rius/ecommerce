@@ -5,7 +5,6 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import AuthenticationForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.contrib.auth.forms import PasswordResetForm
@@ -13,8 +12,7 @@ from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
-from django.db.models import Min
-
+import os
 
 #Les views pour les parties dont les users peuvent voir
 
@@ -321,12 +319,21 @@ def ajoutProduct_view(request):
 def updateProd_view(request, id_produit):
  
     produit = get_object_or_404(Produit, pk= id_produit)
-    form = Produit_form(request.POST or None, instance = produit)
-    if form.is_valid():
-        form.save()
+    if request.method == "POST":
+        if len(request.FILES) != 0:
+            if len(produit.photo_produit) > 0:
+                os.remove(produit.photo_produit.path)
+            produit.photo_produit = request.FILES['photo_produit']
+        produit.nom_produit = request.POST.get("nom_produit")
+        produit.marque_produit = request.POST.get("marque_produit")
+        produit.descrip_produit = request.POST.get("descrip_produit")
+        produit.prix_produit = request.POST.get("prix_produit")
+        produit.quantite_produit = request.POST.get("quantite_produit")
+        produit.cat_produit = request.POST.get("cat_produit")
+        produit.save()
         return redirect("list_prod")
 
-    return render(request, "admin_page/updateProd.html", {"form": form, "produit": produit})
+    return render(request, "admin_page/updateProd.html", { "produit": produit})
 
 
 #view pour delete un produit
