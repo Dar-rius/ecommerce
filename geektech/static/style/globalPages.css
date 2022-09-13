@@ -12,3 +12,11 @@
         margin-top: 20vh;
     }  
 }
+
+
+@media screen and (max-width: 700px) {
+    .seCat, .researchEle, .contact, .container, .secDetailPrincipal, .secInscrire, .panier_body, .item1{
+        margin-top: 18vh;
+    }  
+}
+

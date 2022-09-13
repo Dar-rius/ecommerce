@@ -21,6 +21,8 @@
     border-radius: 4px;
 }
 
+
+
 .fa-arrow-up-to-line{
     color:#ffff;
 }
@@ -225,7 +227,6 @@ nav img{
   .swiper-wrapper{
     margin-top: 20px;
   }
- 
 
   /* version mobile*/
 @media only screen and (max-width: 1000px) {
@@ -282,7 +283,21 @@ nav img{
     #carouselExampleCaptions{
         width: 95%;
     }
-} 
+
+    .d-md-block h5, .d-md-block p{
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .d-md-block h5, .d-md-block p{
+        font-size: 1em;
+    }
+
+    .carousel-caption{
+        bottom: auto;
+    }
+}
 
 
 @media only screen and (max-width:500px){
