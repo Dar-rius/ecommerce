@@ -121,7 +121,7 @@ header .icons #menu-bars{
   }
 }
 
-@media (max-width:1025px){
+@media (max-width:970px){
 
   header .icons #menu-bars{
       display: inline-block;

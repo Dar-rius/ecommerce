@@ -4,7 +4,7 @@
 }
 
 .seCat, .researchEle, .contact, .container, .secDetailPrincipal, .secInscrire, .panier_body, .item1{
-    margin-top: 30vh;
+    margin-top: 25vh;
 }
 
 @media screen and (max-width: 1300px) {
