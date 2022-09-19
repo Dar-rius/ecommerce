@@ -9,6 +9,7 @@ body{
     align-items: center;
     margin-left: 1%;
     font-size: larger;
+    margin-top: 5%;
 }
 
 .haut img{
@@ -28,3 +29,24 @@ body{
     color: black;
     font-size: 23px;
 }
+
+@media only screen and (max-width:650px){
+    body{
+        margin-left: 0px;
+    }
+
+    .haut{
+        margin-top: 15%;
+        font-size: 1.5rem;
+    }
+
+    .haut img{
+        width: 3rem;
+    }
+ 
+    .commandeProduct{
+     font-size: 1.5rem;
+    }
+
+    
+ }

@@ -51,3 +51,44 @@ button{
     background-color: black;
     width: 60%;
 }
+
+@media only screen and (max-width:650px){
+
+    body{
+        margin-left: 0px;
+    }
+
+    .detail{
+        flex-direction: column;
+        width: auto;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .detail p{
+        font-size: 1.7rem;
+    }
+
+    .haut{
+        margin-top: 10%;
+        margin-bottom: 3%;
+    }
+
+    .textCommande{
+        text-align: center;
+    }
+
+    .haut p{
+        font-size:1.7rem ;
+    }
+
+    .haut img{
+        width: 4rem;
+    }
+
+    .commandeImage {
+        width: 52%;
+        height: 240px;
+        margin-bottom: 5%;
+    }
+}

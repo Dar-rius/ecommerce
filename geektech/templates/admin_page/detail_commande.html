@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/aside.css' %}">
+     <!-- API de font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+     <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/asideOp.css' %}">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/detailCommande.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style/admin_css/detailCommands.css' %}">
 
     <title>Document</title>
 </head>
@@ -25,7 +28,7 @@
             <div class="detail">
                 <img src="{{commande.photo_produit.url}}" alt="" class="commandeImage">
                 
-                <div >
+                <div class="textCommande">
                     <p>Le produit a été commandé</p>
                     <p>prix du produit: <span>{{commande.total}} FCFA</span></p>
                     <p>Nom du produit: <span>{{commande.nom_produit}}</span></p>
