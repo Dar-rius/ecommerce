@@ -1,7 +1,7 @@
 header{
     position: fixed;
     top:0; left: 0; right:0;
-    background-color:  black;
+    background-color:  #1C2833;
     padding:1rem 7%;
     z-index: 1000;
     width: 100%;
@@ -38,8 +38,8 @@ header{
 }
 
 .liste ul a:hover{
-    color: blue;
-    transition: all 1s ease;
+  color: #3498DB;
+  transition: all 1s ease;
 }
 
 
@@ -58,8 +58,8 @@ header .icons a{
 
 header .icons i:hover,
 header .icons a:hover{
-    color: blue;
-    transform: rotate(360deg);
+  color: #3498DB;
+  transition: all 1s ease;
 }
 
 header .icons #menu-bars{

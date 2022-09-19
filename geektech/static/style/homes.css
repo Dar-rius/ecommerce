@@ -66,6 +66,12 @@ nav{
     font-size: 1rem;
     height: 63vh;
 }
+
+nav a :hover{
+    transition: all 1s ease;
+    color: #3498DB;
+}
+
 .carousel-item img{
     background-size: cover;
 }
