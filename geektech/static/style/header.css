@@ -2,7 +2,7 @@ header{
     position: fixed;
     top:0; left: 0; right:0;
     background-color:  #1C2833;
-    padding:1rem 7%;
+    padding: 0.1em 0.5%;
     z-index: 1000;
     width: 100%;
     height: 115px;
@@ -20,7 +20,7 @@ header{
 }
 
 .imgLogo{
-  width: 20%;
+  width: 100px;
 }
 
 .logo{
@@ -189,6 +189,11 @@ header .icons #menu-bars{
   .logo{
     font-size: .7rem;
   }
+
+  .imgLogo{
+    width: 80px;
+  }
+
 }
 @media (max-width:408px){
   .icons{

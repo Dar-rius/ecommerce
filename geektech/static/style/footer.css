@@ -67,13 +67,8 @@ li{
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 2%;
-    text-align: center;
 }
 
-.part2 ul {
-    margin: 0%;
-    padding: 0%;
-}
 
 .part2 ul :hover{
     color: #3498DB;
@@ -99,6 +94,12 @@ li{
         padding: auto;
         width: 50%;
     }
+
+    .part1{
+        margin-left: 0%;
+        margin-right: 0%;
+      }
+
 }
 
 /* END FOOTER */
