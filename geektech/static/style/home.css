@@ -40,7 +40,7 @@
 #sec1{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content:space-evenly;
     margin-bottom: 20vh;
 }
 
@@ -49,7 +49,7 @@ nav{
     border-radius: 10px; 
     padding-top: 2.5%;
     padding-bottom: 0.5%;
-    width: 41vh;
+    width: 37vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -86,8 +86,6 @@ nav h3{
 }
 .d-block{
     height: 455px;
-    width: 100%;
-    margin-top: 2%; 
     border-radius: 10px;   
 }
 #image{
