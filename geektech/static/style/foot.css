@@ -20,6 +20,7 @@ footer li{
 .social{
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 #imagesLogoFooter{
@@ -61,7 +62,6 @@ li{
 .part1, .part2, .part3{
     margin-left: 6%;
     margin-right: 6%;
-    margin-bottom: 5%;
 }
 
 
@@ -70,7 +70,7 @@ li{
     transition: all 1s ease;
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:850px) {
     .part3{
         margin-top: 0px;
     }
@@ -86,12 +86,11 @@ li{
         justify-content: center;
         margin: auto;
         padding: auto;
-        width: 50%;
     }
 
-    .part1{
-        margin-left: 0%;
-        margin-right: 0%;
+
+      .part1, .part2, .part3{
+        margin-bottom: 3%;
       }
 
 }
