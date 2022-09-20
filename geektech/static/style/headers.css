@@ -1,8 +1,13 @@
 header{
     position: fixed;
     top:0; left: 0; right:0;
+<<<<<<< HEAD
     background-color:  rgb(0, 0, 0);
     padding:1rem 7%;
+=======
+    background-color:  #1C2833;
+    padding: 0.1em 0.5%;
+>>>>>>> b2438d5384481c886e657150cbffbe6e663c6101
     z-index: 1000;
     width: 100%;
     height: 115px;
@@ -20,7 +25,11 @@ header{
 }
 
 .imgLogo{
+<<<<<<< HEAD
   width: 98px;
+=======
+  width: 100px;
+>>>>>>> b2438d5384481c886e657150cbffbe6e663c6101
 }
 
 .logo{
@@ -38,8 +47,8 @@ header{
 }
 
 .liste ul a:hover{
-    color: blue;
-    transition: all 1s ease;
+  color: #3498DB;
+  transition: all 1s ease;
 }
 header .icons {
   display: flex;
@@ -62,8 +71,8 @@ header .icons a{
 
 header .icons i:hover,
 header .icons a:hover{
-    color: blue;
-    transform: rotate(360deg);
+  color: #3498DB;
+  transition: all 1s ease;
 }
 
 header .icons #menu-bars{
@@ -182,17 +191,23 @@ header .icons #menu-bars{
   header{
     font-size: 25%;
   }
-  header .liste ul{
+  header ul{
     flex-direction: column;
     padding: 1rem;
   }
-  header .liste ul {
+  header ul {
     flex-direction: column;
     padding: 1rem;
+    color: black;
   }
   .logo{
     font-size: .7rem;
   }
+
+  .imgLogo{
+    width: 80px;
+  }
+
 }
 @media (max-width:408px){
   .icons{

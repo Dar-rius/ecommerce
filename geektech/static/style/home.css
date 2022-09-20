@@ -42,7 +42,7 @@
 #sec1{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content:space-evenly;
     margin-bottom: 20vh;
 }
 
@@ -51,8 +51,12 @@ nav{
     border-radius: 10px; 
     padding-top: 2.5%;
     padding-bottom: 0.5%;
+<<<<<<< HEAD
     margin-top: 5px;
     width: 43vh;
+=======
+    width: 37vh;
+>>>>>>> b2438d5384481c886e657150cbffbe6e663c6101
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -69,6 +73,12 @@ nav{
     font-size: 1rem;
     height: 68vh;
 }
+
+nav a :hover{
+    transition: all 1s ease;
+    color: #3498DB;
+}
+
 .carousel-item img{
     background-size: cover;
 }
@@ -82,9 +92,13 @@ nav h3{
     width: 52vw;
 }
 .d-block{
+<<<<<<< HEAD
     height: 430px;
     width: 100%;
     margin-top: 2%; 
+=======
+    height: 455px;
+>>>>>>> b2438d5384481c886e657150cbffbe6e663c6101
     border-radius: 10px;   
 }
 #image{

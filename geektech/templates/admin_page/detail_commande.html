@@ -34,6 +34,7 @@
                     <p>Nom du produit: <span>{{commande.nom_produit}}</span></p>
                     <p>Commander par: <span>{{client.firstName}} {{client.name}}</span></p>
                     <p>Email: <span>{{client.email}}</span></p>
+                    <p>Numero de téléphone: <span>{{client.phone}}</span></p>
                     <p>Adresse du client: <span>{{client.city}}, {{client.quartier}}</span></p>
                     <a href="{% url 'deleteCommande' commande.id %}" class="supp">
                         <button>Traiter</button>
