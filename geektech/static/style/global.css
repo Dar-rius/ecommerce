@@ -3,8 +3,13 @@
     padding: 0px;
 }
 
+body{
+    background-color: #F2F3F4;
+
+}
+
 .seCat, .researchEle, .contact, .container, .secDetailPrincipal, .secInscrire, .panier_body, .item1{
-    margin-top: 30vh;
+    margin-top: 25vh;
 }
 
 @media screen and (max-width: 1300px) {
@@ -12,3 +17,11 @@
         margin-top: 20vh;
     }  
 }
+
+
+@media screen and (max-width: 700px) {
+    .seCat, .researchEle, .contact, .container, .secDetailPrincipal, .secInscrire, .panier_body, .item1{
+        margin-top: 18vh;
+    }  
+}
+

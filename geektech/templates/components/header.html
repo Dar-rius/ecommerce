@@ -1,11 +1,9 @@
 {% load static %}
 {% block content%}
     <header>
-        <div class="logo">
-            <a href="{% url 'home'%}">
-                <img src="{% static 'image/logo.png' %}" alt="" style="width: 50%;"/>
-            </a>
-        </div>
+      <a href="/">
+        <img src="{% static 'image/logo3.png' %}" alt="" class="imgLogo">
+      </a>
         <div class="liste">
             <ul>
                 <a href="{% url 'home' %}" class="active">
@@ -25,10 +23,13 @@
                 </a>
             </ul>
         </div>
+        
         <div class="icons">
             <i class="fas fa-bars" id="menu-bars"></i>
             <i class="fas fa-search" id="search-icon"></i>
-            <a href="{% url 'panier' %}" class="fas fa-shopping-cart"></a>
+            <a href="{% url 'panier' %}">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
         </div>
         <!-- search form  -->
         <form action="{% url 'search' %}" id="search-form">

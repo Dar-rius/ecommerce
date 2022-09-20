@@ -4,7 +4,7 @@
     <section class="secDetailPrincipal">
         <form method="post" class="secDetail">
             {% csrf_token %}
-            <div class="image">
+            <div class="image" id="image">
                 <img src="{{produit.photo_produit.url}}" alt="" class="image1">
             </div>
 
@@ -52,5 +52,5 @@
                 {% endfor %}
             </div>
         </div>
-    </section>
+    </section>   
 {% endblock content%}

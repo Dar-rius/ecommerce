@@ -5,41 +5,52 @@
     margin-left: 23%;
     margin-right: 23%;
     margin-bottom: 3%;
+    background-color: white;
+    width: 60%;
+    height: 65vh;
+    border-radius: 5px;
 }
 
 .image{
     margin: 2%;
 }
 
+.image {overflow:hidden}
+
 .prod_detail{
     margin: 2%;
-
+}
+.prod_detail h2{
+    margin: 20px 0 10px 0;
+    font-weight: 300;
 }
 
 .image1{
     height: 300px;
-    margin: 2%;
-    border: 3px solid #B3B6B7;
-    border-radius: 3%;
     margin-right: 5%;
     padding: 5px;
 }
 
 .prod_detail button{
-    font-size: larger;
-    padding: 5%;
-    background-color: black;
+    font-size: 18px;
+    padding: 15px 50px;
+    margin-top: 40px;
+    cursor: pointer;
+    border: 0;
+    outline:none;
     color: white;
-    width: 100%;
+    background-color: black;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.12);
 }
 
 .classQuantite{
-    width: 60%;
+    width: 90%;
     margin-top: 2%;
+    outline:none;
 }
 
 .quantite{
-    font-size: 23px;
+    font-size: 20px;
 }
 
 .price{
@@ -47,6 +58,7 @@
 }
 
 .dispo{
+    margin-top: 10px;
     font-size: larger;
     color: red;
 }
