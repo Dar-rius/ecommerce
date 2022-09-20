@@ -178,13 +178,14 @@ header .icons #menu-bars{
   header{
     font-size: 25%;
   }
-  header .liste ul{
+  header ul{
     flex-direction: column;
     padding: 1rem;
   }
-  header .liste ul {
+  header ul {
     flex-direction: column;
     padding: 1rem;
+    color: black;
   }
   .logo{
     font-size: .7rem;
