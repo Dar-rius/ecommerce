@@ -6,36 +6,50 @@
     margin-right: 23%;
     margin-bottom: 3%;
     background-color: white;
-    width: 60%;
+    width: 62%;
     height: 65vh;
     border-radius: 5px;
 }
-
-.image{
-    margin: 2%;
+.small-img {
+    float: left;
+    margin-left: 10px;
 }
-
-<<<<<<<< HEAD:geektech/static/style/PageDescription.css
+.small-img img{
+    height: 92px ;
+    width: 90px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: block;
+    border: 1px solid rgb(228, 220, 220);
+    padding: 4px;      
+}
+.small-img img:hover{
+    border: 1px solid black;     
+}
+.image{
+    position: relative;
+    margin: 20px;
+    display: flex;
+}
 .image {overflow:hidden}
-
-========
->>>>>>>> b2438d5384481c886e657150cbffbe6e663c6101:geektech/static/style/details.css
 .prod_detail{
+    position: relative;
     margin: 2%;
 }
 .prod_detail h2{
-    margin: 20px 0 10px 0;
+    margin: 15px 0 10px 0;
     font-weight: 300;
 }
 
 .image1{
     height: 300px;
     margin-right: 5%;
-    padding: 5px;
+    padding: 7px;
+    top:0;
+    margin-left: 10px;
 }
 
 .prod_detail button{
-<<<<<<<< HEAD:geektech/static/style/PageDescription.css
     font-size: 18px;
     padding: 15px 50px;
     margin-top: 40px;
@@ -43,16 +57,8 @@
     border: 0;
     outline:none;
     color: white;
-    background-color: black;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.12);
-========
-    font-size: larger;
-    padding: 3%;
     background-color: black;
-    color: white;
-    width: auto;
-    border: none;
->>>>>>>> b2438d5384481c886e657150cbffbe6e663c6101:geektech/static/style/details.css
 }
 
 .prod_detail button:hover {
@@ -71,7 +77,7 @@
 }
 
 .price{
-    font-size: 26px;
+    font-size: 25px;
 }
 
 .dispo{

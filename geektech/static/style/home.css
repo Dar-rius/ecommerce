@@ -1,7 +1,7 @@
 /* HOME */
 
 .mainHome{
-    margin-top: 20vh;
+    margin-top: 22vh;
     margin-bottom: 10%;
     margin-left: 50px;
     margin-right: 50px;
@@ -47,16 +47,12 @@
 }
 
 nav{
-    background-color: black;
+    background-color:  #1C2833;
     border-radius: 10px; 
     padding-top: 2.5%;
     padding-bottom: 0.5%;
-<<<<<<< HEAD
     margin-top: 5px;
-    width: 43vh;
-=======
-    width: 37vh;
->>>>>>> b2438d5384481c886e657150cbffbe6e663c6101
+    width: 44vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -92,13 +88,10 @@ nav h3{
     width: 52vw;
 }
 .d-block{
-<<<<<<< HEAD
     height: 430px;
     width: 100%;
     margin-top: 2%; 
-=======
     height: 455px;
->>>>>>> b2438d5384481c886e657150cbffbe6e663c6101
     border-radius: 10px;   
 }
 #image{
@@ -162,14 +155,16 @@ nav img{
 
 #card{
     width: 237px;
-    padding: 5px 3px;
+    padding: 5px 4px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border: none;
 }
   
 #card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.377);
+    transform: translate(1px, 1.4px);
+    transition: all 0.5s ease;
   }
 
 #card a img{ 
