@@ -27,7 +27,6 @@
     margin: 20px 0 10px 0;
     font-weight: 300;
 }
-<<<<<<< HEAD
 .image1{
     height: 300px;
     margin-right: 5%;
@@ -44,15 +43,6 @@
 .image1:hover{
     transition: all 0.5s ease;
 }
-=======
-
-.image1{
-    height: 300px;
-    margin-right: 5%;
-    padding: 5px;
-}
-
->>>>>>> parent of 1ee157a (update)
 .prod_detail button{
 <<<<<<<< HEAD:geektech/static/style/PageDescription.css
     font-size: 18px;
