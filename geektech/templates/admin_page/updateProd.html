@@ -77,7 +77,11 @@
                     Image du produit
                 </label>
                 <article class="recentFile">
-                    <p>le recent fichier: <a href="">{{produit.photo_produit.url}}</a></p> <br>
+                    <p>le recent fichier:
+                        {% for image in produit.photo_produit.url%} 
+                        {{image}}
+                        {% endfor %}
+                    </p> <br>
                     <p>Changer d'image: </p>
                     <input type="file" name="photo_produit" accept="image/*" id="id_photo_produit">           
                 </article>
