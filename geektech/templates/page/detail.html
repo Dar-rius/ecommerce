@@ -10,7 +10,7 @@
                     <img src="{{produit.photo_produit.url}}" alt="" onclick="myFunction(this)">
                     <img src="{{produit.photo_produit.url}}" alt="" onclick="myFunction(this)">
                 </div>
-                <div>
+                <div id="bigger">
                     <img src="{{produit.photo_produit.url}}" alt="" class="image1" id="image1">
                 </div>
             </div>   
@@ -65,7 +65,9 @@
         function myFunction (smallImg) {
         let fullImg = document.getElementById('image1');
         fullImg.src = smallImg.src;
-    }         
+        } 
+        
+        
     </script> 
     
 {% endblock content%}
