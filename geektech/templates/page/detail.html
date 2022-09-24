@@ -1,0 +1,57 @@
+{% extends "_base.html" %}
+
+{% block content%}
+    <section class="secDetailPrincipal">
+        <form method="post" class="secDetail">
+            {% csrf_token %}
+            <div class="image" id="image">
+                <img src="{{produit.photo_produit.url}}" alt="" class="image1">
+            </div>
+
+            {{form.non_field_errors}}
+            <div class="prod_detail">
+                <h2>{{produit.nom_produit}}</h2>
+                <p class="quantite">Quantité</p>
+                {{form.quantite.error}}
+                <input type="number" name="quantite" placeholder="Preciser la quantite" value={{produit.quantite_produit}} value="{{produit.quantite_produit}}" min="0" max="{{produit.quantite_produit}}" class="classQuantite">
+                {% if produit.quantite_produit <= 0%}
+                    <p class="dispo">Indisponible</p>
+                {% else %}
+                    <p class="dispo">Disponible</p>
+                {% endif %}
+                <p class="price">Prix: {{produit.prix_produit}} FCFA</p>
+                <button type="submit">Ajouter au panier</button>
+                <p>{{message}}</p>
+            </div>
+        </form>
+
+        <div class="descrip">
+            <h4 class="title3">Détail du produit</h4>
+            <p>{{produit.descrip_produit}}</p>
+        </div>
+
+        <div class="autres">
+            <h4 class="title3">Autres produits</h4>
+            <div class="item1">
+                {% for produit in autre_produit %}
+                <div class="card" id="card">
+                    <a href="{% url 'detail' produit.id%}">
+                        <img src="{{produit.photo_produit.url}}" alt="">
+                        <p class="textPrice">{{produit.nom_produit}}</p> 
+                        <div class="star">
+                            {{produit.tendance}}
+                            <span class="material-icons red md-30">local_fire_department</span>
+                        </div>
+                    </a>
+                    <div class="bas">
+                        <p>{{produit.prix_produit}}  FCFA</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p>Aucun produit meme categorie</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>   
+{% endblock content%}
+

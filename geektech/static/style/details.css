@@ -15,11 +15,8 @@
     margin: 2%;
 }
 
-<<<<<<<< HEAD:geektech/static/style/PageDescription.css
 .image {overflow:hidden}
 
-========
->>>>>>>> b2438d5384481c886e657150cbffbe6e663c6101:geektech/static/style/details.css
 .prod_detail{
     margin: 2%;
 }
@@ -27,30 +24,21 @@
     margin: 20px 0 10px 0;
     font-weight: 300;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 .image1{
     height: 300px;
     margin-right: 5%;
-<<<<<<<< HEAD:geektech/static/style/details.css
     padding: 7px;
     top:0;
     margin-left: 10px;
     position: relative;
-========
-    padding: 5px;
->>>>>>>> parent of 1ee157a (update):geektech/static/style/PageDescription.css
+
 }
 
 .image1:hover{
     transition: all 0.5s ease;
 }
-=======
-=======
->>>>>>> parent of 1ee157a (update)
-=======
->>>>>>> parent of 1ee157a (update)
+
 
 .image1{
     height: 300px;
@@ -58,15 +46,7 @@
     padding: 5px;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 1ee157a (update)
-=======
->>>>>>> parent of 1ee157a (update)
-=======
->>>>>>> parent of 1ee157a (update)
 .prod_detail button{
-<<<<<<<< HEAD:geektech/static/style/PageDescription.css
     font-size: 18px;
     padding: 15px 50px;
     margin-top: 40px;
@@ -76,14 +56,6 @@
     color: white;
     background-color: black;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.12);
-========
-    font-size: larger;
-    padding: 3%;
-    background-color: black;
-    color: white;
-    width: auto;
-    border: none;
->>>>>>>> b2438d5384481c886e657150cbffbe6e663c6101:geektech/static/style/details.css
 }
 
 .prod_detail button:hover {
