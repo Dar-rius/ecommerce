@@ -1,7 +1,7 @@
 from email.mime import image
 from tkinter import Image
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import ImageProduit, Produit, User, Panier,Commande
+from .models import Produit, User, Panier,Commande
 from .forms import Login_form, User_form, Panier_form, Produit_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
@@ -76,7 +76,6 @@ def propos_view(request):
 @login_required
 def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
-    img_produit = ImageProduit.objects.filter(produit=produit)[:3]
     autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit).exclude(nom_produit=produit.nom_produit)
     message =""
     if request.method == "POST":
@@ -96,7 +95,7 @@ def detail_view(request, produit_id):
                     search_dataPanier.save()
                     return redirect("panier")
             else: 
-                data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=image[0])
+                data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
                 data_panier.save()
                 return redirect("panier")
 
@@ -104,7 +103,6 @@ def detail_view(request, produit_id):
     return render(request, "page/detail.html", {"produit": produit,
                                                     "autre_produit": autre_produit,
                                                     "form": form,
-                                                    "img_produit": img_produit,
                                                     "message": message,})
 
 
@@ -311,13 +309,9 @@ def detail_commandes_view(request, id_commande) :
 #La view pour ajouter un produit dans la plateforme
 def ajoutProduct_view(request):
     if request.method == "POST":
-        form = Produit_form(request.POST)
-        images = request.FILES.getlist('photo_produit')
+        form = Produit_form(request.POST, request.FILES)
         if form.is_valid():
-            prod = form.save()
-            for image in images:
-                print("une image ajouter")
-                ImageProduit.objects.create(produit=prod,  photo_produit= image)
+            form.save()
     else:
         form = Produit_form()
 
