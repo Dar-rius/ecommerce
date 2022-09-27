@@ -79,12 +79,24 @@
                     <label for="photo_produit">
                         Image du produit
                     </label>
-                    <input type="file" name="photo_produit" accept="image/*" required id="id_photo_produit">            
+                    <input type="file" name="photo_produit" accept="image/*" required id="id_photo_produit" multiple>            
                 </div>
 
                 <button type="submit">Enregistrer</button>
             </form>
         </section>
     {% endblock content%}
+
+    <script>
+        $(function(){
+            $("button[type='submit']").click(function(){
+                var $fileUpload = $("input[type='file']");
+                if (parseInt($fileUpload.get(0).files.length)>4){
+                alert("Veillez choisir 4 images ou moins");
+                }
+            });    
+        });
+    </script>
 </body>
 </html>
+
