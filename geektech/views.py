@@ -336,7 +336,7 @@ def updateProd_view(request, id_produit):
     if request.method == "POST":
         if len(request.FILES) != 0:
             if len(produit.photo_produit) > 0:
-                os.remove(produit.photo_produit.path)
+                os.remove(produit.image_prod.path)
             produit.photo_produit = request.FILES['photo_produit']
         produit.nom_produit = request.POST.get("nom_produit")
         produit.marque_produit = request.POST.get("marque_produit")
@@ -353,7 +353,15 @@ def updateProd_view(request, id_produit):
 #view pour delete un produit
 def deleteProd_view(request, id_produit):
     produit = get_object_or_404(Produit, pk=id_produit)
+    images = ImageProduit.objects.filter(produit=produit)
+    for image in images:
+        print("1 fichier supprimer")
+        os.remove(image.photo_produit.path)
+    
+    os.remove(produit.image_prod.path)
     produit.delete()
+    images.delete()
+
     return redirect("list_prod")
 
 
