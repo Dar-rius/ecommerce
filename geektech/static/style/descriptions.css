@@ -10,9 +10,10 @@
     height: 70vh;
     border-radius: 5px;
 }
+
+
 img{
     width: 100%;
-    display: block;
 }
 .img-display{
     overflow: hidden;
@@ -23,14 +24,25 @@ img{
     transition: all 0.5s ease;
     
 }
+/* début zoom */
+#zoom {
+    background-position: 100%;
+    position: relative;    
+    cursor: zoom-in;
+  }
+  #zoom img:hover {
+    opacity: 0;
+  }
+  #zoom img {
+    transition: opacity 0.5s;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+  }
+/* fin */
 .img-showcase img{
     min-width: 100%;
-    padding: 5px;
-    cursor: pointer;
-    object-fit: cover;
-    transition: transform 0.3s;
 }
-
 .img-select{
     display: flex;
 }
@@ -58,7 +70,7 @@ img{
     width: 50%;
     padding: 10px;
     margin-bottom: 75px;
-}
+} 
 .prod_detail{
     margin: 2%;
 }

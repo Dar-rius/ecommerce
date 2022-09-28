@@ -1,7 +1,7 @@
 /* HOME */
 
 .mainHome{
-    margin-top: 20vh;
+    margin-top: 24vh;
     margin-bottom: 10%;
     margin-left: 50px;
     margin-right: 50px;
@@ -51,7 +51,7 @@ nav{
     border-radius: 10px; 
     padding-top: 2.5%;
     padding-bottom: 0.5%;
-    margin-top: 5px;
+    margin-top: 10px;
     width: 43vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -113,7 +113,7 @@ ul a{
     text-decoration: none;
     color: white;
     font-size: .92rem;
-  }
+}
 
 nav img{
     margin-right: 5%;
