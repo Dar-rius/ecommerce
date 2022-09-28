@@ -331,13 +331,24 @@ def ajoutProduct_view(request):
 
 #view pour mettre a jour un produit
 def updateProd_view(request, id_produit):
- 
     produit = get_object_or_404(Produit, pk= id_produit)
+    images = ImageProduit.objects.filter(produit=produit)
     if request.method == "POST":
         if len(request.FILES) != 0:
-            if len(produit.photo_produit) > 0:
+            if len(produit.image_prod) > 0:
                 os.remove(produit.image_prod.path)
-            produit.photo_produit = request.FILES['photo_produit']
+            for image in images:
+                if len(image.photo_produit) > 0:
+                    os.remove(image.photo_produit.path)
+                    print("1 fichier supprimer")
+                    images.delete()
+
+            produit.image_prod = request.FILES['photo_produit']
+            f = request.FILES.getlist("photo_produit")
+            for files in f:
+                print("une image ajouter")
+                images = ImageProduit(produit=produit, photo_produit=files).save()
+
         produit.nom_produit = request.POST.get("nom_produit")
         produit.marque_produit = request.POST.get("marque_produit")
         produit.descrip_produit = request.POST.get("descrip_produit")
