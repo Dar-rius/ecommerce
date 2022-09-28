@@ -51,7 +51,7 @@ class Login_form(forms.Form):
 class Produit_form(ModelForm):
     class Meta:
         model = Produit
-        fields = ["nom_produit", "marque_produit", "descrip_produit", "prix_produit", "quantite_produit", "cat_produit"]
+        fields = ["nom_produit", "marque_produit", "descrip_produit", "prix_produit", "quantite_produit", "cat_produit", "image_prod"]
 
 class Panier_form(ModelForm):
     class Meta:

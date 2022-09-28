@@ -11,7 +11,7 @@
             {% for produit in produits %}
             <div class="card" id="card">
                 <a href="{% url 'detail' produit.id%}">
-                    <img src="{{produit.photo_produit.url}}" alt="">
+                    <img src="{{produit.image_prod.url}}" alt="">
                     <p class="textPrice">{{produit.nom_produit}}</p> 
                     <div class="star">
                         {{produit.tendance}}

@@ -106,7 +106,7 @@ class Produit(models.Model):
     quantite_produit = models.IntegerField(default=0)
     cat_produit = models.CharField(max_length=50, choices=CATEGORIES, verbose_name="categories")
     tendance = models.IntegerField(default=0)
-
+    image_prod = models.ImageField(upload_to='images/produit')
 
 class ImageProduit(models.Model):
     produit = models.ForeignKey(Produit, on_delete=models.CASCADE)

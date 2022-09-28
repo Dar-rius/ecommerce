@@ -1,3 +1,4 @@
+from email.mime import image
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import ImageProduit, Produit, User, Panier,Commande
 from .forms import Login_form, User_form, Panier_form, Produit_form
@@ -314,14 +315,14 @@ def detail_commandes_view(request, id_commande) :
 #La view pour ajouter un produit dans la plateforme
 def ajoutProduct_view(request):
     if request.method == "POST":
-        form = Produit_form(request.POST)
-        images = request.FILES.getlist('photo_produit')
+        form = Produit_form(request.POST, request.FILES)
+        images = request.FILES.getlist('image_prod')
         if form.is_valid():
-            form.save()
             prod = form.save()
             for image in images:
                 print("une image ajouter")
-                ImageProduit.objects.create(produit=prod,  photo_produit= image)
+                image = ImageProduit.objects.create(produit=prod,  photo_produit= image)
+
     else:
         form = Produit_form()
 
