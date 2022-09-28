@@ -5,20 +5,19 @@
         <form method="post" class="secDetail">
             {% csrf_token %}
             <div class = "product-imgs">
-<<<<<<< HEAD
                 <div class = "img-display" id="zoom" onmousemove="zoom(event)" style="background-image: url({{produit.photo_produit.url}})">
                   <div class = "img-showcase">
                     <img src = "{{produit.photo_produit.url}}" alt = "image-produit" >
                     <img src = "{{produit.photo_produit.url}}" alt = "image-produit" >
                     <img src = "{{produit.photo_produit.url}}" alt = "image-produit" >
                     <img src = "{{produit.photo_produit.url}}" alt = "image-produit" >
-=======
+
                 <div class = "img-display">
                   <div class = "img-showcase" id="img-showcase">
                     {% for image in  img_produit%}
                     <img src = "{{image.photo_produit.url}}" alt = "image-produit">
                     {% endfor %}
->>>>>>> b1b3338548b390ba33721b7bfe93e23ff0cd4408
+
                   </div>
                 </div>
                 <div class = "img-select">
