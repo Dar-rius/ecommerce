@@ -1,7 +1,6 @@
 from email.mime import image
-from tkinter import Image
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Produit, User, Panier,Commande
+from .models import ImageProduit, Produit, User, Panier,Commande
 from .forms import Login_form, User_form, Panier_form, Produit_form
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
@@ -76,6 +75,7 @@ def propos_view(request):
 @login_required
 def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
+    img_produit = ImageProduit.objects.filter(produit=produit)
     autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit).exclude(nom_produit=produit.nom_produit)
     message =""
     if request.method == "POST":
@@ -95,15 +95,21 @@ def detail_view(request, produit_id):
                     search_dataPanier.save()
                     return redirect("panier")
             else: 
-                data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.photo_produit)
+                image = []
+                for images in img_produit:
+                    image.append(images.photo_produit)
+
+                data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=image[0])
                 data_panier.save()
                 return redirect("panier")
 
     form = Panier_form()
     return render(request, "page/detail.html", {"produit": produit,
                                                     "autre_produit": autre_produit,
+                                                    "img_produit": img_produit,                                                    
                                                     "form": form,
                                                     "message": message,})
+
 
 
 #La view du panier pour afficher toutes donnees du panier du User
@@ -310,8 +316,13 @@ def detail_commandes_view(request, id_commande) :
 def ajoutProduct_view(request):
     if request.method == "POST":
         form = Produit_form(request.POST, request.FILES)
+        images = request.FILES.getlist('image_prod')
         if form.is_valid():
-            form.save()
+            prod = form.save()
+            for image in images:
+                print("une image ajouter")
+                image = ImageProduit.objects.create(produit=prod,  photo_produit= image)
+
     else:
         form = Produit_form()
 
@@ -320,13 +331,24 @@ def ajoutProduct_view(request):
 
 #view pour mettre a jour un produit
 def updateProd_view(request, id_produit):
- 
     produit = get_object_or_404(Produit, pk= id_produit)
+    images = ImageProduit.objects.filter(produit=produit)
     if request.method == "POST":
         if len(request.FILES) != 0:
-            if len(produit.photo_produit) > 0:
-                os.remove(produit.photo_produit.path)
-            produit.photo_produit = request.FILES['photo_produit']
+            if len(produit.image_prod) > 0:
+                os.remove(produit.image_prod.path)
+            for image in images:
+                if len(image.photo_produit) > 0:
+                    os.remove(image.photo_produit.path)
+                    print("1 fichier supprimer")
+                    images.delete()
+
+            produit.image_prod = request.FILES['photo_produit']
+            f = request.FILES.getlist("photo_produit")
+            for files in f:
+                print("une image ajouter")
+                images = ImageProduit(produit=produit, photo_produit=files).save()
+
         produit.nom_produit = request.POST.get("nom_produit")
         produit.marque_produit = request.POST.get("marque_produit")
         produit.descrip_produit = request.POST.get("descrip_produit")
@@ -342,7 +364,15 @@ def updateProd_view(request, id_produit):
 #view pour delete un produit
 def deleteProd_view(request, id_produit):
     produit = get_object_or_404(Produit, pk=id_produit)
+    images = ImageProduit.objects.filter(produit=produit)
+    for image in images:
+        print("1 fichier supprimer")
+        os.remove(image.photo_produit.path)
+    
+    os.remove(produit.image_prod.path)
     produit.delete()
+    images.delete()
+
     return redirect("list_prod")
 
 
