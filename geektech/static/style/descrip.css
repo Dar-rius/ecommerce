@@ -42,14 +42,21 @@ img{
 /* fin */
 .img-showcase img{
     min-width: 100%;
+    min-height: 100%;
 }
 .img-select{
     display: flex;
 }
 .img-item{
-    margin: 0.5rem;
+    margin: 1rem;
     border: 1px solid rgba(194, 193, 193, 0.363);
     padding: 2px;
+}
+.img-item img{
+    width: 90px;  
+    height: 90px;  
+    padding: 2px;
+    margin: 2px;
 }
 .img-item:hover{
     border: 1px solid black;
@@ -67,7 +74,7 @@ img{
 }
 .product-imgs{
     height: 250px;
-    width: 50%;
+    width: 250px;
     padding: 10px;
     margin-bottom: 75px;
 } 

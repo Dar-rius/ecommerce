@@ -5,37 +5,23 @@
         <form method="post" class="secDetail">
             {% csrf_token %}
             <div class = "product-imgs">
-                <div class = "img-display">
-                  <div class = "img-showcase" id="zoom" onmousemove="zoom(event)" style="background-image: url({{produit.photo_produit.url}})">
-                    <img src = "{{produit.photo_produit.url}}" alt = "image-produit" >
-                    <img src = "{{produit.photo_produit.url}}" alt = "image-produit" >
-                    <img src = "{{produit.photo_produit.url}}" alt = "image-produit" >
-                    <img src = "{{produit.photo_produit.url}}" alt = "image-produit" >
+                <div class = "img-display" id="zoom" onmousemove="zoom(event)" style="background: url({{image.photo_produit.url}});">
+                  <div class = "img-showcase">
+                    {% for image in  img_produit%}
+                    <img src = "{{image.photo_produit.url}}" alt = "image-produit" >
+                    {% endfor %}
                   </div>
                 </div>
                 <div class = "img-select">
-                  <div class = "img-item">
-                    <a href = "#" data-id = "1">
-                      <img src = "{{produit.photo_produit.url}}" alt = "image-produit">
-                    </a>
-                  </div>
-                  <div class = "img-item">
-                    <a href = "#" data-id = "2">
-                      <img src = "{{produit.photo_produit.url}}" alt = "image-produit">
-                    </a>
-                  </div>
-                  <div class = "img-item">
-                    <a href = "#" data-id = "3">
-                      <img src = "{{produit.photo_produit.url}}" alt = "image-produit">
-                    </a>
-                  </div>
-                  <div class = "img-item">
-                    <a href = "#" data-id = "4">
-                      <img src = "{{produit.photo_produit.url}}" alt = "image-produit">
-                    </a>
-                  </div>
+                    {% for image in img_produit%}
+                    <div class = "img-item">
+                        <a href = "#" data-id = "{{image.id}}">
+                        <img src = "{{image.photo_produit.url}}" alt = "image-produit">
+                        </a>
+                    </div>
+                  {% endfor %}
                 </div>
-              </div>         
+            </div>         
 
             {{form.non_field_errors}}
             <div class="prod_detail">
@@ -84,7 +70,7 @@
         <script>
             const imgs = document.querySelectorAll('.img-select a');
             const imgBtns = [...imgs];
-            let imgId = 1;
+            let imgId = 1 ;
 
             imgBtns.forEach((imgItem) => {
                 imgItem.addEventListener('click', (event) => {
@@ -110,7 +96,7 @@
             x = offsetX/zoomer.offsetWidth*100
             y = offsetY/zoomer.offsetHeight*100
             zoomer.style.backgroundPosition = x + '% ' + y + '%';
-}
+            } 
         </script>
     </section>
 {% endblock content%}
