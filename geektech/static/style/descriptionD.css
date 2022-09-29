@@ -78,17 +78,7 @@ img{
     margin: 20px 0 10px 0;
     font-weight: 300;
 }
-.image1{
-    height: 300px;
-    margin-right: 5%;
-    padding: 7px;
-    top:0;
-    margin-left: 10px;
-    position: relative;
-}
-.image1:hover{
-    transition: all 0.5s ease;
-}
+
 .prod_detail button{
     font-size: 18px;
     padding: 15px 50px;
