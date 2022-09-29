@@ -78,10 +78,11 @@ def detail_view(request, produit_id):
     produit = get_object_or_404(Produit, pk=produit_id)
     #recuperation des images venant d'un produit
     img_produit = ImageProduit.objects.filter(produit=produit)
-    #recuperation de tous les images sauf celui du produit dont on voit ses details actuellement
+    #recuperation de tous les produits sauf celui du produit dont on voit ses details actuellement
     autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit).exclude(nom_produit=produit.nom_produit)
     #un message pour informer l'utilisateur
     message =""
+    id_image = 0
 
     if request.method == "POST":
         form = Panier_form(request.POST)
@@ -114,7 +115,8 @@ def detail_view(request, produit_id):
                                                     "autre_produit": autre_produit,
                                                     "img_produit": img_produit,                                                    
                                                     "form": form,
-                                                    "message": message,})
+                                                    "message": message,
+                                                    "id_image": id_image})
 
 
 

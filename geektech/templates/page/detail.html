@@ -14,12 +14,14 @@
                 </div>
                 <div class = "img-select">
                     {% for image in img_produit%}
+                     {% with id_image=id_image+1 %}
                     <div class = "img-item">
-                        <a href = "#" data-id = "{{image.id}}">
+                        <a href = "#" data-id = "{{id_image}}">
                         <img src = "{{image.photo_produit.url}}" alt = "image-produit">
                         </a>
                     </div>
-                  {% endfor %}
+                    {%endwith%}
+                    {% endfor %}
                 </div>
             </div>         
 
@@ -70,7 +72,7 @@
         <script>
             const imgs = document.querySelectorAll('.img-select a');
             const imgBtns = [...imgs];
-            let imgId = 1 ;
+            let imgId =1 ;
 
             imgBtns.forEach((imgItem) => {
                 imgItem.addEventListener('click', (event) => {
