@@ -74,19 +74,25 @@ def propos_view(request):
 # La view pour la page du detail du produit
 @login_required
 def detail_view(request, produit_id):
+    #recuperation de l'objet
     produit = get_object_or_404(Produit, pk=produit_id)
+    #recuperation des images venant d'un produit
     img_produit = ImageProduit.objects.filter(produit=produit)
+    #recuperation de tous les images sauf celui du produit dont on voit ses details actuellement
     autre_produit = Produit.objects.filter(cat_produit=produit.cat_produit).exclude(nom_produit=produit.nom_produit)
+    #un message pour informer l'utilisateur
     message =""
+
     if request.method == "POST":
         form = Panier_form(request.POST)
 
         if form.is_valid():
             quantite_form = form.cleaned_data.get("quantite")
             form_user = request.user
+            #on retrouve l'objet
+            search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
 
-            if Panier.objects.filter(client=form_user, nom_produit=produit.nom_produit):
-                search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
+            if search_dataPanier:
                 search_dataPanier.quantite+=quantite_form
                 if search_dataPanier.quantite > produit.quantite_produit:
                     message = "La quantite dans le panier ne doit pas depasser celle du produit"
@@ -132,7 +138,7 @@ def commande_view(request, produit_panier_id):
     if request.method == "POST":
         form_user = request.user
         commande = Commande(client= form_user, nom_produit=produit.nom_produit, pTotal=produit.pTotal, quantite=produit.quantite,
-                            livraison=livraison, total=produit.pTotal+livraison, photo_produit=produit.photo_produit)
+                            livraison=livraison, total=produit.pTotal+livraison, photo_produit=produit.image_prod)
         produit_selec.quantite_produit -= commande.quantite
         produit_selec.tendance+= 5
         produit.commander = True
@@ -320,8 +326,7 @@ def ajoutProduct_view(request):
         if form.is_valid():
             prod = form.save()
             for image in images:
-                print("une image ajouter")
-                image = ImageProduit.objects.create(produit=prod,  photo_produit= image)
+                ImageProduit.objects.create(produit=prod,  photo_produit= image)
 
     else:
         form = Produit_form()
@@ -333,6 +338,7 @@ def ajoutProduct_view(request):
 def updateProd_view(request, id_produit):
     produit = get_object_or_404(Produit, pk= id_produit)
     images = ImageProduit.objects.filter(produit=produit)
+
     if request.method == "POST":
         if len(request.FILES) != 0:
             if len(produit.image_prod) > 0:
@@ -340,13 +346,11 @@ def updateProd_view(request, id_produit):
             for image in images:
                 if len(image.photo_produit) > 0:
                     os.remove(image.photo_produit.path)
-                    print("1 fichier supprimer")
-                    images.delete()
+            images.delete()
 
             produit.image_prod = request.FILES['photo_produit']
             f = request.FILES.getlist("photo_produit")
             for files in f:
-                print("une image ajouter")
                 images = ImageProduit(produit=produit, photo_produit=files).save()
 
         produit.nom_produit = request.POST.get("nom_produit")
@@ -366,7 +370,6 @@ def deleteProd_view(request, id_produit):
     produit = get_object_or_404(Produit, pk=id_produit)
     images = ImageProduit.objects.filter(produit=produit)
     for image in images:
-        print("1 fichier supprimer")
         os.remove(image.photo_produit.path)
     
     os.remove(produit.image_prod.path)
