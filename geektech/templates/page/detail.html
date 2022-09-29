@@ -14,13 +14,11 @@
                 </div>
                 <div class = "img-select">
                     {% for image in img_produit%}
-                     {% with id_image=id_image+1 %}
                     <div class = "img-item">
-                        <a href = "#" data-id = "{{id_image}}">
+                        <a href = "#" data-id = "{{forloop.counter}}">
                         <img src = "{{image.photo_produit.url}}" alt = "image-produit">
                         </a>
                     </div>
-                    {%endwith%}
                     {% endfor %}
                 </div>
             </div>         
