@@ -91,9 +91,9 @@ def detail_view(request, produit_id):
             quantite_form = form.cleaned_data.get("quantite")
             form_user = request.user
             #on retrouve l'objet
-            search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
 
-            if search_dataPanier:
+            if Panier.objects.filter(client=form_user, nom_produit=produit.nom_produit):
+                search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
                 search_dataPanier.quantite+=quantite_form
                 if search_dataPanier.quantite > produit.quantite_produit:
                     message = "La quantite dans le panier ne doit pas depasser celle du produit"
@@ -101,13 +101,8 @@ def detail_view(request, produit_id):
                     search_dataPanier.pTotal+= quantite_form*produit.prix_produit
                     search_dataPanier.save()
                     return redirect("panier")
-            else: 
-                image = []
-                for images in img_produit:
-                    image.append(images.photo_produit)
-
-                data_panier = Panier(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=image[0])
-                data_panier.save()
+            else:
+                data_panier = Panier.objects.create(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.image_prod)
                 return redirect("panier")
 
     form = Panier_form()
@@ -115,8 +110,7 @@ def detail_view(request, produit_id):
                                                     "autre_produit": autre_produit,
                                                     "img_produit": img_produit,                                                    
                                                     "form": form,
-                                                    "message": message,
-                                                    "id_image": id_image})
+                                                    "message": message})
 
 
 
