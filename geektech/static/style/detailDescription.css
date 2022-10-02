@@ -11,52 +11,35 @@
     border-radius: 5px;
 }
 
-
 img{
     width: 100%;
 }
 .img-display{
     overflow: hidden;
+    margin-top: -10px;
 }
 .img-showcase{
     display: flex;
     width: 100%;
-    transition: all 0.5s ease;
-    
+    transition: all 0.5s ease;    
 }
 /* début zoom */
-#zoom {
-    background-position: 100%;
-    position: relative;    
-    cursor: zoom-in;
-  }
-  #zoom img:hover {
-    opacity: 0;
-  }
-  #zoom img {
-    transition: opacity 0.5s;
-    width: 100%;
-    height: 100%;
-    cursor: zoom-in;
-  }
 /* fin */
 .img-showcase img{
     min-width: 100%;
-    min-height: 100%;
 }
 .img-select{
     display: flex;
 }
 .img-item{
-    margin: 1rem;
+    margin: 1.2rem;
     border: 1px solid rgba(194, 193, 193, 0.363);
-    padding: 2px;
 }
 .img-item img{
-    width: 90px;  
-    height: 90px;  
-    padding: 2px;
-    margin: 2px;
+    width: 85px;  
+    height: 85px;  
+    padding: 3px;
+    
 }
 .img-item:hover{
     border: 1px solid black;
