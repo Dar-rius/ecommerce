@@ -91,9 +91,9 @@ def detail_view(request, produit_id):
             quantite_form = form.cleaned_data.get("quantite")
             form_user = request.user
             #on retrouve l'objet
-            search_dataPanier = Panier.objects.filter(client=form_user, nom_produit=produit.nom_produit)
 
-            if search_dataPanier:
+            if Panier.objects.filter(client=form_user, nom_produit=produit.nom_produit):
+                search_dataPanier = Panier.objects.get(client=form_user, nom_produit=produit.nom_produit)
                 search_dataPanier.quantite+=quantite_form
                 if search_dataPanier.quantite > produit.quantite_produit:
                     message = "La quantite dans le panier ne doit pas depasser celle du produit"
@@ -102,7 +102,7 @@ def detail_view(request, produit_id):
                     search_dataPanier.save()
                     return redirect("panier")
             else:
-                Panier.objects.create(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.image_prod)
+                data_panier = Panier.objects.create(client= form_user, nom_produit=produit.nom_produit, quantite=quantite_form, pTotal=quantite_form*produit.prix_produit, photo_produit=produit.image_prod)
                 return redirect("panier")
 
     form = Panier_form()
