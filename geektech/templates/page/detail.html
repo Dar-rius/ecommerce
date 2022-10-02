@@ -6,9 +6,9 @@
             {% csrf_token %}
             <div class = "product-imgs">
                 <div class = "img-display" >
-                  <div class = "img-showcase" id="container">
+                  <div class = "img-showcase" >
                     {% for image in  img_produit%}
-                    <img src = "{{image.photo_produit.url}}" alt = "image-produit" id="image" style="width:400px ;height: 230px;">
+                    <img src = "{{image.photo_produit.url}}" alt = "image-produit" style="width:400px ;height: 230px;">
                     {% endfor %}
                   </div>
                 </div>                  
@@ -88,22 +88,6 @@
 
             window.addEventListener('resize', slideImage);
         </script>
-        <script>
-            const container = document.getElementById('container');
-            const image = document.getElementById('image');
-
-            container.addEventListener("mousemove", (e) => {
-                const x = e.clientX - e.target.offsetLeft;
-                const y = e.clientY - e.target.offsetTop;
-
-                image.style.transformOrigin = `${x}px ${y}px`;
-                image.style.transform = "scale(2)";                
-            });
-            container.addEventListener("mouseleave", (e) =>{
-                image.style.transformOrigin = "center";
-                image.style.transform = "scale(1)";
-            });
-        </script> 
     </section>
 {% endblock content%}
 

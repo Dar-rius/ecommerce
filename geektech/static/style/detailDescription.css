@@ -2,13 +2,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    margin-bottom: 3%;
+    margin-left: 300px;
+    margin-bottom: 35px;
+    margin-top: 5px;
     background-color: white;
     width: 60%;
     height: 70vh;
     border-radius: 5px;
+    padding: 2px;
 }
 
 img{
