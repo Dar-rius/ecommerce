@@ -80,12 +80,14 @@ img{
     color: white;
     background-color: black;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.12);
+    border-radius: 20px;
 }
 
-.prod_detail button:hover {
-    transition: all 1s ease;
-    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
-  }
+.prod_detail button:hover{
+    background-color: #3498DB;
+    color: white;
+    transition: all 0.5s ease;
+ }
 
 .classQuantite{
     width: 90%;
