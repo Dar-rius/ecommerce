@@ -134,7 +134,7 @@ def commande_view(request, produit_panier_id):
     if request.method == "POST":
         form_user = request.user
         commande = Commande(client= form_user, nom_produit=produit.nom_produit, pTotal=produit.pTotal, quantite=produit.quantite,
-                            livraison=livraison, total=produit.pTotal+livraison, photo_produit=produit.image_prod)
+                            livraison=livraison, total=produit.pTotal+livraison, photo_produit=produit.photo_produit)
         produit_selec.quantite_produit -= commande.quantite
         produit_selec.tendance+= 5
         produit.commander = True

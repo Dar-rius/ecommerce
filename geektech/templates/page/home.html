@@ -89,7 +89,7 @@
                         {%for produit in produit_tendance %}
                             {% if produit.tendance >= 10 %}
                                 <div class="swiper-slide ">
-                                    <div class="card" id="card">
+                                    <div id="card">
                                         <a href="{% url 'detail' produit.id%}">
                                             <img src="{{produit.image_prod.url}}" alt="">
                                             <p class="textPrice" >{{produit.nom_produit}}</p> 
@@ -120,7 +120,7 @@
                     <div class="swiper-wrapper">
                         {% for produit in produits_info %}
                         <div class="swiper-slide ">
-                            <div class="card" id="card">
+                            <div  id="card">
                                 <a href="{% url 'detail' produit.id%}">
                                     <img src="{{produit.image_prod.url}}" alt="">
                                     <p class="textPrice" >{{produit.nom_produit}}</p> 
@@ -152,7 +152,7 @@
                     <div class="swiper-wrapper">
                         {% for produit in produits_multi %}
                         <div class="swiper-slide ">
-                            <div class="card" id="card">
+                            <div id="card">
                                 <a href="{% url 'detail' produit.id%}">
                                     <img src="{{produit.image_prod.url}}" alt="">
                                     <p class="textPrice">{{produit.nom_produit}}</p> 
@@ -184,7 +184,7 @@
                     <div class="swiper-wrapper">
                         {% for produit in produits_bureau %}
                         <div class="swiper-slide ">
-                            <div class="card" id="card">
+                            <div id="card">
                                 <a href="{% url 'detail' produit.id%}">
                                     <img src="{{produit.image_prod.url}}" alt="">
                                     <p class="textPrice">{{produit.nom_produit}}</p> 
@@ -216,7 +216,7 @@
                     <div class="swiper-wrapper">
                         {% for produit in produits_tele %}
                         <div class="swiper-slide ">
-                            <div class="card" id="card">
+                            <div id="card">
                                 <a href="{% url 'detail' produit.id%}">
                                     <img src="{{produit.image_prod.url}}" alt="">
                                     <p class="textPrice">{{produit.nom_produit}}</p> 
@@ -248,7 +248,7 @@
                     <div class="swiper-wrapper">
                         {% for produit in produits_accessoir %}
                         <div class="swiper-slide ">
-                            <div class="card" id="card">
+                            <div id="card">
                                 <a href="{% url 'detail' produit.id%}">
                                     <img src="{{produit.image_prod.url}}" alt="">
                                     <p class="textPrice">{{produit.nom_produit}}</p> 
@@ -280,7 +280,7 @@
                     <div class="swiper-wrapper">
                         {% for produit in produits_console %}
                         <div class="swiper-slide ">
-                            <div class="card" id="card">
+                            <div id="card">
                                 <a href="{% url 'detail' produit.id%}">
                                     <img src="{{produit.image_prod.url}}" alt="">
                                     <p class="textPrice">{{produit.nom_produit}}</p> 

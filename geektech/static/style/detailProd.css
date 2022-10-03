@@ -1,5 +1,4 @@
 .secDetail{
-
     align-items: center;
     margin-left: 300px;
     margin-right: 300px;
@@ -15,6 +14,7 @@
 .ensemble{
     display: flex;
     justify-content: space-evenly;
+    margin: 2%;
 }
 
 
@@ -93,6 +93,8 @@ img{
     background-color: #28B463;
     color: white;
     transition: all 0.5s ease;
+    color: black;
+
  }
 
 .classQuantite{
@@ -106,7 +108,7 @@ img{
 }
 
 .price{
-    font-size: 26px;
+    font-size: 24px;
 }
 
 .dispo{
@@ -159,14 +161,18 @@ img{
     .secDetail{
         margin-left: 15%;
         margin-right: 15%;
+        height: auto;
     }
 }
 
 @media only screen and (max-width: 985px){
-    .secDetail{
+
+    .ensemble{
         flex-direction: column;
         text-align: center;
     }
+
+
     .image1{
         margin: 0;
         height: 250px;
