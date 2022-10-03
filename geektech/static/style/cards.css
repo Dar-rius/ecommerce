@@ -34,14 +34,16 @@
 
 
 .bouton a {
-    margin-right: 7%;
+    font-size: 18px;
+    padding: 15px 50px;
+    margin: 5px;
+    cursor: pointer;
     text-decoration: none;
-    background-color: black;
+    border: 0;
+    outline:none;
     color: white;
-    padding: 5%;
-    padding-left: 19%;
-    padding-right: 19%;
-    border-radius: 20px;
+    background-color: black;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.12);
 }
 
 .bouton a:hover{
@@ -68,7 +70,11 @@
 .commander{
     color: #CB4335;;
 }
-
+@media only screen and (max-width: 1024px){
+    .panier_body{
+        margin-top: 130px;
+    }
+}
 @media only screen and (max-width: 780px) {
     .produit{
         flex-direction: column;
@@ -86,6 +92,7 @@
 
     .detailCommande{
         margin-left: 0;
+        padding-top: 35px;
     }
 
     .bouton{
@@ -94,5 +101,13 @@
 
     .bouton a{
         margin-right: 10px;
+    }
+}
+@media only screen and (max-width: 375px){
+    .bouton{
+        flex-direction: column;
+    }
+    .bouton a{
+        margin: 10px;
     }
 }

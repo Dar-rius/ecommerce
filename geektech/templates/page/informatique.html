@@ -8,7 +8,7 @@
                 <img src="{% static 'image/Workstation_black.png' %}" alt="">
                 <h4>Informatique</h4> 
             </div>
-            <div class="item1">
+            <div class="item1" style="margin-top: 22px ;">
                 {% for produit in produits %}
                 <div class="card" id="card">
                     <a href="{% url 'detail' produit.id%}">

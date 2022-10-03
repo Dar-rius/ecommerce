@@ -1,3 +1,6 @@
+.secDetailPrincipal{
+    padding-top: 10px;
+}
 .secDetail{
     align-items: center;
     margin-left: 300px;
@@ -37,6 +40,7 @@ img{
 }
 .img-select{
     display: flex;
+    padding-top: 5px;
 }
 .img-item{
     margin: 1.2rem;
@@ -79,14 +83,13 @@ img{
 .prod_detail button{
     font-size: 18px;
     padding: 15px 50px;
-    margin-top: 40px;
+    margin-top: 10px;
     cursor: pointer;
     border: 0;
     outline:none;
     color: white;
     background-color: black;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.12);
-    border-radius: 20px;
 }
 
 .prod_detail button:hover{
@@ -155,6 +158,9 @@ img{
         margin-left: 20%;
         margin-right: 20%;
     }
+    .secDetailPrincipal{
+        padding-top: 25px;
+    }
 }
 
 @media only screen and (max-width: 1150px){
@@ -162,6 +168,9 @@ img{
         margin-left: 15%;
         margin-right: 15%;
         height: auto;
+    }
+    .secDetailPrincipal{
+        padding-top: 25px;
     }
 }
 
@@ -171,11 +180,15 @@ img{
         flex-direction: column;
         text-align: center;
     }
-
-
+    .secDetailPrincipal{
+        padding-top: 35px;
+    }
     .image1{
         margin: 0;
         height: 250px;
+    }
+    .product-imgs{
+        margin-left: 25%;
     }
 
 }
@@ -183,5 +196,31 @@ img{
 @media only screen and (max-width: 650px){
     .descrip{
         margin-right: 10%;
+    }
+    .secDetailPrincipal{
+        padding-top: 40px;
+    }
+    .secDetail{
+       width: 79%;
+       padding-right: 10px;
+       margin-right: 10px;
+    }
+    .product-imgs{
+        margin-left: 25px;
+    }
+}
+@media only screen and (max-width: 475px){
+    .product-imgs{
+        margin-left: 30px;
+    }
+}
+@media only screen and (max-width: 375px){
+    .product-imgs{
+        margin-left: 10px;
+    }
+}
+@media only screen and (max-width: 320px){
+    .product-imgs{
+        margin-left: 1px;
     }
 }
