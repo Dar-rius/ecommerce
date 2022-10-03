@@ -1,16 +1,22 @@
 .secDetail{
-    display: flex;
-    justify-content: space-around;
+
     align-items: center;
     margin-left: 300px;
-    margin-bottom: 35px;
+    margin-right: 300px;
+    margin-bottom: 45px;
     margin-top: 5px;
     background-color: white;
-    width: 60%;
-    height: 70vh;
+    height: 65vh;
     border-radius: 5px;
     padding: 2px;
 }
+
+
+.ensemble{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 
 img{
     width: 100%;

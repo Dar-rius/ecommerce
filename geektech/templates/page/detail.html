@@ -4,40 +4,42 @@
     <section class="secDetailPrincipal">
         <form method="post" class="secDetail">
             {% csrf_token %}
-            <div class = "product-imgs">
-                <div class = "img-display" >
-                  <div class = "img-showcase" >
-                    {% for image in  img_produit%}
-                    <img src = "{{image.photo_produit.url}}" alt = "image-produit" style="width:400px ;height: 230px;">
-                    {% endfor %}
-                  </div>
-                </div>                  
-                <div class = "img-select">
-                    {% for image in img_produit%}
-                    <div class = "img-item">
-                        <a href = "#" data-id = "{{forloop.counter}}">
-                        <img src = "{{image.photo_produit.url}}" alt = "image-produit">
-                        </a>
+            <div class="ensemble">
+                <div class = "product-imgs">
+                    <div class = "img-display" >
+                      <div class = "img-showcase" >
+                        {% for image in  img_produit%}
+                        <img src = "{{image.photo_produit.url}}" alt = "image-produit" style="width:400px ;height: 230px;">
+                        {% endfor %}
+                      </div>
+                    </div>                  
+                    <div class = "img-select">
+                        {% for image in img_produit%}
+                        <div class = "img-item">
+                            <a href = "#" data-id = "{{forloop.counter}}">
+                            <img src = "{{image.photo_produit.url}}" alt = "image-produit">
+                            </a>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
+                </div>         
+    
+                {{form.non_field_errors}}
+                <div class="prod_detail">
+                    <h2>{{produit.nom_produit}}</h2>
+                    <p class="quantite">Quantité</p>
+                    {{form.quantite.error}}
+                    <input type="number" name="quantite" placeholder="Preciser la quantite" value={{produit.quantite_produit}} value="{{produit.quantite_produit}}" min="0" max="{{produit.quantite_produit}}" class="classQuantite">
+                    {% if produit.quantite_produit <= 0%}
+                        <p class="dispo">Indisponible</p>
+                    {% else %}
+                        <p class="dispo">Disponible</p>
+                    {% endif %}
+                    <p class="price">Prix: {{produit.prix_produit}} FCFA</p>
+                    <button type="submit">Ajouter au panier</button>
                 </div>
-            </div>         
-
-            {{form.non_field_errors}}
-            <div class="prod_detail">
-                <h2>{{produit.nom_produit}}</h2>
-                <p class="quantite">Quantité</p>
-                {{form.quantite.error}}
-                <input type="number" name="quantite" placeholder="Preciser la quantite" value={{produit.quantite_produit}} value="{{produit.quantite_produit}}" min="0" max="{{produit.quantite_produit}}" class="classQuantite">
-                {% if produit.quantite_produit <= 0%}
-                    <p class="dispo">Indisponible</p>
-                {% else %}
-                    <p class="dispo">Disponible</p>
-                {% endif %}
-                <p class="price">Prix: {{produit.prix_produit}} FCFA</p>
-                <button type="submit">Ajouter au panier</button>
-                <p>{{message}}</p>
             </div>
+            <p style="text-align: center; color:#CB4335; ">{{message}}</p>
         </form>
 
         <div class="descrip">
