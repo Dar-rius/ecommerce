@@ -20,6 +20,7 @@
     margin-bottom: 2%;
 }
 
+
 .cas a{
     text-decoration: none;
 }
@@ -64,8 +65,14 @@
 
 
 @media screen and (max-width: 600px) {
+
+    .secInscrire{
+        margin-top: 20vh;
+    }
+
     .formSignup input{
         width: 70%;
+        margin-bottom: 2%;
     }
 
     .formSignup div{
@@ -74,9 +81,14 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
     .formSignup input{
         width: 90%;
+    }
+
+    .sign{
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
 
     .formSignup div{
