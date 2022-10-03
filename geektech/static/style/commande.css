@@ -15,17 +15,19 @@
     font-weight: 400;
     height: 100%;
     width: 100%;
+    text-align: center;
 }
 
 .com{
     text-align: center;
     padding: 10px 0;
     font-weight: larger;
+    font-size: larger;
+
 
 }
 
 .commande button{
-    width: 100%;
     padding: 12px;
     background: #1C2833;
     color: white;
@@ -38,20 +40,23 @@
     margin-bottom: 5%;
 }
 
+.champ{
+    margin-right:10% ;
+}
+
+
 .desc{
     background-color: #1C2833;
     color: white;
     padding-bottom: 1px;
     border-radius: 5px;
     padding-top: 6px;
-    width: 90%;
+    margin-left: 28%;
+    margin-right: 28%;
     height: 100%;
-    margin-left: 80px;
+
 }
 
-.champ{
-    margin-right: 290px;
-}
 
 .detailCommande{
     text-align: center;
@@ -62,21 +67,20 @@
 }
 
 button.bout{
-    width: 200px;
-    margin-left: 450px;
+    width: 250px;
     border-radius: 5px;
     margin-bottom: 20px;
     color: white;
     background-color: #1C2833;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: center;
 }
+
 button.bout:hover{
-   border: 1px solid #1C2833;
-   background-color: white;
-   color: #1C2833;
-   transition: all 1s ;
+   border: 1px solid;
+   background-color: #3498DB;
+   color: white;
+   transition: all 1s ease;
 }
 
 
