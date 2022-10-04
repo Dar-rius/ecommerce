@@ -10,6 +10,8 @@
     background-color: white;
     border-radius: 5px;
     padding: 2px;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
 
@@ -17,6 +19,7 @@
     display: flex;
     justify-content: space-evenly;
     margin: 2%;
+    align-items: center;
 }
 
 
@@ -73,7 +76,6 @@ img{
     margin: 2%;
     width: 250px;
     text-align: center;
-
 }
 .prod_detail h2{
     font-weight: 300;
