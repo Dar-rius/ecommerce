@@ -8,15 +8,17 @@
     margin-bottom: 45px;
     margin-top: 5px;
     background-color: white;
-    height: 65vh;
     border-radius: 5px;
     padding: 2px;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
 .ensemble{
     display: flex;
     justify-content: space-evenly;
     margin: 2%;
+    align-items: center;
 }
 img{
     width: 100%;
@@ -36,6 +38,7 @@ img{
 .img-select{
     display: flex;
     padding-top: 5px;
+    flex-wrap: wrap;
 }
 .img-item{
     margin: 1.2rem;
@@ -61,16 +64,12 @@ img{
     padding: 2rem 1rem;
 }
 .product-imgs{
-    height: 250px;
     width: 250px;
-    padding: 10px;
-    margin-bottom: 75px;
 } 
 .prod_detail{
     margin: 2px 10px;
 }
 .prod_detail h2{
-    margin: 20px 0 10px 0;
     font-weight: 300;
 }
 
@@ -95,7 +94,7 @@ img{
  }
 
 .classQuantite{
-    width: 90%;
+    width: 50%;
     margin-top: 2%;
     outline:none;
 }
