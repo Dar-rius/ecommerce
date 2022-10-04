@@ -1,14 +1,14 @@
 {% extends "_base.html" %}
 
 {% block content%}
-    <div class="container">
+    <div class="containerCommande">
         <h3 class="detailCommande">Detail de livraison</h3>
         <div class="contain">
             <form method="post" class="commande">
                 {% csrf_token %}
-                <div class="desc">
+                <div class="descCommande">
                     <p class="com">Votre commande</p>
-                    <div class="descrip_commande">
+                    <div class="descrip_commandes">
                         <div class="champ">
                             <p>Nom:</p>
                             <p>Prix:</p>

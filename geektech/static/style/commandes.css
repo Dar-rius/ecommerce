@@ -1,5 +1,5 @@
 
-.container{
+.containerCommande{
     margin-bottom: 10%;
 }
 
@@ -34,7 +34,7 @@
     border: none;
 }
 
-.descrip_commande{
+.descrip_commandes{
     display: flex;
     justify-content: center;
     margin-bottom: 5%;
@@ -45,7 +45,7 @@
 }
 
 
-.desc{
+.descCommande{
     background-color: #1C2833;
     color: white;
     padding-bottom: 1px;
@@ -85,20 +85,18 @@ button.bout:hover{
 }
 
 
-@media only screen and (max-width:995px ){
-    .commande{
-        width: 60%
+@media screen and (max-width: 994px){
+    .descCommande{
+        margin-left: 20%;
+        margin-right: 20%;
     }
-}
+} 
 
-@media only screen and (max-width:770px ){
-    .commande{
-        width: 75%
-    }
-}
 
-@media only screen and (max-width:500px ){
-    .commande{
-        width: 85%
+@media screen and (max-width: 783px){
+    .descCommande{
+        margin-left: 10%;
+        margin-right: 10%;
     }
-}
+
+} 

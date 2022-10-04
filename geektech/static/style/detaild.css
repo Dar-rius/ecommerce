@@ -174,11 +174,16 @@ img{
     }
 }
 
-@media only screen and (max-width: 985px){
+@media only screen and (max-width: 850px){
+    .product-imgs{
+        text-align: center;
+    }
 
     .ensemble{
+        justify-content: center;
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
     .secDetailPrincipal{
         padding-top: 35px;
@@ -187,9 +192,7 @@ img{
         margin: 0;
         height: 250px;
     }
-    .product-imgs{
-        margin-left: 25%;
-    }
+
 
 }
 
@@ -201,19 +204,13 @@ img{
         padding-top: 40px;
     }
     .secDetail{
-       width: 79%;
        padding-right: 10px;
-       margin-right: 10px;
+       margin-right: 5%;
+       margin-left: 5%;
     }
-    .product-imgs{
-        margin-left: 25px;
-    }
+
 }
-@media only screen and (max-width: 475px){
-    .product-imgs{
-        margin-left: 30px;
-    }
-}
+
 @media only screen and (max-width: 375px){
     .product-imgs{
         margin-left: 10px;
