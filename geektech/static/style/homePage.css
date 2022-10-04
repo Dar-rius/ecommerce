@@ -233,7 +233,6 @@ nav img{
 
 .swiper-button-next,.swiper-pagination,.swiper-button-prev{
     color:black;
-    padding: 0 65px;
 
 }
 
@@ -287,17 +286,6 @@ nav img{
     #carouselExampleCaptions{
         width: 90%;
     }
-}
-
-@media only screen and (max-width: 870px) {
-    .swiper-button-next{
-        display: none;
-    }
-
-    .swiper-button-prev{
-        display: none;
-    }
-
 }
 
 @media only screen and (max-width:750px){

@@ -49,24 +49,30 @@
 
         <div class="autres">
             <h4 class="title3">Autres produits</h4>
-            <div class="item1">
-                {% for produit in autre_produit %}
-                <div class="card" id="card">
-                    <a href="{% url 'detail' produit.id%}">
-                        <img src="{{produit.photo_produit.url}}" alt="">
-                        <p class="textPrice">{{produit.nom_produit}}</p> 
-                        <div class="star">
-                            {{produit.tendance}}
-                            <span class="material-icons red md-30">local_fire_department</span>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {% for produit in autre_produit %}
+                    <div class="swiper-slide ">
+                        <div id="card">
+                            <a href="{% url 'detail' produit.id%}">
+                                <img src="{{produit.image_prod.url}}" alt="">
+                                <p class="textPrice">{{produit.nom_produit}}</p> 
+                                 <div class="star">
+                                            {{produit.tendance}}
+                                            <span class="material-icons red md-30">local_fire_department</span>
+                                        </div>
+                            </a>
+                            <div class="bas">
+                                <p>{{produit.prix_produit}}  FCFA</p>
+                            </div>
                         </div>
-                    </a>
-                    <div class="bas">
-                        <p>{{produit.prix_produit}}  FCFA</p>
                     </div>
-                </div>
-                {% empty %}
-                <p>Aucun produit meme categorie</p>
+                    {% empty %}
+                        <p style="text-align:center">Il y a aucun produit</p>
                 {% endfor %}
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
         <script>
@@ -89,7 +95,10 @@
             }
 
             window.addEventListener('resize', slideImage);
+
         </script>
+
+        
     </section>
 {% endblock content%}
 
