@@ -2,6 +2,14 @@
     margin: 5%;
 }
 
+.detailCommande h4{
+    font-weight: bold;
+}
+
+.detailCommande p{
+    font-size: 19px;
+}
+
 .panier_body{
     margin-left: 7%;
     margin-right: 7%;
