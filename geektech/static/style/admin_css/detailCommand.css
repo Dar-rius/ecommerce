@@ -5,10 +5,12 @@ body{
 }
 
 .haut{
+    font-size: 20px;
     display: flex;
     align-items: center;
     margin-left: 1%;
     margin-bottom: 1%;
+    margin-top: 10%;
 }
 
 .haut img{
@@ -29,10 +31,6 @@ body{
 .commandeImage{
     width: 40%;
     height: 300px;
-}
-
-p{
-    font-size: 1rem;
 }
 
 span{
