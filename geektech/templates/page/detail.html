@@ -87,7 +87,6 @@
                     slideImage();
                 });
             });
-
             function slideImage(){
                 const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
 
@@ -95,10 +94,62 @@
             }
 
             window.addEventListener('resize', slideImage);
+        </script>   
+        <script>
+            function myFunction(x) {
+                    if (x.matches) { // If media query matches
+                        var swiper = new Swiper(".mySwiper", {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                            slidesPerGroup: 1,
+                            loop: false,
+                            loopFillGroupWithBlank: true,
+                            pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    } else {
+                        var swiper = new Swiper(".mySwiper", {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                            slidesPerGroup: 3,
+                            loop: false,
+                            loopFillGroupWithBlank: true,
+                            pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    }
+                }
 
-        </script>
-
-        
+                        var x = window.matchMedia("(max-width: 870px)")
+                        myFunction(x) // Call listener function at run time
+                        x.addListener(myFunction)
+                    
+                    var mybutton = document.getElementById("myBtn");
+                    window.onscroll = function() {scrollFunction()};        
+                    function scrollFunction() {
+                    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+                        mybutton.style.display = "block";
+                    } else {
+                        mybutton.style.display = "none";
+                    }
+                    }
+                    function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                    }
+        </script>     
     </section>
 {% endblock content%}
 
