@@ -17,7 +17,6 @@
 .ensemble{
     display: flex;
     justify-content: space-evenly;
-    margin: 2% 0%;
     align-items: center;
 }
 img{
@@ -37,6 +36,7 @@ img{
 }
 .img-select{
     display: flex;
+    justify-content: center;
     padding-top: 5px;
     flex-wrap: wrap;
 }
@@ -70,7 +70,7 @@ img{
     margin: 2px 10px;
 }
 .prod_detail h2{
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .prod_detail button{
@@ -81,22 +81,25 @@ img{
     border: 0;
     outline:none;
     color: white;
-    background-color: black;
+    background-color: #1C2833;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.12);
+    border-radius: 10px;
 }
 
 .prod_detail button:hover{
-    background-color: #28B463;
     color: white;
-    transition: all 0.5s ease;
-    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: all 1s ease;
+    background-color: #2E4053;
+
 
  }
 
 .classQuantite{
-    width: 50%;
+    width: 30%;
     margin-top: 2%;
     outline:none;
+
 }
 
 .quantite{

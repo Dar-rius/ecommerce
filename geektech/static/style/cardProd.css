@@ -34,6 +34,7 @@
 
 
 .bouton a {
+    border-radius: 10px;
     font-size: 18px;
     padding: 15px 50px;
     margin: 5px;
@@ -42,19 +43,23 @@
     border: 0;
     outline:none;
     color: white;
-    background-color: black;
+    background-color: #34495E;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.12);
 }
 
 .bouton a:hover{
-    background-color: #28B463;
-    color: white;
+    transition: all 1s ease;
+    background-color: #425A71;
     transition: all 0.5s ease;
-    color: black;
+ }
+
+ .bouton .retire{
+    background-color: #CB4335;
  }
 
  .bouton .retire:hover{
-    background-color: #CB4335;
+    transition: all 1s ease;
+    background-color: #E74C3C;
     color: white;
     transition: all 0.5s ease;
  }
