@@ -43,8 +43,29 @@
     display: flex;
     align-items: center;
     justify-content:space-evenly;
-    margin-bottom: 20vh;
+    margin-bottom: 9vh;
 }
+
+.expand{
+    text-align: center;
+}
+
+#Ebene_2_1_{
+    height: 5vh;
+}
+
+g {
+    animation: g-animation 1.5s infinite;
+    animation-timing-function: linear;
+    fill: #1C2833;
+}
+
+
+@keyframes g-animation {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(9px); }
+}
+
 
 nav{
     background:#1C2833;
@@ -280,6 +301,10 @@ nav img{
 
 @media only screen and (max-width: 930px) {
     nav{
+        display: none;
+    }
+
+    .expand{
         display: none;
     }
     
