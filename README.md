@@ -33,7 +33,7 @@ Linux
 #### 3 - Installation du projet
 
 ```bash
-$ git clone https://github.com/TeraTra/geekTech.git
+$ git clone https://github.com/TeraTra/geek-commerce.git
 
 $ cd geekTech
 ```
